@@ -4,6 +4,7 @@ chardet==3.0.4
 docutils==0.19
 filelock==3.0.12
 greenlet==2.0.1
+gunicorn==20.1.0
 idna==2.8
 lockfile==0.12.2
 python-daemon==2.2.4
