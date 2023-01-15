@@ -9,6 +9,48 @@ from flask_login import (
     logout_user
 )
 
+
+@blueprint.route('/')
+def route_default():
+    return redirect(url_for('authentication_blueprint.login'))
+
+
+@blueprint.route('/login', methods=['GET'])
+def login():
+    login_form = LoginForm(request.form)
+
+    if not current_user.is_authenticated:
+        return render_template('accounts/login.html',
+                               form=login_form)
+    return redirect(url_for('home_blueprint.index'))
+
+
+
+@blueprint.route('/validate', methods=['POST'])
+def validate():
+    login_form = LoginForm(request.form)
+  
+
+    # read form data
+    username = request.form['username']
+    password = request.form['password']
+
+    # Locate user
+    user = Users.query.filter_by(username=username).first()
+
+    # Check the password
+    if user and user.verify_password(password):
+
+        login_user(user)
+        return redirect(url_for('authentication_blueprint.route_default'))
+
+    # Something (user or pass) is not ok
+    return render_template('accounts/login.html',
+                               msg='Wrong user or password',
+                               form=login_form)
+
+
+
 @blueprint.route('/register', methods=['GET'])
 def register():
     """Register a new user"""

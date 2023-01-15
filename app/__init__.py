@@ -22,6 +22,8 @@ def register_extensions(app):
 def register_blueprints(app):
     from app.authentication.routes import blueprint
     app.register_blueprint(blueprint)
+    from app.home.routes import blueprint
+    app.register_blueprint(blueprint)
 
 
 def configure_database(app):
