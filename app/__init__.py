@@ -5,8 +5,7 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from config import Config
-
+from app.config import configurations
 
 
 db = SQLAlchemy()
@@ -21,8 +20,8 @@ def register_extensions(app):
 
 
 def register_blueprints(app):
-    from .view.users import users
-    app.register_blueprint(users, url_prefix='/api')
+    from app.authentication.routes import blueprint
+    app.register_blueprint(blueprint)
 
 
 def configure_database(app):
@@ -41,15 +40,14 @@ def configure_database(app):
         db.session.remove() 
 
 
-
-def create_app(config_class=Config):
+def create_app(configuration):
     app = Flask(__name__)
-
-    app.config.from_object(config_class)
-    from app.model import data_model
+    app.config.from_object(configurations[configuration])
+    
+    from app.authentication import models
     register_extensions(app)
     register_blueprints(app)
-    configure_database(app)
+    # configure_database(app)
    
 
     return app
