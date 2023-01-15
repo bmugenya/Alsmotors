@@ -47,7 +47,7 @@ def create_app(configuration):
     from app.authentication import models
     register_extensions(app)
     register_blueprints(app)
-    # configure_database(app)
+    configure_database(app)
    
 
     return app
