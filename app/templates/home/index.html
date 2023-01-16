@@ -34,77 +34,64 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
   <link id="pagestyle" href="/static/assets/css/material-kit.css?v=3.0.0" rel="stylesheet" />
-    <link id="pagestyle" href="/static/assets/css/layout.css" rel="stylesheet" />
+    
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
 
+<link id="pagestyle" href="/static/assets/css/layout.css" rel="stylesheet" />
 </head>
 <body class="presentation-page bg-gray-200">
 
-  {% include 'includes/navigation-transparent.html' %}
-
-<!-- 
-  <header class="header-2">
-    <div id="carouselExampleControls" class="carousel slide page-header min-vh-100" data-bs-ride="carousel">
-      <span class="mask bg-gradient-dark opacity-4"></span>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-7 text-center mx-auto">
-            <h1 class="text-white pt-3 mt-n5">ALSMOTORS</h1>
-            <p class="lead text-white mt-3">WE HAVE EVERYTHING YOU ARE LOOING FOR IN A CAR.</p>
-             <a href="https://appseed.us/apps/flask-apps/flask-material-kit" target="_blank" class="btn btn-primary btn-lg mb-3 mb-sm-0">learn more</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header> -->
-
+  {% include 'includes/navigation-light.html' %}
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner mb-4">
-      <div class="carousel-item active">
-        <!-- <div class="page-header min-vh-100" style="background-image: linear-gradient(195deg, #42424a 0%, #191919 100%), url('/static/assets/img/road1.jpg');opacity: 0.8;"> -->
-
-      <div class="page-header min-vh-90" style="background-image:linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),
-    url('/static/assets/img/road1.jpg');">
-     
-         
-            <div class="row pt-4">
-                        <h4 class="text-white mb-0 text-center fade-in-img">WE HAVE EVERYTHING</h4>
-                <h1 class="text-white text-center fade-in-img2">YOUR CAR NEEDS!</h1>
-              
-              <div class="pt-5"></div> 
-              <div class="col-3 my-auto">
-                <img class="w-100 fade-in-img2" src="/static/assets/img/img1.png" alt="Product Image">
-              </div>
-              <div class="col-3 my-auto">
-                <img class="w-100 fade-in-img" src="/static/assets/img/img2.png" alt="Product Image">
-              </div>
-              <div class="col-3 my-auto">
-                <img class="w-100 fade-in-img" src="/static/assets/img/img4.png" alt="Product Image">
-              </div>
-              <div class="col-3 my-auto">
-                <img class="w-100 fade-in-img2" src="/static/assets/img/img5.png" alt="Product Image">
-              </div>
-                     </div>
-          </div>
-          </div>
-        </div>
-      
-<!--       <div class="carousel-item">
-        <div class="page-header min-vh-75 m-3 border-radius-xl" style="background-image: url('https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-2-min.jpg');">
+      <div class="carousel-item">
+        <div class="page-header min-vh-75" style="background-image: url('/static/assets/img/bg-1.jpg');">
           <span class="mask bg-gradient-dark"></span>
           <div class="container">
             <div class="row">
               <div class="col-lg-6 my-auto">
-                <h4 class="text-white mb-0 fadeIn1 fadeInBottom">Office Places</h4>
-                <h1 class="text-white fadeIn2 fadeInBottom">Work from home</h1>
-                <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">You’re spending time to save money when you should be spending money to save time.</p>
+                <h4 class="text-white mb-0 fadeIn1 fadeInBottom">WIDE RANGE OF BRANDS</h4>
+                <h1 class="text-white fadeIn2 fadeInBottom" id="state1" countTo="5234">0</h1>
+                <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">A vast selection of the most popular new models from a wide range of brands awaits you today: Toyota, Lexus, Ford, Bentley, MG, Tesla, BMW, Mercedes, Suzuki, etc...</p>
               </div>
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
+       <div class="carousel-item">
+        <div class="page-header min-vh-75" style="background-image: url('/static/assets/img/bg-2.jpg');">
+          <span class="mask bg-gradient-dark"></span>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 my-auto">
+                <h4 class="text-white mb-0 fadeIn1 fadeInBottom">QUALITY SERVICE</h4>
+                <h1 class="text-white fadeIn2 fadeInBottom"> 24/7 </h1>
+                <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">Dependable, reliable and guaranteed quality on time every time makes Legend your chosen partner in business</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item active">
+        <div class="page-header min-vh-75" style="background-image: url('/static/assets/img/bg-4.jpg');">
+          <span class="mask bg-gradient-dark"></span>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 my-auto">
+                <h4 class="text-white mb-0 fadeIn1 fadeInBottom">TRUSTED BY THOUSANDS</h4>
+                <h1 class="text-white fadeIn2 fadeInBottom" id="state2" countTo="5234">0</h1>
+                <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">With over 120,000 vehicles sold, we are trusted by many thousands of customers around the world. If you are looking for your next mobility solution, please do not hesitate to contact us today</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="min-vh-95 position-absolute w-100 top-0">
+    <div class="min-vh-75 position-absolute w-100 top-0">
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon position-absolute bottom-50" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -116,86 +103,94 @@
     </div>
   </div>
 
-
-
-
   <div class="card card-body blur shadow-blur mx-3 mx-md-10 mt-n8">
     <section class="pt-3 pb-4" id="count-stats">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 mx-auto py-3">
             <div class="row">
-              <div class="col-md-3 position-relative">
-                <div class="p-3 text-center">
+
+             <div class="col-md-2 position-relative">
+                <div class="text-center">
                   <div class="input-group input-group-dynamic mb-4">
-                  <label class="">Select Year</label>
+                  <label class="">Price</label>
                   <select class="select-css" aria-label="First Name...">
-                    <option value="">--Select--</option>
+                    <option value="">Select</option>
                   </select>
                 </div>
-                  <div class="input-group input-group-dynamic mb-4">
-                  <label class="">Select Mileage</label>
-                     <select class="select-css" aria-label="First Name...">
-                    <option value="">--Select--</option>
-                  </select>
-                </div>
+       
                 </div>
            
               </div>
-              <div class="col-md-3 position-relative">
-                <div class="p-3 text-center">
-                           <div class="input-group input-group-dynamic mb-4">
-                  <label class="">Select Make</label>
-                     <select class="select-css" aria-label="First Name...">
-                    <option value="">--Select--</option>
-                  </select>
-                </div>
+
+                      <div class="col-md-2 position-relative">
+                <div class="text-center">
                   <div class="input-group input-group-dynamic mb-4">
-                  <label class="">Select Transmission</label>
-                      <select class="select-css" aria-label="First Name...">
-                    <option value="">--Select--</option>
+                  <label class="">All Make</label>
+                  <select class="select-css" aria-label="First Name...">
+                    <option value="">Select</option>
                   </select>
                 </div>
+       
                 </div>
-              
+           
               </div>
 
-    
-                <div class="col-md-3 position-relative">
-                <div class="p-3 text-center">
-                           <div class="input-group input-group-dynamic mb-4">
-                  <label class="">Select Model</label>
+        <div class="col-md-2 position-relative">
+                <div class="text-center">
+                  <div class="input-group input-group-dynamic mb-4">
+                  <label class="">All Models</label>
+                  <select class="select-css" aria-label="First Name...">
+                    <option value="">Select</option>
+                  </select>
+                </div>
+       
+                </div>
+           
+              </div>
+
+
+
+          <div class="col-md-2 position-relative">
+                <div class="text-center">
+                           <div class="input-group input-group-dynamic">
+                  <label class="">Fuel Type</label>
                     <select class="select-css" aria-label="First Name...">
-                    <option value="">--Select--</option>
-                  </select>
-                </div>
-                  <div class="input-group input-group-dynamic mb-4">
-                  <label class="">Select Condition</label>
-                <select class="select-css" aria-label="First Name...">
-                    <option value="">--Select--</option>
+                    <option value="">Select</option>
                   </select>
                 </div>
                 </div>
 
                 </div>
-              
 
 
-                         <div class="col-md-3">
-                <div class="p-3 text-center">
-                 <div class="input-group input-group-dynamic pt-5">
-                  <label class="">Price KSH0 - KSH200,000</label>
-                  <input class="form-range mb-1" aria-label="First Name..." type="range" >
-                  <button type="button" class="btn bg-gradient-primary">Search Inventory</button>
+                  <div class="col-md-2 position-relative">
+                <div class="text-center">
+                           <div class="input-group input-group-dynamic">
+                  <label class="">Transmission</label>
+                    <select class="select-css" aria-label="First Name...">
+                    <option value="">Select</option>
+                  </select>
+                </div>
+                </div>
+
+                </div>
+
+
+                           <div class="col-md-2">
+                <div class="text-center">
+                 <div class="input-group input-group-dynamic pt-4">
+                    <button type="button" class="btn bg-gradient-primary">
+                    <span class="btn-inner--icon"><i class="fa fa-search"></i></span>
+                  <span class="btn-inner--text">Search</span>
+                </button>
                 </div>
     
                 </div>
 
                 </div>
 
-
-              
-              </div>
+        
             </div>
           </div>
         </div>
@@ -203,70 +198,149 @@
     </section>
   </div>
 
-    </section>
+      <section class="py-7">
+  <div class="container">
+    <div class="row">
 
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="row justify-content-center text-center my-sm-5">
-            <div class="col-lg-12">
-              <span class="mb-3">Welcome to our website</span>
-              <h2 class="text-dark mb-0">ALSMOTORS</h2>
-              <p class="lead">Car Dealer is the most enticing, creative, modern and multipurpose auto dealer Premium WordPress Theme. Suitable for any car dealer websites, business or corporate websites. The Theme has been Created especially for automotive dealers, car resellers, car service stations, mechanic workshop and auto motor retailers.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-        <div class="row">
-          <div class="col-lg-2 col-md-4 col-6 ms-auto">
-  
-                  <div class="p-3 info-vertical text-center">
-          <div class="icon icon-shape  bg-gradient-primary shadow-primary text-center">
-            <i class="fas fa-handshake opacity-10"></i>
-          </div>
-          <div class="description ps-3">
-            <p class="mb-0">All brands
- <br><span>Galley simply dummy text lorem Ipsum is of the printin k a of type and</span></p>
-          </div>
-        </div>
+<div class="col-lg-8 mx-auto">
+      <h3>New Arrivals</h3>
+</div>
+       <div class="col-lg-4 mx-auto">
+          <div class="nav-wrapper position-relative end-0">
 
 
+             <ul class="nav nav-pills nav-fill p-1" role="tablist">
+
+                <li class="nav-item">
+                   <a class="nav-link mb-0 px-0 py-1 active" data-bs-toggle="tab" href="#profile-tabs-simple" role="tab" aria-controls="profile" aria-selected="true">
+                   ALL
+                   </a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#dashboard-tabs-simple" role="tab" aria-controls="dashboard" aria-selected="false">
+                   SEDAN
+                   </a>
+                </li>
+                    <li class="nav-item">
+                   <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#dashboard-tabs-simple" role="tab" aria-controls="dashboard" aria-selected="false">
+                   SUV
+                   </a>
+                </li>
+                    <li class="nav-item">
+                   <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#dashboard-tabs-simple" role="tab" aria-controls="dashboard" aria-selected="false">
+                   PICK UPS
+                   </a>
+                </li>
+                    <li class="nav-item">
+                   <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#dashboard-tabs-simple" role="tab" aria-controls="dashboard" aria-selected="false">
+                   BUSES
+                   </a>
+                </li>
+             </ul>
           </div>
-          <div class="col-lg-3 col-md-4 col-6">
-                              <div class="p-3 info-vertical text-center">
-          <div class="icon icon-shape  bg-gradient-primary shadow-primary text-center">
-            <i class="fas fa-handshake opacity-10"></i>
-          </div>
-          <div class="description ps-3">
-            <p class="mb-0">Free Support <br><span>Galley simply dummy text lorem Ipsum is of the printin k a of type and</span></p>
-          </div>
-        </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-6">
-                              <div class="p-3 info-vertical text-center">
-          <div class="icon icon-shape  bg-gradient-primary shadow-primary text-center">
-            <i class="fas fa-handshake opacity-10"></i>
-          </div>
-          <div class="description ps-3">
-            <p class="mb-0">Dealership <br><span>Galley simply dummy text lorem Ipsum is of the printin k a of type and</span></p>
-          </div>
-        </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-6 ms-lg-0 ms-md-auto">
-                              <div class="p-3 info-vertical text-center">
-          <div class="icon icon-shape  bg-gradient-primary shadow-primary text-center">
-            <i class="fas fa-handshake opacity-10"></i>
-          </div>
-          <div class="description ps-3">
-            <p class="mb-0">Affordable<br><span>Galley simply dummy text lorem Ipsum is of the printin k a of type and</span></p>
-          </div>
-        </div>
+       </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+      <section>
+  <div class="container">
+    <div class="row">
+
+          <div class="col-md-4 col-12">
+            <div class="card" data-animation="true">
+  <div class="card-header p-0 position-relative z-index-2">
+    <a class="d-block blur-shadow-image">
+      <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
+    </a>
+    <div class="colored-shadow" style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);"></div>
+  </div>
+  <div class="card-body text-center">
+    <div class="d-flex mt-n6 mx-auto">
+      <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Refresh">
+        <i class="material-icons text-lg">refresh</i>
+      </a>
+      <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
+        <i class="material-icons text-lg">edit</i>
+      </button>
+    </div>
+    <h5 class="font-weight-normal mt-3">
+      <a href="javascript:;">SUBARU FORESTER</a>
+    </h5>
+    <p class="mb-0">
+Call for Price
+    </p>
+  </div>
+</div>
           </div>
 
-        </div>
+                   <div class="col-md-4 col-12">
+            <div class="card" data-animation="true">
+  <div class="card-header p-0 position-relative z-index-2">
+    <a class="d-block blur-shadow-image">
+      <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
+    </a>
+    <div class="colored-shadow" style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);"></div>
+  </div>
+  <div class="card-body text-center">
+    <div class="d-flex mt-n6 mx-auto">
+      <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Refresh">
+        <i class="material-icons text-lg">refresh</i>
+      </a>
+      <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
+        <i class="material-icons text-lg">edit</i>
+      </button>
+    </div>
+    <h5 class="font-weight-normal mt-3">
+      <a href="javascript:;">SUBARU FORESTER</a>
+    </h5>
+    <p class="mb-0">
+Call for Price
+    </p>
+  </div>
+</div>
+          </div>
 
-        
-      <div class="blur move-item">
+                   <div class="col-md-4 col-12">
+            <div class="card" data-animation="true">
+  <div class="card-header p-0 position-relative z-index-2">
+    <a class="d-block blur-shadow-image">
+      <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
+    </a>
+    <div class="colored-shadow" style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);"></div>
+  </div>
+  <div class="card-body text-center">
+    <div class="d-flex mt-n6 mx-auto">
+      <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Refresh">
+        <i class="material-icons text-lg">refresh</i>
+      </a>
+      <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
+        <i class="material-icons text-lg">edit</i>
+      </button>
+    </div>
+    <h5 class="font-weight-normal mt-3">
+      <a href="javascript:;">SUBARU FORESTER</a>
+    </h5>
+    <p class="mb-0">
+Call for Price
+    </p>
+  </div>
+</div>
+          </div>
+
+</div>
+</div>
+</section>
+
+
+
+      <section class="py-7">
+    <div class="row">
+
+ <div class="blur move-item">
         <div class="row">
           <div class="col-md-4 col-12 my-auto img-move-right">
   <img class="w-100" src="/static/assets/img/left.webp" alt="Product Image">
@@ -283,6 +357,9 @@
           </div>
         </div>
       </div>
+    </div>
+ 
+</section>
 
 
  <section class="pb-5 position-relative bg-gradient-dark mx-n3" 
@@ -291,97 +368,53 @@
   <span class="mask bg-gradient-dark opacity-4"></span>
       <div class="container">
         <div class="row">
-          <div class="col-md-8 text-center mb-5 mt-5">
-              <p class="text-white opacity-8 mb-0">Check out our recent cars.</p>
-            <h3 class="text-white z-index-1 position-relative">FEATURE CAR</h3>
+         <div class="col-lg-6 mx-auto text-center">
+            <h3 class="mb-0">What Our Happy Clients say about us</h3>
+            <h2 class="text-gradient text-primary mb-3">our Testimonial </h2>
+          
           </div>
         </div>
         <div class="row">
-    
-          <div class="col-md-4 col-12">
-            <div class="card" data-animation="true">
-  <div class="card-header p-0 position-relative z-index-2">
-    <a class="d-block blur-shadow-image">
-      <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
-    </a>
-    <div class="colored-shadow" style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);"></div>
-  </div>
-  <div class="card-body text-center">
-    <div class="d-flex mt-n6 mx-auto">
-      <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Refresh">
-        <i class="material-icons text-lg">refresh</i>
-      </a>
-      <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
-        <i class="material-icons text-lg">edit</i>
-      </button>
+
+                    <div class="col-md-4 col-12">
+       <div class="card">
+    <div class="page-header min-height-150" style="background-image: url('/static/assets/img/city-profile.jpg');" loading="lazy">
+      <span class="mask bg-gradient-dark opacity-8"></span>
     </div>
-    <h5 class="font-weight-normal mt-3">
-      <a href="javascript:;">SUBARU FORESTER</a>
-    </h5>
-    <p class="mb-0">
-Call for Price
-    </p>
-  </div>
-</div>
+  <div class="card-body">
+   <section class="py-sm-6  position-relative" style="padding-bottom:0 !important">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 mx-auto">
+            <div class="mt-n8 mt-md-n9 text-center">
+              <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="/static/assets/img/bruce-mars.jpg" alt="bruce" loading="lazy">
+            <h6 class="text-black mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
+            </div>
+            <div class="row">
+                <p class="mt-2 text-black">"I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!"</p>
+                <div class="rating mt-2">
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                </div>
+            </div>
           </div>
-      
-     
-          <div class="col-md-4 col-12">
-            <div class="card" data-animation="true">
-  <div class="card-header p-0 position-relative z-index-2">
-    <a class="d-block blur-shadow-image">
-      <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
-    </a>
-    <div class="colored-shadow" style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);"></div>
+        </div>
+      </div>
+
+    </section>
   </div>
-  <div class="card-body text-center">
-    <div class="d-flex mt-n6 mx-auto">
-      <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Refresh">
-        <i class="material-icons text-lg">refresh</i>
-      </a>
-      <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
-        <i class="material-icons text-lg">edit</i>
-      </button>
-    </div>
-    <h5 class="font-weight-normal mt-3">
-      <a href="javascript:;">SUBARU FORESTER</a>
-    </h5>
-    <p class="mb-0">
-Call for Price
-    </p>
-  </div>
-</div>
+      </div>
           </div>
 
-          <div class="col-md-4 col-12">
-            <div class="card" data-animation="true">
-  <div class="card-header p-0 position-relative z-index-2">
-    <a class="d-block blur-shadow-image">
-      <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
-    </a>
-    <div class="colored-shadow" style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);"></div>
-  </div>
-  <div class="card-body text-center">
-    <div class="d-flex mt-n6 mx-auto">
-      <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Refresh">
-        <i class="material-icons text-lg">refresh</i>
-      </a>
-      <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit">
-        <i class="material-icons text-lg">edit</i>
-      </button>
-    </div>
-    <h5 class="font-weight-normal mt-3">
-      <a href="javascript:;">SUBARU FORESTER</a>
-    </h5>
-    <p class="mb-0">
-Call for Price
-    </p>
-  </div>
+
+        </div>
+
 </div>
-          </div>
-      </div>
-    </section>
-   
+</section>
+
 
 
  <section class="my-5">
@@ -391,11 +424,11 @@ Call for Price
             <h3 class="text-gradient text-primary mb-0">You liked it and</h3>
             <h3>Want more?</h3>
             <p class="pe-md-5 mb-4">
-              Most complex and innovative Design System Made by <a href="https://bit.ly/3fKQZaL" target="_blank">Creative Tim </a> . Check our latest Premium Bootstrap 5 UI Kit.
+              Most complex and innovative Design System Made by <a>Creative Tim </a> . Check our latest Premium Bootstrap 5 UI Kit.
               Designed for those who like bold elements and beautiful websites. Made of hundred of elements, designed blocks and fully coded pages, Material Kit is ready to help you create stunning websites and webapps.
             </p>
             <div class="github-buttons">
-              <a href="https://appseed.us/product/flask-material-kit2-pro" target="_blank" class="btn bg-gradient-primary mb-5 mb-sm-0">Learn More</a>
+              <a  class="btn bg-gradient-primary mb-5 mb-sm-0">Learn More</a>
               <div class="github-button">
                 <span></span>
               </div>
@@ -410,9 +443,8 @@ Call for Price
       </div>
     </section>
 
-  <!-- -------- START Content Presentation Docs ------- -->
 
-  <header class="header-2">
+      <header class="header-2">
     <div class="page-header min-vh-50 relative" style="background-image: url('/static/assets/img/city-profile.jpg')">
       <span class="mask bg-gradient-dark opacity-4"></span>
       <div class="container">
@@ -424,9 +456,6 @@ Call for Price
         </div>
       </div>
     </div>
-
-
-
   </header>
   <section class="my-5">
   <div class="card card-body blur shadow-blur mx-3 mx-md-10 mt-n8 p-0">
@@ -438,173 +467,123 @@ Call for Price
   </div>
 </section>
 
-<section>
-        <div class="row justify-content-center text-center">
-          <div class="col-md-3">
-            <h1 class="text-gradient text-info">
-              <i class="fas fa-handshake opacity-10"></i></h1>
-               <h6>Vehicles In Stock</h6>
-            <h3 class="text-gradient text-info" id="state1" countTo="5234">0</h3>
-           
-          </div>
-       
-    <div class="col-md-3">
-            <h1 class="text-gradient text-info">
-              <i class="fas fa-handshake opacity-10"></i></h1>
-               <h6>Vehicles In Stock</h6>
-            <h3 class="text-gradient text-info" id="state2" countTo="5234">0</h3>
-           
-         
-          </div>
-
-            <div class="col-md-3">
-            <h1 class="text-gradient text-info">
-              <i class="fas fa-handshake opacity-10"></i></h1>
-               <h6>Vehicles In Stock</h6>
-            <h3 class="text-gradient text-info" id="state3" countTo="5234">0</h3>
-           
-         
-          </div>
-
-          <div class="col-md-3">
-        
-            <h1 class="text-gradient text-info">
-              <i class="fas fa-handshake opacity-10"></i></h1>
-               <h6>Support</h6>
-            <h3 class="text-gradient text-info">24/7</h3>
-           
-        
-          </div>
-        </div>
-      </section>
 
 
-  
-    <!-- -------- END Content Presentation Docs ------- -->
-    <section class="py-7" style="padding-bottom:0 !important">
+
+
+
+
+
+
+<section class="vehicles my-5" id="vehicles">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mx-auto text-center">
-            <h3 class="mb-0">What Our Happy Clients say about us</h3>
-            <h2 class="text-gradient text-primary mb-3">our Testimonial </h2>
+            <div class="row">
+         <div class="col-lg-6 mx-auto text-center">
+            <h3 class="mb-0">Our products of the month</h3>
+            <h2 class="text-gradient text-primary mb-3">Featured Listings</h2>
           
           </div>
         </div>
-        <div class="row mt-6">
-          <div class="col-lg-4 col-md-8">
-      <div class="card">
-    <div class="page-header min-height-150" style="background-image: url('/static/assets/img/city-profile.jpg');" loading="lazy">
-      <span class="mask bg-gradient-dark opacity-8"></span>
-    </div>
-
-  <div class="card-body">
-    <!-- START Testimonials w/ user image & text & info -->
-    <section class="py-sm-6  position-relative" style="padding-bottom:0 !important">
-      <div class="container">
         <div class="row">
-          <div class="col-12 mx-auto">
-            <div class="mt-n8 mt-md-n9 text-center">
-              <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="/static/assets/img/bruce-mars.jpg" alt="bruce" loading="lazy">
-            <h6 class="text-black mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
+
+              <div class="swiper vehicles-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="/static/assets/img/img1.png" alt="">
+                <div class="content">
+                    <h3>new model</h3>
+                    <div class="price"> <span>price : </span> $62,000/- </div>
+                    <p>
+                        new
+                        <span class="fas fa-circle"></span> 2021
+                        <span class="fas fa-circle"></span> automatic
+                        <span class="fas fa-circle"></span> petrol
+                        <span class="fas fa-circle"></span> 183mph
+                    </p>
+                    <a href="#" class="btn bg-gradient-primary mb-5 mb-sm-0">check out</a>
+                </div>
             </div>
-            <div class="row">
-    
-                <p class="mt-2 text-black">"I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!"</p>
-                <div class="rating mt-2">
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
+
+                  <div class="swiper-slide box">
+                <img src="/static/assets/img/img2.png" alt="">
+                <div class="content">
+                    <h3>new model</h3>
+                    <div class="price"> <span>price : </span> $62,000/- </div>
+                    <p>
+                        new
+                        <span class="fas fa-circle"></span> 2021
+                        <span class="fas fa-circle"></span> automatic
+                        <span class="fas fa-circle"></span> petrol
+                        <span class="fas fa-circle"></span> 183mph
+                    </p>
+                    <a href="#" class="btn bg-gradient-primary mb-5 mb-sm-0">check out</a>
+                </div>
+            </div>
+
+      <div class="swiper-slide box">
+                <img src="/static/assets/img/img3.png" alt="">
+                <div class="content">
+                    <h3>new model</h3>
+                    <div class="price"> <span>price : </span> $62,000/- </div>
+                    <p>
+                        new
+                        <span class="fas fa-circle"></span> 2021
+                        <span class="fas fa-circle"></span> automatic
+                        <span class="fas fa-circle"></span> petrol
+                        <span class="fas fa-circle"></span> 183mph
+                    </p>
+                    <a href="#" class="btn bg-gradient-primary mb-5 mb-sm-0">check out</a>
+                </div>
+            </div>
+
+                  <div class="swiper-slide box">
+                <img src="/static/assets/img/img4.png" alt="">
+                <div class="content">
+                    <h3>new model</h3>
+                    <div class="price"> <span>price : </span> $62,000/- </div>
+                    <p>
+                        new
+                        <span class="fas fa-circle"></span> 2021
+                        <span class="fas fa-circle"></span> automatic
+                        <span class="fas fa-circle"></span> petrol
+                        <span class="fas fa-circle"></span> 183mph
+                    </p>
+                    <a href="#" class="btn bg-gradient-primary mb-5 mb-sm-0">check out</a>
+                </div>
+            </div>
+
+      <div class="swiper-slide box">
+                <img src="/static/assets/img/img1.png" alt="">
+                <div class="content">
+                    <h3>new model</h3>
+                    <div class="price"> <span>price : </span> $62,000/- </div>
+                    <p>
+                        new
+                        <span class="fas fa-circle"></span> 2021
+                        <span class="fas fa-circle"></span> automatic
+                        <span class="fas fa-circle"></span> petrol
+                        <span class="fas fa-circle"></span> 183mph
+                    </p>
+                    <a href="#" class="btn bg-gradient-primary mb-5 mb-sm-0">check out</a>
                 </div>
             </div>
           </div>
         </div>
-      </div>
-
-    </section>
-  </div>
-      </div>
-    </div>
 
 
-    <div class="col-lg-4 col-md-8">
-      <div class="card">
-    <div class="page-header min-height-150" style="background-image: url('/static/assets/img/city-profile.jpg');" loading="lazy">
-      <span class="mask bg-gradient-dark opacity-8"></span>
-    </div>
-  <div class="card-body">
-    <!-- START Testimonials w/ user image & text & info -->
-     <section class="py-sm-6  position-relative" style="padding-bottom:0 !important">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 mx-auto">
-            <div class="mt-n8 mt-md-n9 text-center">
-              <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="/static/assets/img/bruce-mars.jpg" alt="bruce" loading="lazy">
-            <h6 class="text-black mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
-            </div>
-            <div class="row">
-    
-                <p class="mt-2 text-black">"I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!"</p>
-                <div class="rating mt-2">
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                </div>
-            </div>
-          </div>
         </div>
-      </div>
 
+      </div>
     </section>
-  </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-8">
-      <div class="card">
-    <div class="page-header min-height-150" style="background-image: url('/static/assets/img/city-profile.jpg');" loading="lazy">
-      <span class="mask bg-gradient-dark opacity-8"></span>
-    </div>
-
-  <div class="card-body">
-    <!-- START Testimonials w/ user image & text & info -->
-   <section class="py-sm-6  position-relative" style="padding-bottom:0 !important">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 mx-auto">
-            <div class="mt-n8 mt-md-n9 text-center">
-              <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="/static/assets/img/bruce-mars.jpg" alt="bruce" loading="lazy">
-            <h6 class="text-black mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
-            </div>
-            <div class="row">
-    
-                <p class="mt-2 text-black">"I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!"</p>
-                <div class="rating mt-2">
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-  </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
 
-    </section>
-    <section class="py-sm-7" style="padding-bottom:0 !important" id="download-soft-ui">
+
+
+ <section  style="padding-bottom:0 !important" id="download-soft-ui">
       <div class="bg-gradient-dark position-relative overflow-hidden">
         <img src="/static/assets/img/car-bg.jpg" alt="pattern-lines" class="position-absolute start-0 top-md-0 w-100 opacity-2">
   
@@ -743,14 +722,11 @@ Call for Price
 
     </section>
 
-    <!-- -------   START PRE-FOOTER 2 - simple social line w/ title & 3 buttons    -------- -->
- 
-    <!-- -------   END PRE-FOOTER 2 - simple social line w/ title & 3 buttons    -------- -->
-  </div>
 
 
 
   <!--   Core JS Files   -->
+
   <script src="/static/assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="/static/assets/js/core/bootstrap.min.js" type="text/javascript"></script>
   <script src="/static/assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -768,7 +744,36 @@ Call for Price
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
   <script src="/static/assets/js/material-kit.min.js?v=3.0.0" type="text/javascript"></script>
-  <script type="text/javascript">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+      <script type="text/javascript">
+
+
+var swiper = new Swiper(".vehicles-slider", {
+  grabCursor: true,
+  centeredSlides: true,  
+  spaceBetween: 20,
+  loop:true,
+  autoplay: {
+    delay: 9500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable:true,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
+
     if (document.getElementById('state1')) {
       const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
       if (!countUp.error) {
@@ -794,6 +799,6 @@ Call for Price
       };
     }
   </script>
-</body>
 
+</body>
 </html>

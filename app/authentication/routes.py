@@ -10,9 +10,9 @@ from flask_login import (
 )
 
 
-@blueprint.route('/')
-def route_default():
-    return redirect(url_for('authentication_blueprint.login'))
+# @blueprint.route('/')
+# def route_default():
+#     return redirect(url_for('authentication_blueprint.login'))
 
 
 @blueprint.route('/login', methods=['GET'])
