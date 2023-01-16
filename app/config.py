@@ -9,6 +9,8 @@ class Config(object):
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URI')
+    CLOUDINARY_URL=os.getenv('CLOUDINARY_URL'),
+
    
 
 class ProductionConfig(Config):

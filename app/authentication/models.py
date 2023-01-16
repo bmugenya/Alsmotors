@@ -33,6 +33,35 @@ class User(db.Model, UserMixin,Updateable):
         return '<User {}>'.format(self.username)
 
 
+
+class Car(db.Model, Updateable):
+
+    __tablename__ = 'cars'
+
+    id = db.Column(db.Integer, primary_key=True)
+    image_url = db.Column(db.VARCHAR)
+    name = db.Column(db.String(64))
+    type = db.Column(db.String(64))
+    brand = db.Column(db.String(64))
+    make = db.Column(db.String(64))
+    price = db.Column(db.String(64))
+    models = db.Column(db.String(64))
+    location = db.Column(db.String(64))
+    fuel = db.Column(db.String(64))
+    transmission = db.Column(db.String(64))
+    featured = db.Column(db.String(64))
+    promotion = db.Column(db.String(64))
+    used = db.Column(db.String(64))
+
+
+    def select(self):
+        return Car.select()
+
+    def __repr__(self):
+        return '<Car {}>'.format(self.name)
+
+
+
 @login_manager.user_loader
 def user_loader(id):
     return User.query.filter_by(id=id).first()

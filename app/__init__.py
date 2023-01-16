@@ -8,6 +8,7 @@ from flask_migrate import Migrate
 from app.config import configurations
 
 
+
 db = SQLAlchemy()
 migrate = Migrate()
 login_manager = LoginManager()
@@ -22,6 +23,7 @@ def register_extensions(app):
 def register_blueprints(app):
     from app.authentication.routes import blueprint
     app.register_blueprint(blueprint)
+    
     from app.home.routes import blueprint
     app.register_blueprint(blueprint)
 

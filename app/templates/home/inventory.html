@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} About US {% endblock %} 
+{% block title %} About US {% endblock %}
 
 {% block body_class %} about-us {% endblock %}
 
@@ -9,140 +9,256 @@
 
 {% block content %}
 
-  {% include 'includes/navigation-light.html' %}
+{% include 'includes/navigation-light.html' %}
 
-  <header class="bg-gradient-dark">
-    <div class="page-header min-vh-45" style="background-image: url('/static/assets/img/about-bg.jpg');">
-      <span class="mask bg-gradient-dark opacity-6"></span>
-    </div>
-  </header>
+<header class="bg-gradient-dark">
+  <div class="page-header min-vh-45" style="background-image: url('/static/assets/img/about-bg.jpg');">
+    <span class="mask bg-gradient-dark opacity-6"></span>
+  </div>
+</header>
 
-  <div class="card card-body shadow-xl mt-n6">
-    <!-- Section with four info areas left & one card right with image and waves -->
-    <section class="py-7">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-4">
-  
+<div class="card card-body shadow-xl mt-n6">
+  <!-- Section with four info areas left & one card right with image and waves -->
+  <section class="py-7">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card-body">
+            <p>Search Filters</p>
+            <form role="form" method="post" action="{{ url_for('authentication_blueprint.validate') }}" class="text-start">
+
+              <div class="input-group input-group-outline mb-3">
+                <label class="form-label">Search</label>
+                <input type="email" class="form-control">
+              </div>
+
+              <div class="input-group input-group-outline mb-3">
+                <select class="select-css" aria-label="First Name...">
+                  <option value="">Select Type</option>
+                  <option value="">SEDAN & HATCHBACK</option>
+                  <option value="">SUV</option>
+                  <option value="">PICK UPS</option>
+                  <option value="">BUSES VANS & MPVS</option>
+                </select>
+              </div>
+
+              <div class="input-group input-group-outline mb-3">
+                <select class="select-css" aria-label="First Name...">
+                  <option value="">Select Brand</option>
+                  <option value="">TOYOTA</option>
+                  <option value="">NISSAN</option>
+                  <option value="">MAZDA</option>
+                  <option value="">SUBARU</option>
+                  <option value="">ISUZU</option>
+                  <option value="">MISTUBISHI</option>
+                  <option value="">HONDA</option>
+                  <option value="">BMW</option>
+                  <option value="">BENZ</option>
+                  <option value="">OTHER</option>
+                  
+                  
+                </select>
+              </div>
+
+
+              <div class="input-group input-group-outline mb-3">
+                <select class="select-css" aria-label="First Name...">
+                  <option value="">Select Make</option>
+                </select>
+              </div>
+
+              <div class="input-group input-group-outline mb-3">
+                <select class="select-css" aria-label="First Name...">
+                  <option value="">Select Models</option>
+                </select>
+              </div>
+
+
+              <div class="input-group input-group-outline mb-3">
+                <select class="select-css" aria-label="First Name...">
+                  <option value="">Select Location</option>
+                  <option value="">NAIROBI</option>
+                  <option value="">MOMBASA</option>
+                </select>
+              </div>
+
+
+              <div class="input-group input-group-outline mb-3">
+                <select class="select-css" aria-label="First Name...">
+                  <option value="">Fuel Type</option>
+                  <option value="">DISEL</option>
+                  <option value="">ELECTRIC</option>
+                  <option value="">PETROL</option>
+                  <option value="">HYBRID</option>
+                  <option value="">Select Type</option>
+                </select>
+              </div>
+
+              <div class="input-group input-group-outline mb-3">
+                <select class="select-css" aria-label="First Name...">
+                  <option value="">Fuel Transmission</option>
+                  <option value="">AUTOMATIC</option>
+                  <option value="">MANUAL</option>
+                  <option value="">HYBRID</option>
+                </select>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="customCheckDisabled" disabled>
+                <label class="custom-control-label" for="customCheckDisabled">Featured</label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="customCheckDisabled" disabled>
+                <label class="custom-control-label" for="customCheckDisabled">Monthly Promotion</label>
+              </div>
+
+              <div class="input-group input-group-dynamic pt-4">
+                <button type="button" class="btn bg-gradient-primary w-100 my-4 mb-2">
+                  <span class="btn-inner--icon"><i class="fa fa-search"></i></span>
+                  <span class="btn-inner--text">Search</span>
+                </button>
+              </div>
+            </form>
           </div>
-          <div class="col-lg-4 ms-auto mt-lg-0 mt-4">
-            <div class="card">
-              <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                <a class="d-block blur-shadow-image">
-                  <img src="/static/assets/img/about.png" alt="img-colored-shadow" class="img-fluid border-radius-lg">
+        </div>
+
+        <div class="col-md-8">
+          <p>We found 75 Cars available for you</p>
+
+          {% for car in cars %}
+          <div class="col-md-4 mt-4">
+            <div class="card" data-animation="true">
+              <div class="card-header p-0 position-relative z-index-2">
+                <a class="blur-shadow-image">
+                  <img src={{ car.image_url }} alt="img-blur-shadow" class="img-fluid shadow">
                 </a>
+                <div class="colored-shadow"
+                  style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
+                </div>
               </div>
               <div class="card-body text-center">
-                <h5 class="font-weight-normal">
-                  <a href="javascript:;">Al siddique Motors</a>
+                <div class="d-flex mt-n6 mx-auto">
+                  <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Refresh">
+                    <i class="material-icons text-lg">refresh</i>
+                  </a>
+                  <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Edit">
+                    <i class="material-icons text-lg">edit</i>
+                  </button>
+                </div>
+                <h5 class="font-weight-normal mt-3">
+                  <a href="javascript:;">{{ car.name }}</a>
                 </h5>
                 <p class="mb-0">
-              
-
-We stock a wide range of Japanese vehicles including sedans, buses, tractors, rucks, motocycles and even car parts
-              </p>
-                <button type="button" class="btn bg-gradient-info btn-sm mb-0 mt-3">Find out more</button>
+                  {{ car.price }}
+                </p>
               </div>
             </div>
           </div>
+          {% endfor %}
+          
+          
         </div>
       </div>
-    </section>
-    <!-- END Section with four info areas left & one card right with image and waves -->
-    <!-- -------- START Features w/ pattern background & stats & rocket -------- -->
-   
-  </div>
-    <!-- -------- END Features w/ pattern background & stats & rocket -------- -->
+    </div>
+  </section>
+  <!-- END Section with four info areas left & one card right with image and waves -->
+  <!-- -------- START Features w/ pattern background & stats & rocket -------- -->
+
+</div>
+<!-- -------- END Features w/ pattern background & stats & rocket -------- -->
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
 
-  <script>
-    // get the element to animate
-    var element = document.getElementById('count-stats');
-    var elementHeight = element.clientHeight;
+<script>
+  // get the element to animate
+  var element = document.getElementById('count-stats');
+  var elementHeight = element.clientHeight;
 
-    // listen for scroll event and call animate function
+  // listen for scroll event and call animate function
 
-    document.addEventListener('scroll', animate);
+  document.addEventListener('scroll', animate);
 
-    // check if element is in view
-    function inView() {
-      // get window height
-      var windowHeight = window.innerHeight;
-      // get number of pixels that the document is scrolled
-      var scrollY = window.scrollY || window.pageYOffset;
-      // get current scroll position (distance from the top of the page to the bottom of the current viewport)
-      var scrollPosition = scrollY + windowHeight;
-      // get element position (distance from the top of the page to the bottom of the element)
-      var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
+  // check if element is in view
+  function inView() {
+    // get window height
+    var windowHeight = window.innerHeight;
+    // get number of pixels that the document is scrolled
+    var scrollY = window.scrollY || window.pageYOffset;
+    // get current scroll position (distance from the top of the page to the bottom of the current viewport)
+    var scrollPosition = scrollY + windowHeight;
+    // get element position (distance from the top of the page to the bottom of the element)
+    var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
 
-      // is scroll position greater than element position? (is element in view?)
-      if (scrollPosition > elementPosition) {
-        return true;
-      }
-
-      return false;
+    // is scroll position greater than element position? (is element in view?)
+    if (scrollPosition > elementPosition) {
+      return true;
     }
 
-    var animateComplete = true;
-    // animate element when it is in view
-    function animate() {
+    return false;
+  }
 
-      // is element in view?
-      if (inView()) {
-        if (animateComplete) {
-          if (document.getElementById('state1')) {
-            const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
-            if (!countUp.error) {
-              countUp.start();
-            } else {
-              console.error(countUp.error);
-            }
+  var animateComplete = true;
+  // animate element when it is in view
+  function animate() {
+
+    // is element in view?
+    if (inView()) {
+      if (animateComplete) {
+        if (document.getElementById('state1')) {
+          const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
+          if (!countUp.error) {
+            countUp.start();
+          } else {
+            console.error(countUp.error);
           }
-          if (document.getElementById('state2')) {
-            const countUp1 = new CountUp('state2', document.getElementById("state2").getAttribute("countTo"));
-            if (!countUp1.error) {
-              countUp1.start();
-            } else {
-              console.error(countUp1.error);
-            }
-          }
-          if (document.getElementById('state3')) {
-            const countUp2 = new CountUp('state3', document.getElementById("state3").getAttribute("countTo"));
-            if (!countUp2.error) {
-              countUp2.start();
-            } else {
-              console.error(countUp2.error);
-            };
-          }
-          animateComplete = false;
         }
+        if (document.getElementById('state2')) {
+          const countUp1 = new CountUp('state2', document.getElementById("state2").getAttribute("countTo"));
+          if (!countUp1.error) {
+            countUp1.start();
+          } else {
+            console.error(countUp1.error);
+          }
+        }
+        if (document.getElementById('state3')) {
+          const countUp2 = new CountUp('state3', document.getElementById("state3").getAttribute("countTo"));
+          if (!countUp2.error) {
+            countUp2.start();
+          } else {
+            console.error(countUp2.error);
+          };
+        }
+        animateComplete = false;
       }
     }
+  }
 
-    if (document.getElementById('typed')) {
-      var typed = new Typed("#typed", {
-        stringsElement: '#typed-strings',
-        typeSpeed: 90,
-        backSpeed: 90,
-        backDelay: 200,
-        startDelay: 500,
-        loop: true
-      });
-    }
-  </script>
+  if (document.getElementById('typed')) {
+    var typed = new Typed("#typed", {
+      stringsElement: '#typed-strings',
+      typeSpeed: 90,
+      backSpeed: 90,
+      backDelay: 200,
+      startDelay: 500,
+      loop: true
+    });
+  }
+</script>
 
-  <script>
-    if (document.getElementsByClassName('page-header')) {
-      window.onscroll = debounce(function() {
-        var scrollPosition = window.pageYOffset;
-        var bgParallax = document.querySelector('.page-header');
-        var oVal = (window.scrollY / 3);
-        bgParallax.style.transform = 'translate3d(0,' + oVal + 'px,0)';
-      }, 6);
-    }
-  </script>
+<script>
+  if (document.getElementsByClassName('page-header')) {
+    window.onscroll = debounce(function () {
+      var scrollPosition = window.pageYOffset;
+      var bgParallax = document.querySelector('.page-header');
+      var oVal = (window.scrollY / 3);
+      bgParallax.style.transform = 'translate3d(0,' + oVal + 'px,0)';
+    }, 6);
+  }
+</script>
 
 {% endblock javascripts %}
