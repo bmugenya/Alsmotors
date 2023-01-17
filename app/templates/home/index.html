@@ -113,88 +113,105 @@
         <div class="row">
           <div class="col-lg-12 mx-auto py-3">
             <div class="row">
-
+              <form role="form" method="post" action="{{ url_for('home_blueprint.filter') }}" style="display: flex;">
               <div class="col-md-2 position-relative">
-                <div class="text-center">
-                  <div class="input-group input-group-dynamic mb-4">
-                    <label class="">Price</label>
-                    <select class="select-css" aria-label="First Name...">
+             
+                  <div class="input-group input-group-dynamic">
+                    <label class="">Location</label>
+                    <select class="select-css" name="location" aria-label="First Name...">
                       <option value="">Select</option>
+                      <option value="nairobi">NAIROBI</option>
+                      <option value="mombasa">MOMBASA</option>
                     </select>
                   </div>
 
-                </div>
 
               </div>
 
+                <input type="hidden" name="make" />
+                <input type="hidden" name="models" />
+
               <div class="col-md-2 position-relative">
-                <div class="text-center">
-                  <div class="input-group input-group-dynamic mb-4">
+                
+                  <div class="input-group input-group-dynamic">
                     <label class="">All Make</label>
-                    <select class="select-css" aria-label="First Name...">
-                      <option value="">Select</option>
+                    <select  name="type" class="select-css" aria-label="First Name...">
+                      <option>Select</option>
+                      <option value="sedan">SEDAN & HATCHBACK</option>
+                      <option value="suv">SUV</option>
+                      <option value="pickups">PICK UPS</option>
+                      <option value="buses">BUSES VANS & MPVS</option>
                     </select>
                   </div>
-
-                </div>
 
               </div>
 
               <div class="col-md-2 position-relative">
-                <div class="text-center">
-                  <div class="input-group input-group-dynamic mb-4">
+               
+                  <div class="input-group input-group-dynamic">
                     <label class="">All Models</label>
-                    <select class="select-css" aria-label="First Name...">
+                    <select name="brand" class="select-css" aria-label="First Name...">
                       <option value="">Select</option>
+                      <option value="toyota">TOYOTA</option>
+                      <option value="nissan">NISSAN</option>
+                      <option value="mazda">MAZDA</option>
+                      <option value="subaru">SUBARU</option>
+                      <option value="isuzu">ISUZU</option>
+                      <option value="mistubishi">MISTUBISHI</option>
+                      <option value="honda">HONDA</option>
+                      <option value="bmw">BMW</option>
+                      <option value="benz">BENZ</option>
+                      <option value="other">OTHER</option>
                     </select>
                   </div>
-
-                </div>
-
               </div>
 
 
 
               <div class="col-md-2 position-relative">
-                <div class="text-center">
+              
                   <div class="input-group input-group-dynamic">
                     <label class="">Fuel Type</label>
-                    <select class="select-css" aria-label="First Name...">
+                    <select class="select-css" name="fuel" aria-label="First Name...">
                       <option value="">Select</option>
+                      <option value="disel">DISEL</option>
+                      <option value="electric">ELECTRIC</option>
+                      <option value="petrol">PETROL</option>
+                      <option value="hybrid">HYBRID</option>
                     </select>
                   </div>
-                </div>
 
               </div>
 
 
               <div class="col-md-2 position-relative">
-                <div class="text-center">
+             
                   <div class="input-group input-group-dynamic">
                     <label class="">Transmission</label>
-                    <select class="select-css" aria-label="First Name...">
+                    <select class="select-css" name="transmission" aria-label="First Name...">
                       <option value="">Select</option>
+                      <option value="automatic">AUTOMATIC</option>
+                      <option value="manual">MANUAL</option>
+                      <option value="hybrid">HYBRID</option>
                     </select>
                   </div>
-                </div>
-
+        
               </div>
 
 
               <div class="col-md-2">
-                <div class="text-center">
+               
                   <div class="input-group input-group-dynamic pt-4">
-                    <button type="button" class="btn bg-gradient-primary">
+                    <button type="submit" class="btn bg-gradient-warning">
                       <span class="btn-inner--icon"><i class="fa fa-search"></i></span>
                       <span class="btn-inner--text">Search</span>
                     </button>
                   </div>
 
-                </div>
-
+            
               </div>
 
-
+            </form>
             </div>
           </div>
         </div>
@@ -272,8 +289,8 @@
             <div class="card-body text-center">
               <div class="d-flex mt-n6 mx-auto">
                 <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip"
-                  data-bs-placement="bottom" title="Refresh">
-                  <i class="material-icons text-lg">refresh</i>
+                  data-bs-placement="bottom" title="Delete">
+                  <i class="material-icons text-lg">delete</i>
                 </a>
                 <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"
                   data-bs-placement="bottom" title="Edit">
@@ -303,8 +320,8 @@
             <div class="card-body text-center">
               <div class="d-flex mt-n6 mx-auto">
                 <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip"
-                  data-bs-placement="bottom" title="Refresh">
-                  <i class="material-icons text-lg">refresh</i>
+                data-bs-placement="bottom" title="Delete">
+                <i class="material-icons text-lg">delete</i>
                 </a>
                 <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"
                   data-bs-placement="bottom" title="Edit">
@@ -334,8 +351,8 @@
             <div class="card-body text-center">
               <div class="d-flex mt-n6 mx-auto">
                 <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip"
-                  data-bs-placement="bottom" title="Refresh">
-                  <i class="material-icons text-lg">refresh</i>
+                data-bs-placement="bottom" title="Delete">
+                <i class="material-icons text-lg">delete</i>
                 </a>
                 <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"
                   data-bs-placement="bottom" title="Edit">
@@ -370,7 +387,7 @@
             <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="/static/assets/img/bruce-mars.jpg"
               alt="bruce" loading="lazy">
             <p>Have any question ?</p>
-            <h1 class="text-gradient text-primary">(+254) 792 888 666</h1>
+            <h1 class="text-gradient text-warning">(+254) 792 888 666</h1>
           </div>
           <div class="col-md-4 col-12 my-auto img-move-left">
 
@@ -391,12 +408,11 @@
       <div class="row">
         <div class="col-lg-6 mx-auto text-center">
           <h3 class="mb-0">What Our Happy Clients say about us</h3>
-          <h2 class="text-gradient text-primary mb-3">our Testimonial </h2>
+          <h2 class="text-gradient text-warning mb-3">our Testimonial </h2>
 
         </div>
       </div>
       <div class="row">
-
         <div class="col-md-4 col-12">
           <div class="card">
             <div class="page-header min-height-150"
@@ -414,9 +430,78 @@
                         <h6 class="text-black mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
                       </div>
                       <div class="row">
-                        <p class="mt-2 text-black">"I found solution to all my design needs from Creative Tim. I use
-                          them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys
-                          !!!"</p>
+                        <p class="mt-2 text-black">"We purchased a vehicle and had a great experience! The staff is very friendly and answered all our questions. Hassle-free test drive and all information clearly presented.
+                           We will definitely recommend Quality Car Sales to anyone looking for a car!"</p>
+                        <div class="rating mt-2">
+                          <i class="fas fa-star text-warning"></i>
+                          <i class="fas fa-star text-warning"></i>
+                          <i class="fas fa-star text-warning"></i>
+                          <i class="fas fa-star text-warning"></i>
+                          <i class="fas fa-star text-warning"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-12">
+          <div class="card">
+            <div class="page-header min-height-150"
+              style="background-image: url('/static/assets/img/city-profile.jpg');" loading="lazy">
+              <span class="mask bg-gradient-dark opacity-8"></span>
+            </div>
+            <div class="card-body">
+              <section class="py-sm-6  position-relative" style="padding-bottom:0 !important">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12 mx-auto">
+                      <div class="mt-n8 mt-md-n9 text-center">
+                        <img class="avatar avatar-xxl shadow-xl position-relative z-index-2"
+                          src="/static/assets/img/bruce-mars.jpg" alt="bruce" loading="lazy">
+                        <h6 class="text-black mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
+                      </div>
+                      <div class="row">
+                        <p class="mt-2 text-black">"We purchased a vehicle and had a great experience! The staff is very friendly and answered all our questions. Hassle-free test drive and all information clearly presented.
+                           We will definitely recommend Quality Car Sales to anyone looking for a car!"</p>
+                        <div class="rating mt-2">
+                          <i class="fas fa-star text-warning"></i>
+                          <i class="fas fa-star text-warning"></i>
+                          <i class="fas fa-star text-warning"></i>
+                          <i class="fas fa-star text-warning"></i>
+                          <i class="fas fa-star text-warning"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-12">
+          <div class="card">
+            <div class="page-header min-height-150"
+              style="background-image: url('/static/assets/img/city-profile.jpg');" loading="lazy">
+              <span class="mask bg-gradient-dark opacity-8"></span>
+            </div>
+            <div class="card-body">
+              <section class="py-sm-6  position-relative" style="padding-bottom:0 !important">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12 mx-auto">
+                      <div class="mt-n8 mt-md-n9 text-center">
+                        <img class="avatar avatar-xxl shadow-xl position-relative z-index-2"
+                          src="/static/assets/img/bruce-mars.jpg" alt="bruce" loading="lazy">
+                        <h6 class="text-black mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
+                      </div>
+                      <div class="row">
+                        <p class="mt-2 text-black">"We purchased a vehicle and had a great experience! The staff is very friendly and answered all our questions. Hassle-free test drive and all information clearly presented.
+                           We will definitely recommend Quality Car Sales to anyone looking for a car!"</p>
                         <div class="rating mt-2">
                           <i class="fas fa-star text-warning"></i>
                           <i class="fas fa-star text-warning"></i>
@@ -446,16 +531,16 @@
     <div class="container">
       <div class="row">
         <div class="col-md-7 col-12 my-auto">
-          <h3 class="text-gradient text-primary mb-0">You liked it and</h3>
+          <h3 class="text-gradient text-warning mb-0">You liked it and</h3>
           <h3>Want more?</h3>
           <p class="pe-md-5 mb-4">
-            Most complex and innovative Design System Made by <a>Creative Tim </a> . Check our latest Premium Bootstrap
-            5 UI Kit.
-            Designed for those who like bold elements and beautiful websites. Made of hundred of elements, designed
-            blocks and fully coded pages, Material Kit is ready to help you create stunning websites and webapps.
-          </p>
+            Since 2013 we are positively involved in your world of importing used vehicles from Japan,
+             24 hours for our services, seven days a week offering not only the best price, customer service,
+              quality vehicles and the right solution for your auto care needs, 
+              but also initiatives that improve your community and the environment.
+              </p>
           <div class="github-buttons">
-            <a class="btn bg-gradient-primary mb-5 mb-sm-0">Learn More</a>
+            <a class="btn bg-gradient-warning mb-5 mb-sm-0">Learn More</a>
             <div class="github-button">
               <span></span>
             </div>
@@ -510,7 +595,7 @@
       <div class="row">
         <div class="col-lg-6 mx-auto text-center">
           <h3 class="mb-0">Our products of the month</h3>
-          <h2 class="text-gradient text-primary mb-3">Featured Listings</h2>
+          <h2 class="text-gradient text-warning mb-3">Featured Listings</h2>
 
         </div>
       </div>
@@ -532,7 +617,7 @@
                   <span class="fas fa-circle"></span> petrol
                   <span class="fas fa-circle"></span> 183mph
                 </p>
-                <a href="#" class="btn bg-gradient-primary mb-5 mb-sm-0">check out</a>
+                <a href="#" class="btn bg-gradient-warning mb-5 mb-sm-0">check out</a>
               </div>
             </div>
 
@@ -548,7 +633,7 @@
                   <span class="fas fa-circle"></span> petrol
                   <span class="fas fa-circle"></span> 183mph
                 </p>
-                <a href="#" class="btn bg-gradient-primary mb-5 mb-sm-0">check out</a>
+                <a href="#" class="btn bg-gradient-warning mb-5 mb-sm-0">check out</a>
               </div>
             </div>
 
@@ -564,7 +649,7 @@
                   <span class="fas fa-circle"></span> petrol
                   <span class="fas fa-circle"></span> 183mph
                 </p>
-                <a href="#" class="btn bg-gradient-primary mb-5 mb-sm-0">check out</a>
+                <a href="#" class="btn bg-gradient-warning mb-5 mb-sm-0">check out</a>
               </div>
             </div>
 
@@ -580,7 +665,7 @@
                   <span class="fas fa-circle"></span> petrol
                   <span class="fas fa-circle"></span> 183mph
                 </p>
-                <a href="#" class="btn bg-gradient-primary mb-5 mb-sm-0">check out</a>
+                <a href="#" class="btn bg-gradient-warning mb-5 mb-sm-0">check out</a>
               </div>
             </div>
 
@@ -596,7 +681,7 @@
                   <span class="fas fa-circle"></span> petrol
                   <span class="fas fa-circle"></span> 183mph
                 </p>
-                <a href="#" class="btn bg-gradient-primary mb-5 mb-sm-0">check out</a>
+                <a href="#" class="btn bg-gradient-warning mb-5 mb-sm-0">check out</a>
               </div>
             </div>
           </div>
