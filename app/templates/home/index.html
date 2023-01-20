@@ -1,18 +1,5 @@
-<!--
-=========================================================
-* Material Kit 2 - v3.0.0
-=========================================================
-
-* Product Page:  https://www.creative-tim.com/product/material-kit 
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-
 {% extends "layouts/base.html" %}
-
+    
 {% block title %} Home {% endblock %}
 
 {% block body_class %} Home {% endblock %}
@@ -22,819 +9,823 @@
 
 {% block content %}
 
-<body class="presentation-page bg-gray-200">
+<div class="cover">
+{% include 'includes/navigation-light.html' %}
 
-  {% include 'includes/navigation-light.html' %}
-
-
-  <div class="car-top">
-<img src="/static/assets/img/back-to-top.png"  width=74 height=114 id="btn-back-to-top"/>
+<div class="car-top">
+  <img src="/static/assets/img/back-to-top.png" width=74 height=114 id="btn-back-to-top" />
 </div>
 
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner mb-4">
-      <div class="carousel-item active">
-        <div class="page-header min-vh-75" style="background-image: url('/static/assets/img/car1.jpg');">
-          <!-- <span class="mask bg-gradient-dark"></span> -->
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6 my-auto">
-                <h3 class="text-white mb-0 fadeIn1 fadeInBottom">WIDE RANGE OF BRANDS</h3>
-                <h1 class="text-white fadeIn2 fadeInBottom" id="state1" countTo="5234">0</h1>
-                <h6 class="lead text-white opacity-8 fadeIn3 fadeInBottom">A vast selection of the most popular new
-                  models from a wide range of brands awaits you today: Toyota, Lexus, Ford, Bentley, MG, Tesla, BMW,
-                  Mercedes, Suzuki, etc...</h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="page-header min-vh-75" style="background-image: url('/static/assets/img/bg-8.jpg');">
-          <!-- <span class="mask bg-gradient-dark"></span> -->
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6 my-auto">
-                <h4 class="text-white mb-0 fadeIn1 fadeInBottom">QUALITY SERVICE</h4>
-                <h1 class="text-white fadeIn2 fadeInBottom"> 24/7 </h1>
-                <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">Dependable, reliable and guaranteed quality on
-                  time every time makes Legend your chosen partner in business</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="page-header min-vh-75" style="background-image: url('/static/assets/img/bg-6.jpg');">
-          <!-- <span class="mask bg-gradient-dark"></span> -->
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6 my-auto">
-                <h4 class="text-white mb-0 fadeIn1 fadeInBottom">TRUSTED BY THOUSANDS</h4>
-                <h1 class="text-white fadeIn2 fadeInBottom" id="state2" countTo="5234">0</h1>
-                <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">With over 120,000 vehicles sold, we are
-                  trusted by many thousands of customers around the world. If you are looking for your next mobility
-                  solution, please do not hesitate to contact us today</p>
-              </div>
+    
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner mb-4">
+    <div class="carousel-item active">
+      <div class="page-header min-vh-75" style="background-image: url('/static/assets/img/car1.jpg');">
+        <!-- <span class="mask bg-gradient-dark"></span> -->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 my-auto">
+              <h3 class="text-white mb-0 fadeIn1 fadeInBottom">WIDE RANGE OF BRANDS</h3>
+              <h1 class="text-white fadeIn2 fadeInBottom" id="state1" countTo="5234">0</h1>
+              <h6 class="lead text-white opacity-8 fadeIn3 fadeInBottom">A vast selection of the most popular new
+                models from a wide range of brands awaits you today: Toyota, Lexus, Ford, Bentley, MG, Tesla, BMW,
+                Mercedes, Suzuki, etc...</h6>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="min-vh-75 position-absolute w-100 top-0">
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon position-absolute bottom-50" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon position-absolute bottom-50" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </a>
+    <div class="carousel-item">
+      <div class="page-header min-vh-75" style="background-image: url('/static/assets/img/bg-8.jpg');">
+        <!-- <span class="mask bg-gradient-dark"></span> -->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 my-auto">
+              <h4 class="text-white mb-0 fadeIn1 fadeInBottom">QUALITY SERVICE</h4>
+              <h1 class="text-white fadeIn2 fadeInBottom"> 24/7 </h1>
+              <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">Dependable, reliable and guaranteed quality on
+                time every time makes Legend your chosen partner in business</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="page-header min-vh-75" style="background-image: url('/static/assets/img/bg-6.jpg');">
+        <!-- <span class="mask bg-gradient-dark"></span> -->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 my-auto">
+              <h4 class="text-white mb-0 fadeIn1 fadeInBottom">TRUSTED BY THOUSANDS</h4>
+              <h1 class="text-white fadeIn2 fadeInBottom" id="state2" countTo="5234">0</h1>
+              <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">With over 120,000 vehicles sold, we are
+                trusted by many thousands of customers around the world. If you are looking for your next mobility
+                solution, please do not hesitate to contact us today</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="card card-body blur shadow-blur mx-3 mx-md-10 mt-n7" style="padding:0 !important;">
-    <section class="pt-3 pb-4" id="count-stats">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 mx-auto py-3">
-            <div class="row">
-              <form role="form" method="post" action="{{ url_for('home_blueprint.filter') }}" style="display: flex;">
-                <div class="col-md-2 position-relative">
-
-                  <div class="input-group input-group-dynamic">
-                    <label class="">Location</label>
-                    <select class="select-css" name="location" aria-label="First Name...">
-                      <option value="">Select</option>
-                      <option value="nairobi">NAIROBI</option>
-                      <option value="mombasa">MOMBASA</option>
-                    </select>
-                  </div>
+  <div class="min-vh-75 position-absolute w-100 top-0">
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon position-absolute bottom-50" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon position-absolute bottom-50" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+</div>
 
 
-                </div>
 
-                <input type="hidden" name="make" />
-                <input type="hidden" name="models" />
+    
+<div class="card card-body blur shadow-blur mx-3 mx-md-10 mt-n7" style="padding:0 !important;">
+  <section class="pt-3 pb-4" id="count-stats">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 mx-auto py-3">
+          <div class="row">
+            <form role="form" method="post" action="{{ url_for('home_blueprint.filter') }}" style="display: flex;">
+              <div class="col-md-2 position-relative">
 
-                <div class="col-md-2 position-relative">
-
-                  <div class="input-group input-group-dynamic">
-                    <label class="">All Make</label>
-                    <select name="type" class="select-css" aria-label="First Name...">
-                      <option>Select</option>
-                      <option value="sedan">SEDAN & HATCHBACK</option>
-                      <option value="suv">SUV</option>
-                      <option value="pickups">PICK UPS</option>
-                      <option value="buses">BUSES VANS & MPVS</option>
-                    </select>
-                  </div>
-
-                </div>
-
-                <div class="col-md-2 position-relative">
-
-                  <div class="input-group input-group-dynamic">
-                    <label class="">All Models</label>
-                    <select name="brand" class="select-css" aria-label="First Name...">
-                      <option value="">Select</option>
-                      <option value="toyota">TOYOTA</option>
-                      <option value="nissan">NISSAN</option>
-                      <option value="mazda">MAZDA</option>
-                      <option value="subaru">SUBARU</option>
-                      <option value="isuzu">ISUZU</option>
-                      <option value="mistubishi">MISTUBISHI</option>
-                      <option value="honda">HONDA</option>
-                      <option value="bmw">BMW</option>
-                      <option value="benz">BENZ</option>
-                      <option value="other">OTHER</option>
-                    </select>
-                  </div>
+                <div class="input-group input-group-dynamic">
+                  <label class="">Location</label>
+                  <select class="select-css" name="location" aria-label="First Name...">
+                    <option value="">Select</option>
+                    <option value="nairobi">NAIROBI</option>
+                    <option value="mombasa">MOMBASA</option>
+                  </select>
                 </div>
 
 
+              </div>
 
-                <div class="col-md-2 position-relative">
+              <input type="hidden" name="make" />
+              <input type="hidden" name="models" />
 
-                  <div class="input-group input-group-dynamic">
-                    <label class="">Fuel Type</label>
-                    <select class="select-css" name="fuel" aria-label="First Name...">
-                      <option value="">Select</option>
-                      <option value="disel">DISEL</option>
-                      <option value="electric">ELECTRIC</option>
-                      <option value="petrol">PETROL</option>
-                      <option value="hybrid">HYBRID</option>
-                    </select>
-                  </div>
+              <div class="col-md-2 position-relative">
 
+                <div class="input-group input-group-dynamic">
+                  <label class="">All Make</label>
+                  <select name="type" class="select-css" aria-label="First Name...">
+                    <option>Select</option>
+                    <option value="sedan">SEDAN & HATCHBACK</option>
+                    <option value="suv">SUV</option>
+                    <option value="pickups">PICK UPS</option>
+                    <option value="buses">BUSES VANS & MPVS</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="col-md-2 position-relative">
+
+                <div class="input-group input-group-dynamic">
+                  <label class="">All Models</label>
+                  <select name="brand" class="select-css" aria-label="First Name...">
+                    <option value="">Select</option>
+                    <option value="toyota">TOYOTA</option>
+                    <option value="nissan">NISSAN</option>
+                    <option value="mazda">MAZDA</option>
+                    <option value="subaru">SUBARU</option>
+                    <option value="isuzu">ISUZU</option>
+                    <option value="mistubishi">MISTUBISHI</option>
+                    <option value="honda">HONDA</option>
+                    <option value="bmw">BMW</option>
+                    <option value="benz">BENZ</option>
+                    <option value="other">OTHER</option>
+                  </select>
+                </div>
+              </div>
+
+
+
+              <div class="col-md-2 position-relative">
+
+                <div class="input-group input-group-dynamic">
+                  <label class="">Fuel Type</label>
+                  <select class="select-css" name="fuel" aria-label="First Name...">
+                    <option value="">Select</option>
+                    <option value="disel">DISEL</option>
+                    <option value="electric">ELECTRIC</option>
+                    <option value="petrol">PETROL</option>
+                    <option value="hybrid">HYBRID</option>
+                  </select>
+                </div>
+
+              </div>
+
+
+              <div class="col-md-2 position-relative">
+
+                <div class="input-group input-group-dynamic">
+                  <label class="">Transmission</label>
+                  <select class="select-css" name="transmission" aria-label="First Name...">
+                    <option value="">Select</option>
+                    <option value="automatic">AUTOMATIC</option>
+                    <option value="manual">MANUAL</option>
+                    <option value="hybrid">HYBRID</option>
+                  </select>
+                </div>
+
+              </div>
+
+
+              <div class="col-md-2">
+
+                <div class="input-group input-group-dynamic pt-2rem">
+                  <button type="submit" class="btn bg-gradient-warning">
+                    <span class="btn-inner--icon"><i class="fa fa-search"></i></span>
+                    <span class="btn-inner--text">Search</span>
+                  </button>
                 </div>
 
 
-                <div class="col-md-2 position-relative">
+              </div>
 
-                  <div class="input-group input-group-dynamic">
-                    <label class="">Transmission</label>
-                    <select class="select-css" name="transmission" aria-label="First Name...">
-                      <option value="">Select</option>
-                      <option value="automatic">AUTOMATIC</option>
-                      <option value="manual">MANUAL</option>
-                      <option value="hybrid">HYBRID</option>
-                    </select>
-                  </div>
-
-                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
 
-                <div class="col-md-2">
 
-                  <div class="input-group input-group-dynamic pt-2rem">
-                    <button type="submit" class="btn bg-gradient-warning">
-                      <span class="btn-inner--icon"><i class="fa fa-search"></i></span>
-                      <span class="btn-inner--text">Search</span>
+<section class="py-7">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-8 mx-auto">
+        <h3>New Arrivals</h3>
+      </div>
+      <div class="col-lg-4 mx-auto">
+        <div class="nav-wrapper position-relative end-0">
+
+
+          <ul class="nav nav-pills nav-fill p-1" id="pills-tab" role="tablist">
+
+            <li class="nav-item" role="presentation">
+              <a class="nav-link mb-0 px-0 py-1 active" id="pills-all-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-all" type="button" role="tab" aria-controls="pills-all" aria-selected="true">
+                ALL
+              </a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link mb-0 px-0 py-1" id="pills-sedan-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-sedan" type="button" role="tab" aria-controls="pills-sedan"
+                aria-selected="false">
+                SEDAN
+              </a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link mb-0 px-0 py-1" id="pills-suv-tab" data-bs-toggle="pill" data-bs-target="#pills-suv"
+                type="button" role="tab" aria-controls="pills-suv" aria-selected="false">
+                SUV
+              </a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link mb-0 px-0 py-1" id="pills-pick-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-pick" type="button" role="tab" aria-controls="pills-pick">
+                PICK UPS
+              </a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link mb-0 px-0 py-1" id="pills-bus-tab" data-bs-toggle="pill" data-bs-target="#pills-bus"
+                type="button" role="tab" aria-controls="pills-bus">
+                BUSES
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    
+    
+    
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="tab-content" id="pills-tabContent">
+
+        <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
+          <div class="row">
+
+
+            {% for car in cars %}
+
+            <div class="col-md-4 col-12 pb-3">
+              <div class="card">
+                <div class="card-header p-0 position-relative z-index-2">
+
+                  <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
+
+                  <div class="middle">
+                    <a class="btn btn-link text-primary ms-auto border-0">
+                      <i class="material-icons text-lg">delete</i>
+                    </a>
+                    <button class="btn btn-link text-info me-auto border-0">
+                      <i class="material-icons text-lg">edit</i>
                     </button>
                   </div>
 
-
                 </div>
+                <div class="card-body text-center">
 
-              </form>
+                  <h5 class="font-weight-normal mt-3">
+                    <a href="javascript:;">{{ car.type }}</a>
+                  </h5>
+                  <p class="mb-0">
+                    Call for Price
+                  </p>
+                </div>
+              </div>
             </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="tab-pane fade" id="pills-sedan" role="tabpanel" aria-labelledby="pills-sedan-tab">
+          <div class="row">
+            {% for car in cars if 'sedan' in car["type"] %}
+            <div class="col-md-4 col-12 pb-3">
+              <div class="card" data-animation="true">
+                <div class="card-header p-0 position-relative z-index-2">
+                  <a class="d-block blur-shadow-image">
+                    <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
+                  </a>
+                  <div class="colored-shadow"
+                    style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
+                  </div>
+                </div>
+                <div class="card-body text-center">
+                  <div class="d-flex mt-n6 mx-auto">
+                    <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Delete">
+                      <i class="material-icons text-lg">delete</i>
+                    </a>
+                    <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Edit">
+                      <i class="material-icons text-lg">edit</i>
+                    </button>
+                  </div>
+                  <h5 class="font-weight-normal mt-3">
+                    <a href="javascript:;">{{ car.type }}</a>
+                  </h5>
+                  <p class="mb-0">
+                    Call for Price
+                  </p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="tab-pane fade" id="pills-suv" role="tabpanel" aria-labelledby="pills-suv-tab">
+          <div class="row">
+            {% for car in cars if 'suv' in car["type"] %}
+            <div class="col-md-4 col-12 pb-3">
+              <div class="card" data-animation="true">
+                <div class="card-header p-0 position-relative z-index-2">
+                  <a class="d-block blur-shadow-image">
+                    <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
+                  </a>
+                  <div class="colored-shadow"
+                    style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
+                  </div>
+                </div>
+                <div class="card-body text-center">
+                  <div class="d-flex mt-n6 mx-auto">
+                    <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Delete">
+                      <i class="material-icons text-lg">delete</i>
+                    </a>
+                    <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Edit">
+                      <i class="material-icons text-lg">edit</i>
+                    </button>
+                  </div>
+                  <h5 class="font-weight-normal mt-3">
+                    <a href="javascript:;">{{ car.type }}</a>
+                  </h5>
+                  <p class="mb-0">
+                    Call for Price
+                  </p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="pills-pick" role="tabpanel" aria-labelledby="pills-pick-tab">
+          <div class="row">
+            {% for car in cars if 'pickups' in car["type"] %}
+            <div class="col-md-4 col-12 pb-3">
+              <div class="card" data-animation="true">
+                <div class="card-header p-0 position-relative z-index-2">
+                  <a class="d-block blur-shadow-image">
+                    <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
+                  </a>
+                  <div class="colored-shadow"
+                    style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
+                  </div>
+                </div>
+                <div class="card-body text-center">
+                  <div class="d-flex mt-n6 mx-auto">
+                    <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Delete">
+                      <i class="material-icons text-lg">delete</i>
+                    </a>
+                    <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Edit">
+                      <i class="material-icons text-lg">edit</i>
+                    </button>
+                  </div>
+                  <h5 class="font-weight-normal mt-3">
+                    <a href="javascript:;">{{ car.type }}</a>
+                  </h5>
+                  <p class="mb-0">
+                    Call for Price
+                  </p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+
+
+        <div class="tab-pane fade" id="pills-bus" role="tabpanel" aria-labelledby="pills-bus-tab">
+          <div class="row">
+            {% for car in cars if 'buses' in car["type"] %}
+            <div class="col-md-4 col-12 pb-3">
+              <div class="card" data-animation="true">
+                <div class="card-header p-0 position-relative z-index-2">
+                  <a class="d-block blur-shadow-image">
+                    <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
+                  </a>
+                  <div class="colored-shadow"
+                    style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
+                  </div>
+                </div>
+                <div class="card-body text-center">
+                  <div class="d-flex mt-n6 mx-auto">
+                    <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Delete">
+                      <i class="material-icons text-lg">delete</i>
+                    </a>
+                    <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Edit">
+                      <i class="material-icons text-lg">edit</i>
+                    </button>
+                  </div>
+                  <h5 class="font-weight-normal mt-3">
+                    <a href="javascript:;">{{ car.type }}</a>
+                  </h5>
+                  <p class="mb-0">
+                    Call for Price
+                  </p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
           </div>
         </div>
       </div>
-    </section>
+
+
+
+    </div>
+  </div>
+</section>
+
+
+<section class="py-7">
+  <div class="row">
+
+    <div class="blur move-item">
+      <div class="row">
+        <div class="col-md-4 col-12 my-auto img-move-right">
+          <img class="w-100" src="/static/assets/img/left.webp" alt="Product Image">
+        </div>
+        <div class="col-md-4 col-12 my-auto text-center">
+          <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="/static/assets/img/bruce-mars.jpg"
+            alt="bruce" loading="lazy">
+          <p>Have any question ?</p>
+          <h1 class="text-gradient text-warning">(+254) 792 888 666</h1>
+        </div>
+        <div class="col-md-4 col-12 my-auto img-move-left">
+
+          <img width="428" height="355" src="/static/assets/img/right.webp" alt="Product Image">
+
+        </div>
+      </div>
+    </div>
   </div>
 
-  <section class="py-7">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-lg-8 mx-auto">
-          <h3>New Arrivals</h3>
-        </div>
-        <div class="col-lg-4 mx-auto">
-          <div class="nav-wrapper position-relative end-0">
+</section>
 
 
-            <ul class="nav nav-pills nav-fill p-1" id="pills-tab" role="tablist">
+    
 
-              <li class="nav-item" role="presentation">
-                <a class="nav-link mb-0 px-0 py-1 active" id="pills-all-tab" data-bs-toggle="pill"
-                  data-bs-target="#pills-all" type="button" role="tab" aria-controls="pills-all" aria-selected="true">
-                  ALL
-                </a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link mb-0 px-0 py-1" id="pills-sedan-tab" data-bs-toggle="pill"
-                  data-bs-target="#pills-sedan" type="button" role="tab" aria-controls="pills-sedan"
-                  aria-selected="false">
-                  SEDAN
-                </a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link mb-0 px-0 py-1" id="pills-suv-tab" data-bs-toggle="pill" data-bs-target="#pills-suv"
-                  type="button" role="tab" aria-controls="pills-suv" aria-selected="false">
-                  SUV
-                </a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link mb-0 px-0 py-1" id="pills-pick-tab" data-bs-toggle="pill"
-                  data-bs-target="#pills-pick" type="button" role="tab" aria-controls="pills-pick">
-                  PICK UPS
-                </a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link mb-0 px-0 py-1" id="pills-bus-tab" data-bs-toggle="pill" data-bs-target="#pills-bus"
-                  type="button" role="tab" aria-controls="pills-bus">
-                  BUSES
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="tab-content" id="pills-tabContent">
-
-          <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
-            <div class="row">
-
-              
-              {% for car in cars %}
-
-              <div class="col-md-4 col-12 pb-3">
-                <div class="card">
-                  <div class="card-header p-0 position-relative z-index-2">
-                   
-                      <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
-                    
-                    <div class="middle">
-                      <a class="btn btn-link text-primary ms-auto border-0" >
-                        <i class="material-icons text-lg">delete</i>
-                      </a>
-                      <button class="btn btn-link text-info me-auto border-0">
-                        <i class="material-icons text-lg">edit</i>
-                      </button>
-                    </div>
-          
-                  </div>
-                  <div class="card-body text-center">
-      
-                    <h5 class="font-weight-normal mt-3">
-                      <a href="javascript:;">{{ car.type }}</a>
-                    </h5>
-                    <p class="mb-0">
-                      Call for Price
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-          <div class="tab-pane fade" id="pills-sedan" role="tabpanel" aria-labelledby="pills-sedan-tab">
-            <div class="row">
-              {% for car in cars if 'sedan' in car["type"] %}
-              <div class="col-md-4 col-12 pb-3">
-                <div class="card" data-animation="true">
-                  <div class="card-header p-0 position-relative z-index-2">
-                    <a class="d-block blur-shadow-image">
-                      <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
-                    </a>
-                    <div class="colored-shadow"
-                      style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
-                    </div>
-                  </div>
-                  <div class="card-body text-center">
-                    <div class="d-flex mt-n6 mx-auto">
-                      <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip"
-                        data-bs-placement="bottom" title="Delete">
-                        <i class="material-icons text-lg">delete</i>
-                      </a>
-                      <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"
-                        data-bs-placement="bottom" title="Edit">
-                        <i class="material-icons text-lg">edit</i>
-                      </button>
-                    </div>
-                    <h5 class="font-weight-normal mt-3">
-                      <a href="javascript:;">{{ car.type }}</a>
-                    </h5>
-                    <p class="mb-0">
-                      Call for Price
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-          <div class="tab-pane fade" id="pills-suv" role="tabpanel" aria-labelledby="pills-suv-tab">
-            <div class="row">
-              {% for car in cars if 'suv' in car["type"] %}
-              <div class="col-md-4 col-12 pb-3">
-                <div class="card" data-animation="true">
-                  <div class="card-header p-0 position-relative z-index-2">
-                    <a class="d-block blur-shadow-image">
-                      <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
-                    </a>
-                    <div class="colored-shadow"
-                      style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
-                    </div>
-                  </div>
-                  <div class="card-body text-center">
-                    <div class="d-flex mt-n6 mx-auto">
-                      <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip"
-                        data-bs-placement="bottom" title="Delete">
-                        <i class="material-icons text-lg">delete</i>
-                      </a>
-                      <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"
-                        data-bs-placement="bottom" title="Edit">
-                        <i class="material-icons text-lg">edit</i>
-                      </button>
-                    </div>
-                    <h5 class="font-weight-normal mt-3">
-                      <a href="javascript:;">{{ car.type }}</a>
-                    </h5>
-                    <p class="mb-0">
-                      Call for Price
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-
-          <div class="tab-pane fade" id="pills-pick" role="tabpanel" aria-labelledby="pills-pick-tab">
-            <div class="row">
-              {% for car in cars if 'pickups' in car["type"] %}
-              <div class="col-md-4 col-12 pb-3">
-                <div class="card" data-animation="true">
-                  <div class="card-header p-0 position-relative z-index-2">
-                    <a class="d-block blur-shadow-image">
-                      <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
-                    </a>
-                    <div class="colored-shadow"
-                      style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
-                    </div>
-                  </div>
-                  <div class="card-body text-center">
-                    <div class="d-flex mt-n6 mx-auto">
-                      <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip"
-                        data-bs-placement="bottom" title="Delete">
-                        <i class="material-icons text-lg">delete</i>
-                      </a>
-                      <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"
-                        data-bs-placement="bottom" title="Edit">
-                        <i class="material-icons text-lg">edit</i>
-                      </button>
-                    </div>
-                    <h5 class="font-weight-normal mt-3">
-                      <a href="javascript:;">{{ car.type }}</a>
-                    </h5>
-                    <p class="mb-0">
-                      Call for Price
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-
-
-
-          <div class="tab-pane fade" id="pills-bus" role="tabpanel" aria-labelledby="pills-bus-tab">
-            <div class="row">
-              {% for car in cars if 'buses' in car["type"] %}
-              <div class="col-md-4 col-12 pb-3">
-                <div class="card" data-animation="true">
-                  <div class="card-header p-0 position-relative z-index-2">
-                    <a class="d-block blur-shadow-image">
-                      <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
-                    </a>
-                    <div class="colored-shadow"
-                      style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
-                    </div>
-                  </div>
-                  <div class="card-body text-center">
-                    <div class="d-flex mt-n6 mx-auto">
-                      <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip"
-                        data-bs-placement="bottom" title="Delete">
-                        <i class="material-icons text-lg">delete</i>
-                      </a>
-                      <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"
-                        data-bs-placement="bottom" title="Edit">
-                        <i class="material-icons text-lg">edit</i>
-                      </button>
-                    </div>
-                    <h5 class="font-weight-normal mt-3">
-                      <a href="javascript:;">{{ car.type }}</a>
-                    </h5>
-                    <p class="mb-0">
-                      Call for Price
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-
-
+    
+    
+<section class="pb-5 position-relative bg-gradient-dark mx-n3" style="background-image: url('/static/assets/img/car-bg.jpg');  background-position: center; 
+background-repeat: no-repeat; background-size: cover;">
+  <span class="mask bg-gradient-dark opacity-4"></span>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mx-auto text-center">
+        <h3 class="mb-0">What Our Happy Clients say about us</h3>
+        <h2 class="text-gradient text-warning mb-3">our Testimonial </h2>
 
       </div>
     </div>
-  </section>
-
-
-
-  <section class="py-7">
     <div class="row">
 
-      <div class="blur move-item">
-        <div class="row">
-          <div class="col-md-4 col-12 my-auto img-move-right">
-            <img class="w-100" src="/static/assets/img/left.webp" alt="Product Image">
-          </div>
-          <div class="col-md-4 col-12 my-auto text-center">
-            <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="/static/assets/img/bruce-mars.jpg"
-              alt="bruce" loading="lazy">
-            <p>Have any question ?</p>
-            <h1 class="text-gradient text-warning">(+254) 792 888 666</h1>
-          </div>
-          <div class="col-md-4 col-12 my-auto img-move-left">
+      <div class="swiper featured-slider">
 
-            <img width="428" height="355" src="/static/assets/img/right.webp" alt="Product Image">
+        <div class="swiper-wrapper">
 
+          <div class="swiper-slide box col-md-4 col-12">
+            <div class="card">
+              <div class="page-header min-height-150"
+                style="background-image: url('/static/assets/img/city-profile.jpg');" loading="lazy">
+                <span class="mask bg-gradient-dark opacity-8"></span>
+              </div>
+              <div class="card-body">
+                <section class="py-sm-6  position-relative" style="padding-bottom:0 !important">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-12 mx-auto">
+                        <div class="mt-n8 mt-md-n9 text-center">
+                          <img class="avatar avatar-xxl shadow-xl position-relative z-index-2"
+                            src="/static/assets/img/bruce-mars.jpg" alt="bruce" loading="lazy">
+                          <h6 class="text-black mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
+                        </div>
+                        <div class="row">
+                          <p class="mt-2 text-black">"We purchased a vehicle and had a great experience! The staff is
+                            very
+                            friendly and answered all our questions. Hassle-free test drive and all information
+                            clearly
+                            presented."</p>
+                          <div class="rating mt-2">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide box col-md-4 col-12">
+            <div class="card">
+              <div class="page-header min-height-150"
+                style="background-image: url('/static/assets/img/city-profile.jpg');" loading="lazy">
+                <span class="mask bg-gradient-dark opacity-8"></span>
+              </div>
+              <div class="card-body">
+                <section class="py-sm-6  position-relative" style="padding-bottom:0 !important">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-12 mx-auto">
+                        <div class="mt-n8 mt-md-n9 text-center">
+                          <img class="avatar avatar-xxl shadow-xl position-relative z-index-2"
+                            src="/static/assets/img/bruce-mars.jpg" alt="bruce" loading="lazy">
+                          <h6 class="text-black mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
+                        </div>
+                        <div class="row">
+                          <p class="mt-2 text-black">"We purchased a vehicle and had a great experience! The staff is
+                            very
+                            friendly and answered all our questions. Hassle-free test drive and all information
+                            clearly
+                            presented."</p>
+                          <div class="rating mt-2">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide box col-md-4 col-12">
+            <div class="card">
+              <div class="page-header min-height-150"
+                style="background-image: url('/static/assets/img/city-profile.jpg');" loading="lazy">
+                <span class="mask bg-gradient-dark opacity-8"></span>
+              </div>
+              <div class="card-body">
+                <section class="py-sm-6  position-relative" style="padding-bottom:0 !important">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-12 mx-auto">
+                        <div class="mt-n8 mt-md-n9 text-center">
+                          <img class="avatar avatar-xxl shadow-xl position-relative z-index-2"
+                            src="/static/assets/img/bruce-mars.jpg" alt="bruce" loading="lazy">
+                          <h6 class="text-black mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
+                        </div>
+                        <div class="row">
+                          <p class="mt-2 text-black">"We purchased a vehicle and had a great experience! The staff is
+                            very
+                            friendly and answered all our questions. Hassle-free test drive and all information
+                            clearly
+                            presented."</p>
+                          <div class="rating mt-2">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide box col-md-4 col-12">
+            <div class="card">
+              <div class="page-header min-height-150"
+                style="background-image: url('/static/assets/img/city-profile.jpg');" loading="lazy">
+                <span class="mask bg-gradient-dark opacity-8"></span>
+              </div>
+              <div class="card-body">
+                <section class="py-sm-6  position-relative" style="padding-bottom:0 !important">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-12 mx-auto">
+                        <div class="mt-n8 mt-md-n9 text-center">
+                          <img class="avatar avatar-xxl shadow-xl position-relative z-index-2"
+                            src="/static/assets/img/bruce-mars.jpg" alt="bruce" loading="lazy">
+                          <h6 class="text-black mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
+                        </div>
+                        <div class="row">
+                          <p class="mt-2 text-black">"We purchased a vehicle and had a great experience! The staff is
+                            very
+                            friendly and answered all our questions. Hassle-free test drive and all information
+                            clearly
+                            presented."</p>
+                          <div class="rating mt-2">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </section>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+
+      </div>
+
+
+</section>
+
+
+
+ 
+    
+    
+    
+<section class="my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 col-12 my-auto">
+        <h3 class="text-gradient text-warning mb-0">You liked it and</h3>
+        <h3>Want more?</h3>
+        <p class="pe-md-5 mb-4">
+          Since 2013 we are positively involved in your world of importing used vehicles from Japan,
+          24 hours for our services, seven days a week offering not only the best price, customer service,
+          quality vehicles and the right solution for your auto care needs,
+          but also initiatives that improve your community and the environment.
+        </p>
+        <div class="github-buttons">
+          <a class="btn bg-gradient-warning mb-5 mb-sm-0">Learn More</a>
+          <div class="github-button">
+            <span></span>
           </div>
         </div>
       </div>
+      <div class="col-md-5 col-12 my-auto">
+        <a target="_blank">
+          <img class="w-100" src="/static/assets/img/ban.png" alt="Product Image">
+        </a>
+      </div>
     </div>
+  </div>
+</section>
 
-  </section>
-
-
-  <section class="pb-5 position-relative bg-gradient-dark mx-n3" style="background-image: url('/static/assets/img/car-bg.jpg');  background-position: center; 
-  background-repeat: no-repeat; background-size: cover;">
+<header class="header-2">
+  <div class="page-header min-vh-50 relative" style="background-image: url('/static/assets/img/city-profile.jpg')">
     <span class="mask bg-gradient-dark opacity-4"></span>
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 mx-auto text-center">
-          <h3 class="mb-0">What Our Happy Clients say about us</h3>
-          <h2 class="text-gradient text-warning mb-3">our Testimonial </h2>
+        <div class="col-lg-7 text-center mx-auto">
+          <h2 class="text-white pt-3 mt-n5">Want to know more about us? Play our promotional video now!</h2>
 
         </div>
       </div>
-      <div class="row">
-  
-          <div class="swiper featured-slider">
-      
-             <div class="swiper-wrapper">
-      
-                  <div class="swiper-slide box col-md-4 col-12">
-                    <div class="card">
-                      <div class="page-header min-height-150"
-                        style="background-image: url('/static/assets/img/city-profile.jpg');" loading="lazy">
-                        <span class="mask bg-gradient-dark opacity-8"></span>
-                      </div>
-                      <div class="card-body">
-                        <section class="py-sm-6  position-relative" style="padding-bottom:0 !important">
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-12 mx-auto">
-                                <div class="mt-n8 mt-md-n9 text-center">
-                                  <img class="avatar avatar-xxl shadow-xl position-relative z-index-2"
-                                    src="/static/assets/img/bruce-mars.jpg" alt="bruce" loading="lazy">
-                                  <h6 class="text-black mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
-                                </div>
-                                <div class="row">
-                                  <p class="mt-2 text-black">"We purchased a vehicle and had a great experience! The staff is very
-                                    friendly and answered all our questions. Hassle-free test drive and all information clearly
-                                    presented."</p>
-                                  <div class="rating mt-2">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-          
-                        </section>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide box col-md-4 col-12">
-                    <div class="card">
-                      <div class="page-header min-height-150"
-                        style="background-image: url('/static/assets/img/city-profile.jpg');" loading="lazy">
-                        <span class="mask bg-gradient-dark opacity-8"></span>
-                      </div>
-                      <div class="card-body">
-                        <section class="py-sm-6  position-relative" style="padding-bottom:0 !important">
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-12 mx-auto">
-                                <div class="mt-n8 mt-md-n9 text-center">
-                                  <img class="avatar avatar-xxl shadow-xl position-relative z-index-2"
-                                    src="/static/assets/img/bruce-mars.jpg" alt="bruce" loading="lazy">
-                                  <h6 class="text-black mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
-                                </div>
-                                <div class="row">
-                                  <p class="mt-2 text-black">"We purchased a vehicle and had a great experience! The staff is very
-                                    friendly and answered all our questions. Hassle-free test drive and all information clearly
-                                    presented."</p>
-                                  <div class="rating mt-2">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-          
-                        </section>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide box col-md-4 col-12">
-                    <div class="card">
-                      <div class="page-header min-height-150"
-                        style="background-image: url('/static/assets/img/city-profile.jpg');" loading="lazy">
-                        <span class="mask bg-gradient-dark opacity-8"></span>
-                      </div>
-                      <div class="card-body">
-                        <section class="py-sm-6  position-relative" style="padding-bottom:0 !important">
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-12 mx-auto">
-                                <div class="mt-n8 mt-md-n9 text-center">
-                                  <img class="avatar avatar-xxl shadow-xl position-relative z-index-2"
-                                    src="/static/assets/img/bruce-mars.jpg" alt="bruce" loading="lazy">
-                                  <h6 class="text-black mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
-                                </div>
-                                <div class="row">
-                                  <p class="mt-2 text-black">"We purchased a vehicle and had a great experience! The staff is very
-                                    friendly and answered all our questions. Hassle-free test drive and all information clearly
-                                    presented."</p>
-                                  <div class="rating mt-2">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-          
-                        </section>
-                      </div>
-                    </div>
-                  </div>
-      
-                  <div class="swiper-slide box col-md-4 col-12">
-                    <div class="card">
-                      <div class="page-header min-height-150"
-                        style="background-image: url('/static/assets/img/city-profile.jpg');" loading="lazy">
-                        <span class="mask bg-gradient-dark opacity-8"></span>
-                      </div>
-                      <div class="card-body">
-                        <section class="py-sm-6  position-relative" style="padding-bottom:0 !important">
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-12 mx-auto">
-                                <div class="mt-n8 mt-md-n9 text-center">
-                                  <img class="avatar avatar-xxl shadow-xl position-relative z-index-2"
-                                    src="/static/assets/img/bruce-mars.jpg" alt="bruce" loading="lazy">
-                                  <h6 class="text-black mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
-                                </div>
-                                <div class="row">
-                                  <p class="mt-2 text-black">"We purchased a vehicle and had a great experience! The staff is very
-                                    friendly and answered all our questions. Hassle-free test drive and all information clearly
-                                    presented."</p>
-                                  <div class="rating mt-2">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-          
-                        </section>
-                      </div>
-                    </div>
-                  </div>
-      
-
-    
-      
-             </div>
-      
-      
-          </div>
-      
-
-      </section>
-      
+    </div>
+  </div>
+</header>
+<section class="my-5">
+  <div class="card card-body blur shadow-blur mx-3 mx-md-10 mt-n8 p-0">
 
 
+
+    <iframe width="100%" height="415" src="https://www.youtube.com/embed/JeRwuPk3pqQ" title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+
+  </div>
+</section>
+
+<section class="vehicles my-5" id="vehicles">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mx-auto text-center">
+        <h3 class="mb-0">Our products of the month</h3>
+        <h2 class="text-gradient text-warning mb-3">Featured Listings</h2>
 
       </div>
-
     </div>
-  </section>
+    <div class="row">
 
+      <div class="swiper vehicles-slider">
 
+        <div class="swiper-wrapper">
 
-  <section class="my-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-7 col-12 my-auto">
-          <h3 class="text-gradient text-warning mb-0">You liked it and</h3>
-          <h3>Want more?</h3>
-          <p class="pe-md-5 mb-4">
-            Since 2013 we are positively involved in your world of importing used vehicles from Japan,
-            24 hours for our services, seven days a week offering not only the best price, customer service,
-            quality vehicles and the right solution for your auto care needs,
-            but also initiatives that improve your community and the environment.
-          </p>
-          <div class="github-buttons">
-            <a class="btn bg-gradient-warning mb-5 mb-sm-0">Learn More</a>
-            <div class="github-button">
-              <span></span>
+          <div class="swiper-slide box">
+            <img src="/static/assets/img/img1.png" alt="">
+            <div class="content">
+              <h3>new model</h3>
+
+              <p>
+                new
+                <span class="fas fa-circle"></span> 2021
+                <span class="fas fa-circle"></span> automatic
+                <span class="fas fa-circle"></span> petrol
+                <span class="fas fa-circle"></span> 183mph
+              </p>
+              <a href="#" class="btn bg-gradient-warning mb-5 mb-sm-0">check out</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="/static/assets/img/img2.png" alt="">
+            <div class="content">
+              <h3>new model</h3>
+
+              <p>
+                new
+                <span class="fas fa-circle"></span> 2021
+                <span class="fas fa-circle"></span> automatic
+                <span class="fas fa-circle"></span> petrol
+                <span class="fas fa-circle"></span> 183mph
+              </p>
+              <a href="#" class="btn bg-gradient-warning mb-5 mb-sm-0">check out</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="/static/assets/img/img3.png" alt="">
+            <div class="content">
+              <h3>new model</h3>
+
+              <p>
+                new
+                <span class="fas fa-circle"></span> 2021
+                <span class="fas fa-circle"></span> automatic
+                <span class="fas fa-circle"></span> petrol
+                <span class="fas fa-circle"></span> 183mph
+              </p>
+              <a href="#" class="btn bg-gradient-warning mb-5 mb-sm-0">check out</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="/static/assets/img/img4.png" alt="">
+            <div class="content">
+              <h3>new model</h3>
+
+              <p>
+                new
+                <span class="fas fa-circle"></span> 2021
+                <span class="fas fa-circle"></span> automatic
+                <span class="fas fa-circle"></span> petrol
+                <span class="fas fa-circle"></span> 183mph
+              </p>
+              <a href="#" class="btn bg-gradient-warning mb-5 mb-sm-0">check out</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="/static/assets/img/img1.png" alt="">
+            <div class="content">
+              <h3>new model</h3>
+
+              <p>
+                new
+                <span class="fas fa-circle"></span> 2021
+                <span class="fas fa-circle"></span> automatic
+                <span class="fas fa-circle"></span> petrol
+                <span class="fas fa-circle"></span> 183mph
+              </p>
+              <a href="#" class="btn bg-gradient-warning mb-5 mb-sm-0">check out</a>
             </div>
           </div>
         </div>
-        <div class="col-md-5 col-12 my-auto">
-          <a target="_blank">
-            <img class="w-100" src="/static/assets/img/ban.png" alt="Product Image">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <header class="header-2">
-    <div class="page-header min-vh-50 relative" style="background-image: url('/static/assets/img/city-profile.jpg')">
-      <span class="mask bg-gradient-dark opacity-4"></span>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-7 text-center mx-auto">
-            <h2 class="text-white pt-3 mt-n5">Want to know more about us? Play our promotional video now!</h2>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <section class="my-5">
-    <div class="card card-body blur shadow-blur mx-3 mx-md-10 mt-n8 p-0">
-
-
-
-      <iframe width="100%" height="415" src="https://www.youtube.com/embed/JeRwuPk3pqQ" title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
-
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-
-  <section class="vehicles my-5" id="vehicles">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 mx-auto text-center">
-          <h3 class="mb-0">Our products of the month</h3>
-          <h2 class="text-gradient text-warning mb-3">Featured Listings</h2>
-
-        </div>
-      </div>
-      <div class="row">
-
-        <div class="swiper vehicles-slider">
-
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide box">
-              <img src="/static/assets/img/img1.png" alt="">
-              <div class="content">
-                <h3>new model</h3>
-
-                <p>
-                  new
-                  <span class="fas fa-circle"></span> 2021
-                  <span class="fas fa-circle"></span> automatic
-                  <span class="fas fa-circle"></span> petrol
-                  <span class="fas fa-circle"></span> 183mph
-                </p>
-                <a href="#" class="btn bg-gradient-warning mb-5 mb-sm-0">check out</a>
-              </div>
-            </div>
-
-            <div class="swiper-slide box">
-              <img src="/static/assets/img/img2.png" alt="">
-              <div class="content">
-                <h3>new model</h3>
-
-                <p>
-                  new
-                  <span class="fas fa-circle"></span> 2021
-                  <span class="fas fa-circle"></span> automatic
-                  <span class="fas fa-circle"></span> petrol
-                  <span class="fas fa-circle"></span> 183mph
-                </p>
-                <a href="#" class="btn bg-gradient-warning mb-5 mb-sm-0">check out</a>
-              </div>
-            </div>
-
-            <div class="swiper-slide box">
-              <img src="/static/assets/img/img3.png" alt="">
-              <div class="content">
-                <h3>new model</h3>
-
-                <p>
-                  new
-                  <span class="fas fa-circle"></span> 2021
-                  <span class="fas fa-circle"></span> automatic
-                  <span class="fas fa-circle"></span> petrol
-                  <span class="fas fa-circle"></span> 183mph
-                </p>
-                <a href="#" class="btn bg-gradient-warning mb-5 mb-sm-0">check out</a>
-              </div>
-            </div>
-
-            <div class="swiper-slide box">
-              <img src="/static/assets/img/img4.png" alt="">
-              <div class="content">
-                <h3>new model</h3>
-
-                <p>
-                  new
-                  <span class="fas fa-circle"></span> 2021
-                  <span class="fas fa-circle"></span> automatic
-                  <span class="fas fa-circle"></span> petrol
-                  <span class="fas fa-circle"></span> 183mph
-                </p>
-                <a href="#" class="btn bg-gradient-warning mb-5 mb-sm-0">check out</a>
-              </div>
-            </div>
-
-            <div class="swiper-slide box">
-              <img src="/static/assets/img/img1.png" alt="">
-              <div class="content">
-                <h3>new model</h3>
-
-                <p>
-                  new
-                  <span class="fas fa-circle"></span> 2021
-                  <span class="fas fa-circle"></span> automatic
-                  <span class="fas fa-circle"></span> petrol
-                  <span class="fas fa-circle"></span> 183mph
-                </p>
-                <a href="#" class="btn bg-gradient-warning mb-5 mb-sm-0">check out</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
       </div>
 
+
     </div>
-  </section>
+
+  </div>
+</section>
 
 
 
-
-  {% endblock content %}
+{% include 'includes/footer.html' %} 
+</div>
+{% endblock content %}

@@ -28,21 +28,35 @@
 
   <link id="pagestyle" href="/static/assets/css/layout.css" rel="stylesheet" />
 
+
   <!-- Specific Page CSS goes HERE  -->
   {% block stylesheets %}{% endblock stylesheets %}
 
 </head>
 
-<body class="{% block body_class %}{% endblock %} bg-gray-200">
 
+
+<body  class="{% block body_class %}{% endblock %} bg-gray-200">
+  <div class="loader">
+    <div class="loader-img">
+      <img style="width:30%" src="/static/assets/img/favicon.png"/>
+    </div>
+  </div>
   {% block content %}{% endblock content %}  
-
-  {% include 'includes/footer.html' %} 
-
   {% include 'includes/scripts.html' %} 
 
    <!-- Specific Page JS goes HERE  -->
-   {% block javascripts %}{% endblock javascripts %}
+   {% block javascripts %}
+   <script src="/static/assets/js/script.js"> </script>
+
+   <script>
+$(window).on('load',function(){
+      $(".loader").fadeOut(1000);
+      $(".cover").fadeIn(1000);
+  });
+</script>
+  
+   {% endblock javascripts %}
 
 </body>
 </html>
