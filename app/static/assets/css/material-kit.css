@@ -1635,6 +1635,11 @@ progress {
 .caption-top {
   caption-side: top; }
 
+
+.bg-black{
+  background-color:#000;
+  
+}
 .table-sm > :not(caption) > * > * {
   padding: 0.25rem 0.25rem; }
 
@@ -1987,6 +1992,7 @@ textarea.form-control-lg {
   font-weight: 400;
   color: #495057;
   text-align: center;
+  margin:2px !important;
 
   background: none;
 border: 1px solid #d2d6da;
@@ -5962,6 +5968,10 @@ line-height: 1.3 !important;
 
 .min-vw-100 {
   min-width: 100vw !important; }
+
+.pt-2rem {
+  padding-top: 2rem !important;
+}
 
 .h-25 {
   height: 25% !important; }
@@ -12591,7 +12601,8 @@ line-height: 1.3 !important;
 
 
 
-.img-move-right img {
+  
+  .img-move-right img {
   transition: all 0.2s cubic-bezier(0.34, 1.61, 0.7, 1.3); }
 
 .img-move-right:hover img, .icon-move-right:focus img {

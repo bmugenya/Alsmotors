@@ -1,37 +1,60 @@
 
-.fade-in-img {
-  animation: fadeIn 2s;
+.fadeIn1 {
+  animation-duration: 1s;
+animation-fill-mode: both;
+/* transform: translateX(-50%) translateY(-50%); */
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+.fadeIn2 {
+  animation-duration: 2s;
+animation-fill-mode: both;
+
+}
+.fadeIn3 {
+  animation-duration: 3s;
+animation-fill-mode: both;
+/* transform: translateX(-50%) translateY(-50%); */
+}
+
+.fadeInBottom { animation-name: fadeInBottom }
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+         transform: translateY(100%); 
+      
+    }
+    to { opacity: 1 }
 }
 
 
-.fade-in-img2 {
-  animation: fadeIn2 20s;
-}
+/* .car-top{ */
+    /* -webkit-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s; */
+     /* transform: translateX(-50%) translateY(-50%); */
+  /* } */
 
-@keyframes fadeIn2 {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-
-.fade-in-img3 {
-  animation: fadeIn3 30s;
-}
-
-@keyframes fadeIn3 {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+  .car-top {
+    width: 85px;
+    position: fixed;
+    bottom: -180px;
+    right: 30px;
+    z-index: 999;
+    opacity: 1;
+    cursor: pointer;
+  }
 
 
+
+#btn-back-to-top {
+  position: fixed;
+  z-index:1;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  }
 
 .vehicles .vehicles-slider .box{
     text-align: center;
@@ -97,12 +120,61 @@
 
 
 
+.featured .featured-slider{
+    padding:1rem;
+    padding-bottom: 4rem;
+}
+
+.featured .featured-slider .box{
+    padding:2rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border:var(--border);
+    border-radius: .5rem;
+}
+
+.featured .featured-slider .box img{
+    height: 15rem;
+}
+
+.featured .featured-slider .box:hover img{
+    transform: scale(.9);
+}
+
+.featured .featured-slider .box .content h3{
+    font-size: 2.2rem;
+    color:var(--black);
+}
+
+.featured .featured-slider .box .content .stars{
+    padding:1rem 0;
+}
+
+.featured .featured-slider .box .content .stars i{
+    font-size: 1.7rem;
+    color:var(--yellow);
+}
+
+.featured .featured-slider .box .content .price{
+    font-size: 2.5rem;
+    color:var(--black);
+}
 
 
 
 
 
-
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
 
 
 

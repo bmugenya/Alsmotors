@@ -29,7 +29,7 @@
 
               <div class="input-group input-group-outline mb-3">
                 <select  name="type" class="select-css" aria-label="First Name...">
-                  <option>Select Type</option>
+                  <option>Select Make</option>
                   <option value="sedan">SEDAN & HATCHBACK</option>
                   <option value="suv">SUV</option>
                   <option value="pickups">PICK UPS</option>
@@ -55,19 +55,7 @@
                 </select>
               </div>
 
-
-              <div class="input-group input-group-outline mb-3">
-                <select name="make" class="select-css" aria-label="First Name...">
-                  <option value="">Select Make</option>
-                </select>
-              </div>
-
-              <div class="input-group input-group-outline mb-3">
-                <select name="models" class="select-css" aria-label="First Name...">
-                  <option value="">Select Models</option>
-                </select>
-              </div>
-
+        
 
               <div class="input-group input-group-outline mb-3">
                 <select class="select-css" name="location" aria-label="First Name...">
@@ -123,7 +111,7 @@
           {% else %}
           <p>We found {{ cars.count() }} Cars available for you</p>
           {% endif %}
-
+<div class="row">
           {% for car in cars %}
           <div class="col-md-4 mt-4">
             <div class="card" data-animation="true">
@@ -156,7 +144,7 @@
             </div>
           </div>
           {% endfor %}
-          
+          </div>
           
         </div>
       </div>

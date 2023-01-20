@@ -10,7 +10,8 @@ import cloudinary.uploader
 
 @blueprint.route('/')
 def index():
-    return render_template('home/index.html', segment='index')
+    cars =  Car.query.all()
+    return render_template('home/index.html',cars=cars,segment='index')
 
 
 @blueprint.route('/inventory')
@@ -25,9 +26,9 @@ def filter():
 
     s_type = request.form['type']
     brand = request.form['brand']
-    make = request.form['make']
+  
     # price = request.form['price']
-    models = request.form['models']
+   
     location = request.form['location']
     fuel = request.form['fuel']
     transmission = request.form['transmission']
@@ -38,10 +39,7 @@ def filter():
         cars =  Car.query.filter(Car.brand.like(brand))
     if s_type:
         cars =  Car.query.filter(Car.type.like(s_type))
-    if make:
-        cars =  Car.query.filter(Car.make.like(make))
-    if models:
-        cars =  Car.query.filter( Car.models.like(models))
+    
     if location:
         cars =  Car.query.filter(Car.location.like(location))
     if fuel:
