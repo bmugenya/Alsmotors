@@ -59,24 +59,21 @@ def car():
 def add_car():
     """Register a new car"""
   
-    # file = request.files['image']
-    # upload_data = cloudinary.uploader.upload(file)
-    # photo = upload_data['secure_url']
+    file = request.files['image']
+    upload_data = cloudinary.uploader.upload(file)
+    photo = upload_data['secure_url']
     
     data = {
-        # 'image_url':photo,
+        'image_url':photo,
         'name' : request.form['name'],
         'type' : request.form['type'],
         'brand' : request.form['brand'],
-        'make' : request.form['make'],
         'price' : request.form['price'],
-        'models' : request.form['models'],
         'location' : request.form['location'],
         'fuel' : request.form['fuel'],
         'transmission' : request.form['transmission'],
-        'featured' : request.form.getlist('featured')[0],
-        'promotion' : request.form.getlist('promotion')[0],
-        'used' : request.form.getlist('used')[0]
+        # 'featured' : request.form.getlist('featured')[0],
+        # 'used' : request.form.getlist('used')[0]
     }
  
     car = Car(**data)
