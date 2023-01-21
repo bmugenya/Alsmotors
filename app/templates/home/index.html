@@ -262,29 +262,32 @@
 
             {% for car in cars %}
 
-            <div class="col-md-4 col-12 pb-3">
-              <div class="card">
+            <div class="col-md-4 mt-4">
+              <div class="card" data-animation="true">
                 <div class="card-header p-0 position-relative z-index-2">
-
-                  <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
-
-                  <div class="middle">
-                    <a class="btn btn-link text-primary ms-auto border-0">
+                  <a class="blur-shadow-image">
+                    <img src={{ car.image_url }} alt="img-blur-shadow" class="img-fluid shadow">
+                  </a>
+                  <div class="colored-shadow"
+                    style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
+                  </div>
+                </div>
+                <div class="card-body text-center">
+                  <div class="d-flex mt-n6 mx-auto">
+                    <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Delete">
                       <i class="material-icons text-lg">delete</i>
                     </a>
-                    <button class="btn btn-link text-info me-auto border-0">
+                    <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Edit">
                       <i class="material-icons text-lg">edit</i>
                     </button>
                   </div>
-
-                </div>
-                <div class="card-body text-center">
-
                   <h5 class="font-weight-normal mt-3">
-                    <a href="javascript:;">{{ car.type }}</a>
+                    <a href="javascript:;">{{ car.name }}</a>
                   </h5>
                   <p class="mb-0">
-                    Call for Price
+                    {{ car.price }}
                   </p>
                 </div>
               </div>
@@ -295,11 +298,11 @@
         <div class="tab-pane fade" id="pills-sedan" role="tabpanel" aria-labelledby="pills-sedan-tab">
           <div class="row">
             {% for car in cars if 'sedan' in car["type"] %}
-            <div class="col-md-4 col-12 pb-3">
+            <div class="col-md-4 mt-4">
               <div class="card" data-animation="true">
                 <div class="card-header p-0 position-relative z-index-2">
-                  <a class="d-block blur-shadow-image">
-                    <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
+                  <a class="blur-shadow-image">
+                    <img src={{ car.image_url }} alt="img-blur-shadow" class="img-fluid shadow">
                   </a>
                   <div class="colored-shadow"
                     style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
@@ -317,10 +320,10 @@
                     </button>
                   </div>
                   <h5 class="font-weight-normal mt-3">
-                    <a href="javascript:;">{{ car.type }}</a>
+                    <a href="javascript:;">{{ car.name }}</a>
                   </h5>
                   <p class="mb-0">
-                    Call for Price
+                    {{ car.price }}
                   </p>
                 </div>
               </div>
@@ -331,11 +334,11 @@
         <div class="tab-pane fade" id="pills-suv" role="tabpanel" aria-labelledby="pills-suv-tab">
           <div class="row">
             {% for car in cars if 'suv' in car["type"] %}
-            <div class="col-md-4 col-12 pb-3">
+            <div class="col-md-4 mt-4">
               <div class="card" data-animation="true">
                 <div class="card-header p-0 position-relative z-index-2">
-                  <a class="d-block blur-shadow-image">
-                    <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
+                  <a class="blur-shadow-image">
+                    <img src={{ car.image_url }} alt="img-blur-shadow" class="img-fluid shadow">
                   </a>
                   <div class="colored-shadow"
                     style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
@@ -353,10 +356,10 @@
                     </button>
                   </div>
                   <h5 class="font-weight-normal mt-3">
-                    <a href="javascript:;">{{ car.type }}</a>
+                    <a href="javascript:;">{{ car.name }}</a>
                   </h5>
                   <p class="mb-0">
-                    Call for Price
+                    {{ car.price }}
                   </p>
                 </div>
               </div>
@@ -368,11 +371,11 @@
         <div class="tab-pane fade" id="pills-pick" role="tabpanel" aria-labelledby="pills-pick-tab">
           <div class="row">
             {% for car in cars if 'pickups' in car["type"] %}
-            <div class="col-md-4 col-12 pb-3">
+            <div class="col-md-4 mt-4">
               <div class="card" data-animation="true">
                 <div class="card-header p-0 position-relative z-index-2">
-                  <a class="d-block blur-shadow-image">
-                    <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
+                  <a class="blur-shadow-image">
+                    <img src={{ car.image_url }} alt="img-blur-shadow" class="img-fluid shadow">
                   </a>
                   <div class="colored-shadow"
                     style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
@@ -390,10 +393,10 @@
                     </button>
                   </div>
                   <h5 class="font-weight-normal mt-3">
-                    <a href="javascript:;">{{ car.type }}</a>
+                    <a href="javascript:;">{{ car.name }}</a>
                   </h5>
                   <p class="mb-0">
-                    Call for Price
+                    {{ car.price }}
                   </p>
                 </div>
               </div>
@@ -407,11 +410,11 @@
         <div class="tab-pane fade" id="pills-bus" role="tabpanel" aria-labelledby="pills-bus-tab">
           <div class="row">
             {% for car in cars if 'buses' in car["type"] %}
-            <div class="col-md-4 col-12 pb-3">
+            <div class="col-md-4 mt-4">
               <div class="card" data-animation="true">
                 <div class="card-header p-0 position-relative z-index-2">
-                  <a class="d-block blur-shadow-image">
-                    <img src="/static/assets/img/car6.jpg" alt="img-blur-shadow" class="img-fluid shadow">
+                  <a class="blur-shadow-image">
+                    <img src={{ car.image_url }} alt="img-blur-shadow" class="img-fluid shadow">
                   </a>
                   <div class="colored-shadow"
                     style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
@@ -429,10 +432,10 @@
                     </button>
                   </div>
                   <h5 class="font-weight-normal mt-3">
-                    <a href="javascript:;">{{ car.type }}</a>
+                    <a href="javascript:;">{{ car.name }}</a>
                   </h5>
                   <p class="mb-0">
-                    Call for Price
+                    {{ car.price }}
                   </p>
                 </div>
               </div>
