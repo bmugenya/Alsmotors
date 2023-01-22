@@ -14,6 +14,12 @@ def index():
     return render_template('home/index.html',cars=cars,segment='index')
 
 
+@blueprint.route('/update')
+def update():
+    cars =  Car.query.all()
+    return render_template('home/update.html',cars=cars,segment='index')
+
+
 @blueprint.route('/inventory')
 def inventory():
     cars =  Car.query.all()
