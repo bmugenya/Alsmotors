@@ -113,37 +113,54 @@
           {% endif %}
 <div class="row">
           {% for car in cars %}
+        
           <div class="col-md-4 mt-4">
-            <div class="card" data-animation="true">
+            <div class="card">
               <div class="card-header p-0 position-relative z-index-2">
-                <a class="blur-shadow-image">
-                  <img src={{ car.image_url }} alt="img-blur-shadow" class="img-fluid shadow">
-                </a>
-                <div class="colored-shadow"
-                  style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
+
+                  <img  class='card-header-img' src={{ car.image_url }} alt="img-blur-shadow">
+               
+                <div class="info">
+                  <div class="pt-5">
+                 
+                
+                  <button data-bs-toggle="tooltip"
+                  data-bs-placement="bottom" title="Link">
+                  <i class="material-icons text-white text-lg">link</i>
+                </button>
+                <button  data-bs-toggle="tooltip"
+                data-bs-placement="bottom" title="Zoom">
+                <i class="material-icons text-white text-lg">zoom_out_map</i>
+              </button>
+              <button  data-bs-toggle="tooltip"
+              data-bs-placement="bottom" title="Print">
+              <i class="material-icons text-white text-lg">print</i>
+            </button>
                 </div>
               </div>
-              <div class="card-body text-center">
-                <div class="d-flex mt-n6 mx-auto">
-                  <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip"
-                    data-bs-placement="bottom" title="Delete">
-                    <i class="material-icons text-lg">delete</i>
-                  </a>
-                  <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"
-                    data-bs-placement="bottom" title="Edit">
-                    <i class="material-icons text-lg">edit</i>
-                  </button>
-                </div>
-                <h5 class="font-weight-normal mt-3">
-                  <a href="javascript:;">{{ car.name }}</a>
-                </h5>
-                <p class="mb-0">
-                  {{ car.price }}
+              </div>
+         
+              <div class="card-body text-center p-0">
+              <h6 class="font-weight-normal mt-3">{{ car.name }}</h6>
+              <div class="d-flex">
+             <div class="col-6">
+                <p class="text-capitalize pt-2">
+                   <i class="material-icons text-lg">location_on</i>
+                  {{ car.location }}
                 </p>
+                </div>
+                <div class="col-6">
+                <p class="text-capitalize pt-2">
+                  <i class="material-icons text-lg">local_gas_station</i>
+                 {{ car.fuel }}
+               </p>
+               </div>
+
+              </div>
               </div>
             </div>
           </div>
-          {% endfor %}
+{% endfor %}
           </div>
           
         </div>
