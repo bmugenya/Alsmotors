@@ -20,6 +20,12 @@ def update():
     return render_template('home/update.html',cars=cars,segment='index')
 
 
+@blueprint.route('/detail/<int:id>', methods=['GET'])
+def detail(id):
+    car =  db.session.get(Car, id)
+    return render_template('home/detail.html',car=car,segment='index')
+
+
 @blueprint.route('/inventory')
 def inventory():
     cars =  Car.query.all()

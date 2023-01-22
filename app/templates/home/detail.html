@@ -1,0 +1,281 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} About US {% endblock %}
+
+{% block body_class %} about-us {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+<script src="https://www.google.com/recaptcha/api.js?render=6LeiZBkkAAAAAFPw2TUh-NcCWjXWOD0eCtk7k76Y"></script>
+{% endblock stylesheets %}
+
+{% block content %}
+<div class="cover">
+    {% include 'includes/navigation-light.html' %}
+
+    <header class="bg-gradient-dark">
+        <div class="page-header min-vh-45" style="background-image: url('/static/assets/img/about-bg.jpg');">
+            <span class="mask bg-gradient-dark opacity-6"></span>
+        </div>
+    </header>
+
+    <div class="card card-body shadow-xl mt-n6">
+        <!-- Section with four info areas left & one card right with image and waves -->
+        <section class="py-7">
+            <div class="container">
+
+                <h5>{{car.name }} </h5>
+                <hr />
+                <div class="row d-flex">
+                    <div class="col-3">
+                        <button type="submit" class="btn btn-outline-secondary">
+                            <span class="btn-inner--icon"><i class="material-icons text-lg">arrow_back</i></span>
+                            <span class="btn-inner--text">Previous Vehicle</span>
+                        </button>
+                    </div>
+
+                    <div class="col-3">
+                        <button type="submit" class="btn btn-outline-secondary">
+                            <span class="btn-inner--icon"><i class="material-icons text-lg">file_download</i></span>
+                            <span class="btn-inner--text">Download Specification</span>
+                        </button>
+                    </div>
+                    <div class="col-3">
+                        <button type="submit" class="btn btn-outline-secondary">
+                            <span class="btn-inner--icon">
+                                <i class="material-icons text-lg">print</i>
+                            </span>
+                            <span class="btn-inner--text">Print this vehicle</span>
+                        </button>
+                    </div>
+
+                    <div class="col-3">
+                        <button type="submit" class="btn btn-outline-secondary">
+                            <span class="btn-inner--text">Next Vehicle</span>
+                            <span class="btn-inner--icon">
+                                <i class="material-icons text-lg">arrow_forward</i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner mb-4">
+                                    <div class="carousel-item active">
+                                        <div class="page-header min-vh-75"
+                                            style="background-image: url('/static/assets/img/car1.jpg');">
+                                            <!-- <span class="mask bg-gradient-dark"></span> -->
+
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="page-header min-vh-75"
+                                            style="background-image: url('/static/assets/img/bg-8.jpg');">
+                                            <!-- <span class="mask bg-gradient-dark"></span> -->
+
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="page-header min-vh-75"
+                                            style="background-image: url('/static/assets/img/bg-6.jpg');">
+                                            <!-- <span class="mask bg-gradient-dark"></span> -->
+
+                                        </div>
+                                    </div>
+                                    <div class="min-vh-75 position-absolute w-100 top-0">
+                                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                            data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon position-absolute bottom-50"
+                                                aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                                            data-bs-slide="next">
+                                            <span class="carousel-control-next-icon position-absolute bottom-50"
+                                                aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <img style="width:100%" src="/static/assets/img/bg-5.jpg" />
+                            </div>
+                            <div class="col-2">
+                                <img style="width:100%" src="/static/assets/img/bg-5.jpg" />
+                            </div>
+                            <div class="col-2">
+                                <img style="width:100%" src="/static/assets/img/bg-5.jpg" />
+                            </div>
+                            <div class="col-2">
+                                <img style="width:100%" src="/static/assets/img/bg-5.jpg" />
+                            </div>
+                            <div class="col-2">
+                                <img style="width:100%" src="/static/assets/img/bg-5.jpg" />
+                            </div>
+                            <div class="col-2">
+                                <img style="width:100%" src="/static/assets/img/bg-5.jpg" />
+                            </div>
+                        </div>
+                        <div class="pb-5"></div>
+                        <div class="row">
+
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                        aria-controls="home" aria-selected="true">Specification</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-warning" id="profile-tab" data-toggle="tab" href="#profile"
+                                        role="tab" aria-controls="profile" aria-selected="false">Overview</a>
+                                </li>
+
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active d-flex" id="home" role="tabpanel"
+                                    aria-labelledby="home-tab">
+                                    <table class="table">
+                                        <tr>
+                                            <th>Make</th>
+                                            <td>Tesla</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Category</th>
+                                            <td>SUV</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Transmission</th>
+                                            <td>Automatic</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Year</th>
+                                            <td>2022</td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="table">
+                                        <tr>
+                                            <th>Model</th>
+                                            <td>Model Y</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Drive Type</th>
+                                            <td>AWD</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Engine</th>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Fuel Type</th>
+                                            <td>Electric</td>
+                                        </tr>
+                                </div>
+
+                                </table>
+
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                Overview</div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="card-body p-0">
+
+                        <form role="form" method="post" action="{{ url_for('home_blueprint.filter') }}"
+                            class="text-start border">
+                            <div class="card-header">
+
+                                <p class="lead">Contact Alsmotors</p>
+                            </div>
+
+                            <div class="card-body pt-1">
+                                <div class="row">
+                                    <div class="col-md-12 pe-2 mb-3">
+                                        <div class="input-group input-group-static mb-4">
+                                            <input type="text" class="select-css" placeholder="Full Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 pe-2 mb-3">
+                                        <div class="input-group input-group-static mb-4">
+
+                                            <input type="text" class="select-css" placeholder="+254">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 pe-2 mb-3">
+                                        <div class="input-group input-group-static mb-4">
+
+                                            <input type="email" class="select-css" placeholder="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 pe-2 mb-3">
+                                        <div class="input-group input-group-static mb-4">
+                                            <label>Your message</label>
+                                            <textarea name="message" class="select-css" id="message" rows="6"
+                                                placeholder="I am interested in a price quote on this vehicle.Please contact me at your earliest convenience with your best price for this vehicle."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="g-recaptcha" data-sitekey="6LeiZBkkAAAAAFPw2TUh-NcCWjXWOD0eCtk7k76Y">
+                                    </div>
+
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-6 text-end ms-auto">
+
+                                        <button data-sitekey="6LeiZBkkAAAAAEdgfEIQc1WpDs9OKjpdzfvxx489"
+                                            data-callback='onSubmit' data-action='submit' type="submit"
+                                            class="g-recaptcha btn bg-gradient-warning mb-0">Send Message</button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <br />
+                    <div style="width:70%;margin:0 auto;">
+                        <button type="submit" class="btn btn-outline-secondary">
+                            <span class="btn-inner--icon"><i class="material-icons text-lg">call</i></span>
+                            <span class="btn-inner--text">(+254) 792 888 666</span>
+                        </button>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+    </div>
+    </section>
+    <!-- END Section with four info areas left & one card right with image and waves -->
+    <!-- -------- START Features w/ pattern background & stats & rocket -------- -->
+
+</div>
+</div>
+<!-- -------- END Features w/ pattern background & stats & rocket -------- -->
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->

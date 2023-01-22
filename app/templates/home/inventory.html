@@ -124,14 +124,10 @@
                   <div class="pt-5">
                  
                 
-                  <button data-bs-toggle="tooltip"
-                  data-bs-placement="bottom" title="Link">
-                  <i class="material-icons text-white text-lg">link</i>
-                </button>
-                <button  data-bs-toggle="tooltip"
-                data-bs-placement="bottom" title="Zoom">
-                <i class="material-icons text-white text-lg">zoom_out_map</i>
-              </button>
+                    <a href="{{ url_for('home_blueprint.detail',id=car.id) }}">
+                      <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gallary">
+                        <i class="material-icons text-white text-lg">link</i>
+                      </button></a>
               <button  data-bs-toggle="tooltip"
               data-bs-placement="bottom" title="Print">
               <i class="material-icons text-white text-lg">print</i>

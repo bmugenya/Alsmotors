@@ -223,6 +223,9 @@ margin:0 auto;
     top: 0;
     left: 0;
   }
+  .border{
+    border: 1px solid #fff;
+  }
   .card-header .info {
     height:25vh;
     position: relative;
