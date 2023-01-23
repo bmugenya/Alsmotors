@@ -71,9 +71,11 @@ def car():
 def add_car():
     """Register a new car"""
   
-    file = request.files['image']
-    upload_data = cloudinary.uploader.upload(file)
-    photo = upload_data['secure_url']
+    photo = []
+    files = request.files.getlist('image')
+    for file in files:
+        upload_data = cloudinary.uploader.upload(file)
+        photo.append(upload_data['secure_url'])
     
     data = {
         'image_url':photo,
