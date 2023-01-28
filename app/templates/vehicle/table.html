@@ -22,11 +22,11 @@
             <thead>
               <tr>
                 <th class="text-center">#</th>
-                <th>Name</th>
-                <th>Brand</th>
-                <th>Location</th>
-                <th class="text-right">Price</th>
-                <th class="text-right">Actions</th>
+                <th class="text-center">Name</th>
+                <th class="text-center">Brand</th>
+                <th class="text-center">Location</th>
+                <th class="text-center">Transmission</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -38,15 +38,19 @@
                    src={{ car.image_url }}
                   alt="bruce" loading="lazy">
                 </td>
-                <td>{{ car.name }}</td>
-                <td>{{ car.brand }}</td>
-                <td>{{ car.location }}</td>
-                <td class="text-right">&euro; {{ car.price }}</td>
+                <td class="text-center">{{ car.name }}</td>
+                <td class="text-center">{{ car.brand }}</td>
+                <td class="text-center">{{ car.location }}</td>
+                <td class="text-center">{{ car.transmission }}</td>
                 <td class="td-actions text-right">
 
-                  <button type="button" rel="tooltip" class="btn btn-success btn-simple">
-                    <i class="material-icons">edit</i>
+                      <a href="{{ url_for('vehicle_blueprint.update_vehicle',id=car.id) }}">
+                       <button type="button" rel="tooltip" class="btn btn-success btn-simple">
+                    <i class="material-icons">add_a_photo</i>
                   </button>
+                </a>
+
+
                   <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
                     <i class="material-icons">delete</i>
                   </button>

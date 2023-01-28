@@ -1,6 +1,8 @@
 from app import db, login_manager
+from flask import url_for
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
 
 
 class Updateable:
@@ -19,6 +21,11 @@ class User(db.Model, UserMixin,Updateable):
     password_hash = db.Column(db.String(128))
 
     @property
+    def avatar_url(self):
+        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        return f'https://www.gravatar.com/avatar/{digest}?d=identicon'
+
+    @property
     def password(self):
         raise AttributeError('password is not a readable attribute')
 
@@ -33,35 +40,6 @@ class User(db.Model, UserMixin,Updateable):
         return '<User {}>'.format(self.username)
 
 
-
-class Car(db.Model, Updateable):
-
-    __tablename__ = 'cars'
-
-    id = db.Column(db.Integer, primary_key=True)
-    image_url = db.Column(db.VARCHAR)
-    name = db.Column(db.String(64))
-    type = db.Column(db.String(64))
-    brand = db.Column(db.String(64))
-    make = db.Column(db.String(64))
-    price = db.Column(db.String(64))
-    models = db.Column(db.String(64))
-    location = db.Column(db.String(64))
-    fuel = db.Column(db.String(64))
-    transmission = db.Column(db.String(64))
-    featured = db.Column(db.String(64))
-    promotion = db.Column(db.String(64))
-    used = db.Column(db.String(64))
-
-
-    def select(self):
-        return Car.select()
-
-    def __repr__(self):
-        return '<Car {}>'.format(self.name)
-
-
-
 @login_manager.user_loader
 def user_loader(id):
     return User.query.filter_by(id=id).first()
@@ -72,3 +50,51 @@ def request_loader(request):
     username = request.form.get('username')
     user = User.query.filter_by(username=username).first()
     return user if user else None
+
+
+
+
+class Car(db.Model, Updateable):
+
+    __tablename__ = 'cars'
+
+    id = db.Column(db.Integer, primary_key=True)
+    image_url = db.Column(db.VARCHAR)
+    name = db.Column(db.String(64))
+    year = db.Column(db.DateTime, default=datetime.utcnow)
+    engine = db.Column(db.String(64))
+    drive_type = db.Column(db.String(64))
+    brand = db.Column(db.String(64))
+    category = db.Column(db.String(64))
+    model = db.Column(db.String(64))
+    location = db.Column(db.String(64))
+    fuel_type = db.Column(db.String(64))
+    transmission = db.Column(db.String(64))
+    promotion = db.Column(db.Boolean, default=True)
+    used = db.Column(db.Boolean, default=False)
+
+
+
+    def __repr__(self):
+        return '<Car {}>'.format(self.name)
+
+
+
+class Image(db.Model, Updateable):
+    
+    __tablename__ = 'images'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    images = db.Column(db.VARCHAR)
+    body_type = db.Column(db.String(64))
+    description = db.Column(db.VARCHAR)
+    cars_id = db.Column(db.Integer, db.ForeignKey('cars.id'))
+
+    def __repr__(self):
+        return '<Image {}>'.format(self.body_type)
+
+
+    @property
+    def url(self):
+        return url_for('images.get', id=self.id)
+

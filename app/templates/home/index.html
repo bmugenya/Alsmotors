@@ -88,12 +88,12 @@
         <div class="row">
           <div class="col-lg-12 mx-auto py-3">
             <div class="row">
-              <form role="form" method="post" action="{{ url_for('home_blueprint.filter') }}" style="display: flex;">
+              <form role="form" method="post" action="{{ url_for('vehicle_blueprint.collection') }}" style="display: flex;">
                 <div class="col-md-2 position-relative">
 
                   <div class="input-group input-group-dynamic">
-                    <label class="">Location</label>
-                    <select class="select-css" name="location" aria-label="First Name...">
+                    <label disabled>Location</label>
+                    <select class="select-css" name="location">
                       <option value="">Select</option>
                       <option value="nairobi">NAIROBI</option>
                       <option value="mombasa">MOMBASA</option>
@@ -109,9 +109,9 @@
                 <div class="col-md-2 position-relative">
 
                   <div class="input-group input-group-dynamic">
-                    <label class="">All Make</label>
-                    <select name="type" class="select-css" aria-label="First Name...">
-                      <option>Select</option>
+                    <label class="">All Category</label>
+                    <select name="category" class="select-css">
+                      <option value="">Select</option>
                       <option value="sedan">SEDAN & HATCHBACK</option>
                       <option value="suv">SUV</option>
                       <option value="pickups">PICK UPS</option>
@@ -125,7 +125,7 @@
 
                   <div class="input-group input-group-dynamic">
                     <label class="">All Models</label>
-                    <select name="brand" class="select-css" aria-label="First Name...">
+                    <select name="brand" class="select-css">
                       <option value="">Select</option>
                       <option value="toyota">TOYOTA</option>
                       <option value="nissan">NISSAN</option>
@@ -276,7 +276,7 @@
                     <div class="info">
                       <div class="pt-5">
 
-                        <a href="{{ url_for('home_blueprint.detail',id=car.id) }}">
+                        <a href="{{ url_for('vehicle_blueprint.vehicle',id=car.id) }}">
                           <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gallary">
                             <i class="material-icons text-white text-lg">link</i>
                           </button></a>
@@ -302,7 +302,7 @@
                       <div class="col-6">
                         <p class="text-capitalize pt-2">
                           <i class="material-icons text-lg">local_gas_station</i>
-                          {{ car.fuel }}
+                          {{ car.fuel_type }}
                         </p>
                       </div>
 
@@ -315,7 +315,7 @@
           </div>
           <div class="tab-pane fade" id="pills-sedan" role="tabpanel" aria-labelledby="pills-sedan-tab">
             <div class="row">
-              {% for car in cars if 'sedan' in car["type"] %}
+              {% for car in cars if 'sedan' in car["category"] %}
 
               <div class="col-md-4 mt-4">
                 <div class="card">
@@ -327,7 +327,7 @@
                       <div class="pt-5">
 
 
-                        <a href="{{ url_for('home_blueprint.detail',id=car.id) }}">
+                        <a href="{{ url_for('vehicle_blueprint.vehicle',id=car.id) }}">
                           <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gallary">
                             <i class="material-icons text-white text-lg">link</i>
                           </button></a>
@@ -353,7 +353,7 @@
                       <div class="col-6">
                         <p class="text-capitalize pt-2">
                           <i class="material-icons text-lg">local_gas_station</i>
-                          {{ car.fuel }}
+                          {{ car.fuel_type }}
                         </p>
                       </div>
 
@@ -366,7 +366,7 @@
           </div>
           <div class="tab-pane fade" id="pills-suv" role="tabpanel" aria-labelledby="pills-suv-tab">
             <div class="row">
-              {% for car in cars if 'suv' in car["type"] %}
+              {% for car in cars if 'suv' in car["category"] %}
 
               <div class="col-md-4 mt-4">
                 <div class="card">
@@ -378,7 +378,7 @@
                       <div class="pt-5">
 
 
-                        <a href="{{ url_for('home_blueprint.detail',id=car.id) }}">
+                        <a href="{{ url_for('vehicle_blueprint.vehicle',id=car.id) }}">
                           <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gallary">
                             <i class="material-icons text-white text-lg">link</i>
                           </button></a>
@@ -404,7 +404,7 @@
                       <div class="col-6">
                         <p class="text-capitalize pt-2">
                           <i class="material-icons text-lg">local_gas_station</i>
-                          {{ car.fuel }}
+                          {{ car.fuel_type }}
                         </p>
                       </div>
 
@@ -418,7 +418,7 @@
 
           <div class="tab-pane fade" id="pills-pick" role="tabpanel" aria-labelledby="pills-pick-tab">
             <div class="row">
-              {% for car in cars if 'pickups' in car["type"] %}
+              {% for car in cars if 'pickups' in car["category"] %}
 
               <div class="col-md-4 mt-4">
                 <div class="card">
@@ -430,7 +430,7 @@
                       <div class="pt-5">
 
 
-                        <a href="{{ url_for('home_blueprint.detail',id=car.id) }}">
+                        <a href="{{ url_for('vehicle_blueprint.vehicle',id=car.id) }}">
                           <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gallary">
                             <i class="material-icons text-white text-lg">link</i>
                           </button></a>
@@ -456,7 +456,7 @@
                       <div class="col-6">
                         <p class="text-capitalize pt-2">
                           <i class="material-icons text-lg">local_gas_station</i>
-                          {{ car.fuel }}
+                          {{ car.fuel_type }}
                         </p>
                       </div>
 
@@ -472,7 +472,7 @@
 
           <div class="tab-pane fade" id="pills-bus" role="tabpanel" aria-labelledby="pills-bus-tab">
             <div class="row">
-              {% for car in cars if 'buses' in car["type"] %}
+              {% for car in cars if 'buses' in car["category"] %}
 
               <div class="col-md-4 mt-4">
                 <div class="card">
@@ -484,7 +484,7 @@
                       <div class="pt-5">
 
 
-                        <a href="{{ url_for('home_blueprint.detail',id=car.id) }}">
+                        <a href="{{ url_for('vehicle_blueprint.vehicle',id=car.id) }}">
                           <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gallary">
                             <i class="material-icons text-white text-lg">link</i>
                           </button></a>
@@ -510,7 +510,7 @@
                       <div class="col-6">
                         <p class="text-capitalize pt-2">
                           <i class="material-icons text-lg">local_gas_station</i>
-                          {{ car.fuel }}
+                          {{ car.fuel_type }}
                         </p>
                       </div>
 
@@ -807,7 +807,7 @@ background-repeat: no-repeat; background-size: cover;">
       <div class="row">
         <div class="col-lg-6 mx-auto text-center">
           <h3 class="mb-0">Our products of the month</h3>
-          <h2 class="text-gradient text-warning mb-3">Featured Listings</h2>
+          <h2 class="text-gradient text-warning mb-3">Promotion Listings</h2>
 
         </div>
       </div>

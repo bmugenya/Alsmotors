@@ -65,25 +65,23 @@
                                 <div class="carousel-inner mb-4">
                                     <div class="carousel-item active">
                                         <div class="page-header min-vh-75"
-                                            style="background-image: url('/static/assets/img/car1.jpg');">
+                                            style="background-image: url({{car.image_url}});">
                                             <!-- <span class="mask bg-gradient-dark"></span> -->
 
                                         </div>
                                     </div>
+                                       {% for image in images %}
                                     <div class="carousel-item">
                                         <div class="page-header min-vh-75"
-                                            style="background-image: url('/static/assets/img/bg-8.jpg');">
-                                            <!-- <span class="mask bg-gradient-dark"></span> -->
+                                            style="background-image: url({{image.images}});">
+                                            
 
                                         </div>
                                     </div>
-                                    <div class="carousel-item">
-                                        <div class="page-header min-vh-75"
-                                            style="background-image: url('/static/assets/img/bg-6.jpg');">
-                                            <!-- <span class="mask bg-gradient-dark"></span> -->
+                                     {% endfor %}
+                                
 
-                                        </div>
-                                    </div>
+
                                     <div class="min-vh-75 position-absolute w-100 top-0">
                                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
                                             data-bs-slide="prev">
@@ -102,24 +100,15 @@
                             </div>
                         </div>
                         <div class="row">
+
+
+                 {% for image in images %}
                             <div class="col-2">
-                                <img style="width:100%" src="/static/assets/img/bg-5.jpg" />
+                                <img style="width:100%" src={{image.images}} />
                             </div>
-                            <div class="col-2">
-                                <img style="width:100%" src="/static/assets/img/bg-5.jpg" />
-                            </div>
-                            <div class="col-2">
-                                <img style="width:100%" src="/static/assets/img/bg-5.jpg" />
-                            </div>
-                            <div class="col-2">
-                                <img style="width:100%" src="/static/assets/img/bg-5.jpg" />
-                            </div>
-                            <div class="col-2">
-                                <img style="width:100%" src="/static/assets/img/bg-5.jpg" />
-                            </div>
-                            <div class="col-2">
-                                <img style="width:100%" src="/static/assets/img/bg-5.jpg" />
-                            </div>
+
+                            {% endfor %}
+                         
                         </div>
                         <div class="pb-5"></div>
                         <div class="row">
@@ -140,39 +129,40 @@
                                     aria-labelledby="home-tab">
                                     <table class="table">
                                         <tr>
-                                            <th>Make</th>
-                                            <td>Tesla</td>
+                                            <th>Brand</th>
+                                            <td class="text-capitalize">{{car.brand }}</td>
                                         </tr>
                                         <tr>
                                             <th>Category</th>
-                                            <td>SUV</td>
+                                            <td class="text-capitalize">{{car.category }}</td>
                                         </tr>
                                         <tr>
                                             <th>Transmission</th>
-                                            <td>Automatic</td>
+                                            <td class="text-capitalize">{{car.transmission }}</td>
                                         </tr>
                                         <tr>
                                             <th>Year</th>
-                                            <td>2022</td>
+                                            <td class="text-capitalize">{{car.year.strftime('%Y') }}</td>
                                         </tr>
                                     </table>
 
                                     <table class="table">
                                         <tr>
                                             <th>Model</th>
-                                            <td>Model Y</td>
+                                            <td class="text-capitalize">{{car.model }}</td>
                                         </tr>
                                         <tr>
                                             <th>Drive Type</th>
-                                            <td>AWD</td>
+                                            <td class="text-capitalize">{{car.drive_type }}</td>
+                                          
                                         </tr>
                                         <tr>
                                             <th>Engine</th>
-                                            <td>0</td>
+                                            <td class="text-capitalize">{{car.engine }}</td>
                                         </tr>
                                         <tr>
                                             <th>Fuel Type</th>
-                                            <td>Electric</td>
+                                            <td class="text-capitalize">{{car.fuel_type }}</td>
                                         </tr>
                                 </div>
 
@@ -192,7 +182,7 @@
 
                     <div class="card-body p-0">
 
-                        <form role="form" method="post" action="{{ url_for('home_blueprint.filter') }}"
+                        <form role="form" method="post" action="{{ url_for('vehicle_blueprint.collection') }}"
                             class="text-start border">
                             <div class="card-header">
 

@@ -27,6 +27,9 @@ def register_blueprints(app):
     from app.home.routes import blueprint
     app.register_blueprint(blueprint)
 
+    from app.vehicle.routes import blueprint
+    app.register_blueprint(blueprint)
+
 
 def configure_database(app):
 
