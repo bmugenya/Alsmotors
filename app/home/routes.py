@@ -1,12 +1,44 @@
 from app.home import blueprint
-from flask import render_template, request
+from flask import render_template, request,flash,redirect,url_for
 from jinja2 import TemplateNotFound
-from app.authentication.models import Car
+from app.authentication.models import Car,Contact, Subscribe
+from app import db
 
 
-@blueprint.route('/')
+@blueprint.route('/subscribe', methods=['GET','POST'])
+def subscription():
+    cars =  Car.query.all()
+    
+    if request.method == 'POST':
+        data = { 'email' : request.form['email']  }
+        
+        notification = Subscribe(**data)
+        db.session.add(notification)
+        db.session.commit()
+        flash("Thank you for subscribing to Alsmotors newsletter.")
+        redirect(url_for('home_blueprint.index'))
+    return render_template('home/index.html',cars=cars,segment='index')
+
+
+
+@blueprint.route('/',methods=['GET','POST'])
 def index():
     cars =  Car.query.all()
+
+    if request.method == 'POST':
+        data = {
+            'name' : request.form['name'],
+            'mobile' : request.form['phone'],
+            'message' : request.form['message'],
+        }
+        
+        contact = Contact(**data)
+        db.session.add(contact)
+        db.session.commit()
+
+        flash("Thank you for reaching out to Alsmotors.")
+        redirect(url_for('home_blueprint.index'))
+
     return render_template('home/index.html',cars=cars,segment='index')
 
 

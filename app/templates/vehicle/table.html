@@ -16,52 +16,154 @@
   <section class="pt-10">
     <div class="container">
       <div class="row">
-        <div class="card card-body shadow-xl mt-n6">
+        <div class="col-8">
+          <div class="card card-body shadow-xl mt-n6">
 
-          <table class="table">
-            <thead>
-              <tr>
-                <th class="text-center">#</th>
-                <th class="text-center">Name</th>
-                <th class="text-center">Brand</th>
-                <th class="text-center">Location</th>
-                <th class="text-center">Transmission</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="text-center">#</th>
+                  <th class="text-center">Name</th>
+                  <th class="text-center">Brand</th>
+                  <th class="text-center">Location</th>
 
-              {% for car in cars %}
-              <tr>
-                <td class="text-center">
-                  <img class="avatar avatar-sm shadow-xl position-relative z-index-2"
-                   src={{ car.image_url }}
-                  alt="bruce" loading="lazy">
-                </td>
-                <td class="text-center">{{ car.name }}</td>
-                <td class="text-center">{{ car.brand }}</td>
-                <td class="text-center">{{ car.location }}</td>
-                <td class="text-center">{{ car.transmission }}</td>
-                <td class="td-actions text-right">
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
 
-                      <a href="{{ url_for('vehicle_blueprint.update_vehicle',id=car.id) }}">
-                       <button type="button" rel="tooltip" class="btn btn-success btn-simple">
-                    <i class="material-icons">add_a_photo</i>
-                  </button>
+
+                {% for car in cars %}
+                <tr>
+                  <td class="text-center">
+                    <img class="avatar shadow-xl position-relative z-index-2" src={{ car.image_url }} alt={{car.name}}
+                      loading="lazy">
+                  </td>
+                  <td class="text-center text-capitalize">{{ car.name }}</td>
+                  <td class="text-center text-capitalize">{{ car.brand }}</td>
+                  <td class="text-center text-capitalize">{{ car.location }}</td>
+                  <td class="td-actions text-right">
+
+                    <a href="{{ url_for('vehicle_blueprint.update_vehicle',id=car.id) }}">
+                      <button type="button" rel="tooltip" class="btn btn-secondary-outline btn-simple">
+                        <i class="material-icons">settings</i>
+                      </button>
+                    </a>
+                  </td>
+                </tr>
+
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+        <div class="col-4">
+
+          <div class="nav-wrapper position-relative end-0  mt-n6">
+            <ul class="nav nav-pills nav-fill p-1" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+
+
+                <a class="nav-link mb-0 px-0 py-1 active" data-bs-toggle="pill" id="subscription-tab"
+                  data-bs-target="#pills-subscription-tab" role="tab" aria-controls="subscription-tab"
+                  aria-selected="true">
+                  <i class="material-icons text-lg position-relative">notifications</i>
+                  <span class="ms-1">Subscribers</span>
                 </a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="pill" id="message-tab"
+                  data-bs-target="#pills-message-tab" role="tab" aria-controls="message-tab" aria-selected="false">
+                  <i class="material-icons text-lg position-relative">email</i>
+                  <span class="ms-1">Messages</span>
+                </a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link mb-0 px-0 py-1" id="settings-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-settings-tab" role="tab" aria-controls="settings-tab" aria-selected="false">
+                  <i class="material-icons text-lg position-relative">settings</i>
+                  <span class="ms-1">Settings</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-content" id="pills-tabContent">
+
+            <div class="card-body p-3 tab-pane fade show active" id="pills-subscription-tab" role="tabpanel">
+              <ul class="list-group">
+
+                {% for subscriber in subscribers %}
+                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                  <div class="avatar me-3">
+                    <img src={{ subscriber.avatar_url }} class="border-radius-lg shadow">
+                  </div>
+                  <div class="d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="mb-0 text-sm">{{ subscriber.email }}</h6>
+                    <p class="mb-0 text-xs">{{ subscriber.timestamp.strftime('%d-%m-%Y') }}</p>
+                  </div>
+                  <!-- <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;"></a> -->
+                </li>
+                {% endfor %}
 
 
-                  <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
-                    <i class="material-icons">delete</i>
-                  </button>
-                </td>
-              </tr>
 
-              {% endfor %}
+              </ul>
+            </div>
 
 
-            </tbody>
-          </table>
+
+
+            <div class="card-body p-3 tab-pane fade" id="pills-message-tab" role="tabpanel">
+              <ul class="list-group">
+
+
+                {% for contact in contacts %}
+                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+
+                  <div class="d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="mb-0 text-sm">{{ contact.name }}</h6>
+                    <p class="mb-0 text-xs">{{ contact.message |truncate(35, True) }}</p>
+                  </div>
+                  <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;">Reply</a>
+                </li>
+
+                {% endfor %}
+
+              </ul>
+            </div>
+
+
+            <div class="card-body p-3 tab-pane fade" id="pills-settings-tab" role="tabpanel">
+              <ul class="list-group">
+                <li class="list-group-item border-0 px-0">
+                  <div class="form-check form-switch ps-0">
+                    <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault" checked>
+                    <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0"
+                      for="flexSwitchCheckDefault">Email me when someone subscribes</label>
+                  </div>
+                </li>
+                <li class="list-group-item border-0 px-0">
+                  <div class="form-check form-switch ps-0">
+                    <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault1">
+                    <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0"
+                      for="flexSwitchCheckDefault1">Email me when someone reaches out</label>
+                  </div>
+                </li>
+                <li class="list-group-item border-0 px-0">
+                  <div class="form-check form-switch ps-0">
+                    <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault2" checked>
+                    <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0"
+                      for="flexSwitchCheckDefault2">Email me when someone views a vehicle</label>
+                  </div>
+                </li>
+            </div>
+
+
+          </div>
+
+
 
         </div>
       </div>

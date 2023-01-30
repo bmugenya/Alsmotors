@@ -3,6 +3,7 @@ from flask import url_for
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
+from hashlib import md5
 
 
 class Updateable:
@@ -52,8 +53,6 @@ def request_loader(request):
     return user if user else None
 
 
-
-
 class Car(db.Model, Updateable):
 
     __tablename__ = 'cars'
@@ -73,11 +72,8 @@ class Car(db.Model, Updateable):
     promotion = db.Column(db.Boolean, default=True)
     used = db.Column(db.Boolean, default=False)
 
-
-
     def __repr__(self):
         return '<Car {}>'.format(self.name)
-
 
 
 class Image(db.Model, Updateable):
@@ -93,8 +89,58 @@ class Image(db.Model, Updateable):
     def __repr__(self):
         return '<Image {}>'.format(self.body_type)
 
-
     @property
     def url(self):
         return url_for('images.get', id=self.id)
+
+
+class Notification(db.Model):
+    
+    __tablename__ = 'notifications'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64))
+    mobile = db.Column(db.String(120))
+    email = db.Column(db.String(120))
+    message =  db.Column(db.String(140))
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+    cars_id = db.Column(db.Integer, db.ForeignKey('cars.id'))
+
+    @property
+    def avatar_url(self):
+        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        return f'https://www.gravatar.com/avatar/{digest}?d=identicon'
+
+    def __repr__(self):
+        return '<Notification {}>'.format(self.message)
+
+
+class Contact(db.Model):
+    
+    __tablename__ = 'contacts'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64))
+    mobile = db.Column(db.String(120))
+    message =  db.Column(db.String(140))
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+   
+    def __repr__(self):
+        return '<Contact {}>'.format(self.message)
+
+class Subscribe(db.Model):
+    
+    __tablename__ = 'subscribers'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(120))
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+
+    @property
+    def avatar_url(self):
+        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        return f'https://www.gravatar.com/avatar/{digest}?d=identicon'
+   
+    def __repr__(self):
+        return '<Subscribe {}>'.format(self.email)
 

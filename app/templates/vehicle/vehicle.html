@@ -13,6 +13,20 @@
 <div class="cover">
     {% include 'includes/navigation-light.html' %}
 
+       {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+              <div class="alert alert-primary alert-dismissible text-white" role="alert">
+
+                <span class="text-sm">{{ message }}</span>
+                <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+           {% endfor %}
+   {% endif %}
+      {% endwith %}
+
     <header class="bg-gradient-dark">
         <div class="page-header min-vh-45" style="background-image: url('/static/assets/img/about-bg.jpg');">
             <span class="mask bg-gradient-dark opacity-6"></span>
@@ -182,7 +196,7 @@
 
                     <div class="card-body p-0">
 
-                        <form role="form" method="post" action="{{ url_for('vehicle_blueprint.collection') }}"
+                        <form role="form" method="post" action="{{ url_for('vehicle_blueprint.vehicle',id=id) }}"
                             class="text-start border">
                             <div class="card-header">
 
@@ -193,25 +207,25 @@
                                 <div class="row">
                                     <div class="col-md-12 pe-2 mb-3">
                                         <div class="input-group input-group-static mb-4">
-                                            <input type="text" class="select-css" placeholder="Full Name">
+                                            <input type="text" required name="name" class="select-css" placeholder="Full Name">
                                         </div>
                                     </div>
                                     <div class="col-md-12 pe-2 mb-3">
                                         <div class="input-group input-group-static mb-4">
 
-                                            <input type="text" class="select-css" placeholder="+254">
+                                            <input type="text" required name="phone" class="select-css" placeholder="+254">
                                         </div>
                                     </div>
                                     <div class="col-md-12 pe-2 mb-3">
                                         <div class="input-group input-group-static mb-4">
 
-                                            <input type="email" class="select-css" placeholder="email">
+                                            <input type="email" required name="email" class="select-css" placeholder="email">
                                         </div>
                                     </div>
                                     <div class="col-md-12 pe-2 mb-3">
                                         <div class="input-group input-group-static mb-4">
                                             <label>Your message</label>
-                                            <textarea name="message" class="select-css" id="message" rows="6"
+                                            <textarea name="message" class="select-css" required rows="6"
                                                 placeholder="I am interested in a price quote on this vehicle.Please contact me at your earliest convenience with your best price for this vehicle."></textarea>
                                         </div>
                                     </div>

@@ -10,6 +10,20 @@
 {% block content %}
 
 {% include 'includes/navigation-transparent.html' %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+              <div class="mt-7 alert alert-primary alert-dismissible text-white" role="alert">
+
+                <span class="text-sm">{{ message }}</span>
+                <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+           {% endfor %}
+   {% endif %}
+      {% endwith %}
+  
 
 <div class="page-header align-items-start min-vh-100" style="background-image: url('/static/assets/img/road1.jpg');"
   loading="lazy">
@@ -201,5 +215,3 @@
 
 {% endblock content %}
 
-<!-- Specific Page JS goes HERE  -->
-{% block javascripts %}{% endblock javascripts %}
