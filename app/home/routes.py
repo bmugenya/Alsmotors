@@ -1,9 +1,11 @@
+import os
 from app.home import blueprint
-from flask import render_template, request,flash,redirect,url_for
+from flask import render_template, request,flash,redirect,url_for,current_app
 from jinja2 import TemplateNotFound
 from app.authentication.models import Car,Contact, Subscribe
 from app import db
-
+from flask_mail import Message
+from app import mail
 
 @blueprint.route('/subscribe', methods=['GET','POST'])
 def subscription():
@@ -11,11 +13,15 @@ def subscription():
     
     if request.method == 'POST':
         data = { 'email' : request.form['email']  }
+        msg = "Thank you for subscribing."
+        send_msg = Message(msg,sender=os.getenv('MAIL_USERNAME'),recipients=[data['email']])
+        send_msg.html = render_template('home/message.html')
+        mail.send(send_msg)
         
         notification = Subscribe(**data)
         db.session.add(notification)
         db.session.commit()
-        flash("Thank you for subscribing to Alsmotors newsletter.")
+        flash(msg)
         redirect(url_for('home_blueprint.index'))
     return render_template('home/index.html',cars=cars,segment='index')
 
