@@ -1,4 +1,13 @@
 
+:root{
+    --yellow: #b5842c;
+    --light-yellow:#ffee80;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    --border:.1rem solid rgba(0,0,0,.1);
+}
+
 .fadeIn1 {
   animation-duration: 1s;
 animation-fill-mode: both;
@@ -81,12 +90,12 @@ animation-fill-mode: both;
 }
 
 .vehicles .vehicles-slider .box .content h3{
-    font-size: 2.5rem;
+    font-size: 2.5rem !important;
     color:var(--black);
 }
 
 .vehicles .vehicles-slider .box .content .price{
-    font-size: 2.2rem;
+    font-size: 2.2rem !important;
     color:var(--yellow);
     padding:1rem 0;
     font-weight: bolder;
@@ -94,12 +103,12 @@ animation-fill-mode: both;
 
 .vehicles .vehicles-slider .box .content .price span{
     color:var(--light-color);
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
     font-weight: normal;
 }
 
 .vehicles .vehicles-slider .box .content p{
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
     color:var(--light-color);
     padding: 1rem 0;
     padding-top: 1.5rem;
@@ -142,7 +151,7 @@ animation-fill-mode: both;
 }
 
 .featured .featured-slider .box .content h3{
-    font-size: 2.2rem;
+    font-size: 2.2rem !important;
     color:var(--black);
 }
 

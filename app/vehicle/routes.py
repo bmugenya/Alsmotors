@@ -7,6 +7,7 @@ import cloudinary.uploader
 
 
 @blueprint.route('/table')
+@login_required
 def table():
     cars =  Car.query.all()
     contacts =  Contact.query.all()
@@ -67,6 +68,7 @@ def collection():
  
  
 @blueprint.route('/update/vehicle/<int:id>', methods=['POST','GET'])
+@login_required
 def update_vehicle(id):
     """Update a new vehicle"""
    
@@ -95,6 +97,7 @@ def update_vehicle(id):
 
 
 @blueprint.route('/register/vehicle', methods=['POST','GET'])
+@login_required
 def register_vehicle():
     """Register a new car"""
   

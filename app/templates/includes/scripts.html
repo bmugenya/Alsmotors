@@ -13,10 +13,12 @@
 <script src="/static/assets/js/plugins/parallax.min.js"></script>
 <!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
 <!--  Google Maps Plugin    -->
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
 <script src="/static/assets/js/material-kit.min.js?v=3.0.0" type="text/javascript"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9.0.1/swiper-bundle.min.js"></script>
 
 <script type="text/javascript">
 
@@ -137,33 +139,6 @@
 
 
 
-  var swiper = new Swiper(".featured-slider", {
-    grabCursor: true,
-    centeredSlides: true,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-    },
-  });
-
-
 
   var swiper = new Swiper(".vehicles-slider", {
     grabCursor: true,
@@ -171,7 +146,7 @@
     spaceBetween: 20,
     loop: true,
     autoplay: {
-      delay: 3500,
+      delay: 2500,
       disableOnInteraction: false,
     },
     pagination: {
