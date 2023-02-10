@@ -208,7 +208,13 @@ margin:0 auto;
   
 
 
-
+.car-top:hover {
+ bottom: 52px;
+right: 7px;
+  width: 85px;
+  height: 89px;
+  background: url(/static/assets/img/car-focus.png) no-repeat 0 0;
+}
 
 
  
