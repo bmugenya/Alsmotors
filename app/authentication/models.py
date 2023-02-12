@@ -69,7 +69,7 @@ class Car(db.Model, Updateable):
     location = db.Column(db.String(64))
     fuel_type = db.Column(db.String(64))
     transmission = db.Column(db.String(64))
-    promotion = db.Column(db.Boolean, default=True)
+    promotion = db.Column(db.Boolean, default=False)
     used = db.Column(db.Boolean, default=False)
 
     def __repr__(self):

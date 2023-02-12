@@ -27,13 +27,13 @@
       {% endwith %}
   
 
-
-  <!-- Section with four info areas left & one card right with image and waves -->
   <section class="pt-10">
     <div class="container">
-      <div class="row">
-        <div class="col-8">
-          <div class="card card-body shadow-xl mt-n6">
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        
+          <div class="card card-body shadow-xl">
 
             <form method="post" action="{{ url_for('vehicle_blueprint.update_vehicle',id=id) }}"
               enctype="multipart/form-data">
@@ -70,69 +70,305 @@
                   </div>
                 </div>
               </div>
+            </form>
 
           </div>
 
-          </form>
+      
 
-        </div>
-        <div class="col-4">
+    
 
+    </div>
+  </div>
 
+      <div class="row">
+        <div class="col-8">
+          <div class="row">
+            <div class="col-lg-6 col-md-8 order-2 order-md-2 order-lg-1">
+              <div class="row">
 
-
-          <div class="card card-body shadow-xl mt-n6">
-            <div class="pb-0 p-3">
-              <h6 class="mb-0">Conversations</h6>
-            </div>
-            <div class="card-body p-3">
-              <ul class="list-group">
-
-                {% for notification in notifications %}
-
-                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
-                  <div class="avatar me-3">
-                    <img src={{ notification.avatar_url }} alt={{ notification.name }} class="border-radius-lg shadow">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner mb-4">
+                    <div class="carousel-item active">
+                      <div class="page-header min-vh-25">
+                        <div class="blur-shadow-image">
+                          <img src={{car.image_url}} class="w-100 border-radius-xl" alt="carz">
+                        </div>
+                      </div>
+                    </div>
+                    {% for image in images %}
+                      <div class="carousel-item">
+                        <div class="page-header min-vh-25">
+                          <div class="blur-shadow-image">
+                            <img src={{image.images}} class="w-100 border-radius-xl" alt="carz">
+                          </div>
+                        </div>
+                      </div>
+                    {% endfor %}
+                              
+                    <div class="min-vh-25 position-absolute w-100 top-0">
+                      <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon position-absolute bottom-50"
+                                                aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon position-absolute bottom-50"
+                                                aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </a>
+                    </div>
                   </div>
-                  <div class="d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="mb-0 text-sm">{{ notification.name }}</h6>
-                    <p class="mb-0 text-xs">{{ notification.message |truncate(35, True)  }}</p>
-                  </div>
-                  <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;">Reply</a>
-                </li>
-                {% endfor %}
-
-
-              </ul>
+                </div>
+              </div>
             </div>
+
+            <div class="col-lg-5 col-md-12 ms-auto order-1 order-md-1 order-lg-1">
+              <div class="table-responsive">
+                <h4 class="mb-4 text-center">{{ car.name}}</h4>
+                <table class="table align-items-center mb-0">
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Brand</th>
+                    <td class="text-capitalize text-xs">{{car.brand }}</td>
+                  </tr>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Category</th>
+                    <td class="text-capitalize text-xs">{{car.category }}</td>
+                  </tr>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Transmission</th>
+                    <td class="text-capitalize text-xs">{{car.transmission }}</td>
+                  </tr>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Year</th>
+                    <td class="text-capitalize text-xs">{{car.year.strftime('%Y') }}</td>
+                  </tr>        
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Model</th>
+                    <td class="text-capitalize text-xs">{{car.model }}</td>
+                  </tr>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Drive Type</th>
+                    <td class="text-capitalize text-xs">{{car.drive_type }}</td>                      
+                  </tr>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Engine</th>
+                    <td class="text-capitalize text-xs">{{car.engine }}</td>
+                  </tr>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fuel Type</th>
+                    <td class="text-capitalize text-xs">{{car.fuel_type }}</td>
+                  </tr>
+
+                       <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Promotion</th>
+                    <td class="text-capitalize text-xs">{{car.promotion }}</td>
+                  </tr>
+
+
+                  </table>
+                  
+                  </div>
+
+                               
+           
+      
+          </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+    <div class="card card-background align-items-start h-100">
+      <div class="full-background" style="background-image: url({{car.image_url}});"></div>
+      <div class="card-body text-center z-index-3">
+        <p class="text-uppercase font-weight-bold opacity-8 text-xs mt-5">{{car.name}}</p>
+        <h4 class="text-white mb-1">Promotion Listing</h4>
+        <p class="text-white opacity-8">Indicating a product of the month really matters as customers are sparked by the idea.</p>
+        {% if car.promotion == true %}
+        <button class="btn btn-white btn-sm" type="button" name="button">Remove promotion</button>
+        {% else %}
+             <button class="btn btn-white btn-sm" type="button" name="button">Add promotion</button>
+
+        {% endif %}
+      </div>
+      <span class="mask bg-gradient-warning border-radius-xl z-index-2 opacity-7"></span>
+    </div>
+    </div>
+
+
+  <div class="row justify-space-between text-center py-2">
+
+
+    <button type="button" class="btn btn-outline-info w-auto me-2">  
+     <i class="material-icons opacity-10">person</i>{{ requests }}  Vehicle Request</button>
+
+    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success w-auto me-2">  
+     <i class="material-icons opacity-10">camera_alt</i> Add Photo</button>
+
+
+    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger w-auto me-2">  
+     <i class="material-icons opacity-10">delete</i> Delete Vehicle</button>
+
+      
+          </div>
+    
+
+
+
+   
+
+
+
+
+
+
+
+      <div class="row">
+    
+
+ <div class="card">
+          <div class="table-responsive accordion" id="accordionRental">
+            <table class="table align-items-center mb-0">
+              <thead>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">client</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Mobile</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Message</th>
+           
+                </tr>
+              </thead>
+              <tbody>
+ 
+{% for notification in notifications %}
+
+          <tr class="accordion-item">
+    
+         <td>
+                    <div class="d-flex px-2">
+                      <div>
+                        <img src={{ notification.avatar_url }} class="avatar avatar-sm rounded-circle me-2">
+                      </div>
+                      <div class="my-auto">
+                        <h6 class="mb-0 text-xs">{{ notification.name }}</h6>
+                         <p class="text-xs text-secondary mb-0">{{ notification.email }}</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <p class="text-xs font-weight-bold mb-0">{{ notification.mobile }}</p>
+                  </td>
+         
+                  <td class="my-auto">
+                    <div class="align-items-center">
+                      <h6 class="mb-0 text-xs">{{ notification.timestamp.strftime('%d-%m-%Y')  }}</h6>
+                        <p class="text-xs text-secondary mb-0">{{ notification.timestamp.strftime('%H:%M:%S')  }}</p>
+                      <div>
+                
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                  <button data-bs-toggle="collapse" class="btn btn-outline-secondary" data-bs-target="#collapse_{{ notification.id }}" aria-expanded="false">
+                    VIEW
+      
+   
+            </button>
+                  </td>
+
+
+          
+       
+          </tr>
+               <tr>
+               <td id="collapse_{{ notification.id }}" class="accordion-collapse collapse" data-bs-parent="#accordionRental">
+              <div class="accordion-body text-sm opacity-8">
+                {{ notification.message }}
+              </div>
+
+            </tr>
+
+         {% endfor %}
+     
+
+
+
+ 
+              </tbody>
+            </table>
           </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </div>
 
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   </section>
 </div>

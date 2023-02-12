@@ -92,8 +92,13 @@ def update_vehicle(id):
         flash("Image added successfully.")
         redirect(url_for('vehicle_blueprint.update_vehicle',id=id))
     
+    car =  db.session.get(Car, id)
+    images = Image.query.filter(Image.cars_id == id)
+    requests = images.count()
+    
     notifications = Notification.query.filter(Notification.cars_id == id)
-    return render_template('vehicle/update_vehicle.html',id=id,notifications=notifications)
+    return render_template('vehicle/update_vehicle.html',id=id,requests=requests,notifications=notifications,images=images,car=car)
+
 
 
 @blueprint.route('/register/vehicle', methods=['POST','GET'])
