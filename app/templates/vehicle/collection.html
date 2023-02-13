@@ -27,7 +27,7 @@
         <div class="col-md-4">
           <div class="card-body">
             <p>Search Filters</p>
-            <form role="form" method="post" action="{{ url_for('vehicle_blueprint.collection') }}" class="text-start">
+            <form role="form"  method="post" action="{{ url_for('vehicle_blueprint.collection') }}" class="text-start">
 
               <div class="input-group input-group-outline mb-3">
                 <select  name="category" class="select-css">
@@ -105,6 +105,31 @@
               </div>
             </form>
           </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
 
         <div class="col-md-8">
@@ -116,48 +141,90 @@
 <div class="row">
           {% for car in cars %}
         
-          <div class="col-md-4 mt-4">
-            <div class="card">
-              <div class="card-header p-0 position-relative z-index-2">
+  
 
-                  <img  class='card-header-img' src={{ car.image_url }} alt="img-blur-shadow">
+
+      
+            <div class="row mb-5">
+              <div class="card border-radius-lg">
+                <div class="row">
+
+          <div class="col-lg-6 justify-content-center">
+              <div class="d-block blur-shadow-image pt-5">
+                <img src={{ car.image_url }} alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
+              </div>
+             
+            </div>
+      
+          <div class="col-lg-6 justify-content-center">
+  
+
+
+
+         <div class="table-responsive">
                
-                <div class="info">
-                  <div class="pt-5">
-                 
-                
-                    <a href="{{ url_for('vehicle_blueprint.vehicle',id=car.id) }}">
-                      <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gallary">
-                        <i class="material-icons text-white text-lg">link</i>
-                      </button></a>
-              <button  data-bs-toggle="tooltip"
-              data-bs-placement="bottom" title="Print">
-              <i class="material-icons text-white text-lg">print</i>
-            </button>
-                </div>
-              </div>
-              </div>
-         
-              <div class="card-body text-center p-0">
-              <h6 class="font-weight-normal mt-3">{{ car.name }}</h6>
-              <div class="d-flex">
-             <div class="col-6">
-                <p class="text-capitalize pt-2">
-                   <i class="material-icons text-lg">location_on</i>
-                  {{ car.location }}
-                </p>
-                </div>
-                <div class="col-6">
-                <p class="text-capitalize pt-2">
-                  <i class="material-icons text-lg">local_gas_station</i>
-                 {{ car.fuel_type }}
-               </p>
+                <table class="table align-items-center mb-0">
+                    <h6 class="text-gradient text-warning text-center">{{ car.name}}</h6>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Brand</th>
+                    <td class="text-capitalize text-xs">{{car.brand }}</td>
+                  </tr>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Category</th>
+                    <td class="text-capitalize text-xs">{{car.category }}</td>
+                  </tr>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Transmission</th>
+                    <td class="text-capitalize text-xs">{{car.transmission }}</td>
+                  </tr>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Year</th>
+                    <td class="text-capitalize text-xs">{{car.year.strftime('%Y') }}</td>
+                  </tr>        
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Model</th>
+                    <td class="text-capitalize text-xs">{{car.model }}</td>
+                  </tr>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Drive Type</th>
+                    <td class="text-capitalize text-xs">{{car.drive_type }}</td>                      
+                  </tr>
+                  <tr>
+              
+
+        
+                  </table>
+                  
+                  </div>
+
+
+
+</div>
+
+
+
+
+ <a href="{{ url_for('vehicle_blueprint.vehicle',id=car.id) }}" class="text-end text-warning text-sm icon-move-right">More Details
+                    <i class="fas fa-arrow-right text-xs ms-1"></i>
+                  </a>
+               
+                <p class=" pt-2">
+              
                </div>
 
-              </div>
-              </div>
-            </div>
+             
+
+</div>
+
           </div>
+        
+
+
+
+
+
+
+
 {% endfor %}
           </div>
           
