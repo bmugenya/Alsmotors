@@ -180,15 +180,9 @@ animation-fill-mode: both;
     position: absolute;
 }
 
-.loader-img > img{
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  
-}
+
+
+
 .loader>div{
     width:50%;
 margin:0 auto;
@@ -283,4 +277,27 @@ right: 7px;
   width:80%;
   margin:0 auto;
 }
+
+
+.margin{
+    width:50%;
+    margin: 0 auto;
+}
+
+
+
+.wait-body{
+
+  background-color: #ffffff;
+  background-image: url("/static/assets/img/preloader.gif");
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+  left: 0px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 99999;
+}
+
 
