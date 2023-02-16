@@ -28,7 +28,7 @@
       {% endwith %}
 
     <header class="bg-gradient-dark">
-        <div class="page-header min-vh-45" style="background-image: url('/static/assets/img/about-bg.jpg');">
+        <div class="page-header min-vh-45" style="background-image: url({{car.image_url}});">
             <span class="mask bg-gradient-dark opacity-6"></span>
         </div>
     </header>
@@ -260,6 +260,8 @@
     <!-- -------- START Features w/ pattern background & stats & rocket -------- -->
 
 </div>
+
+  {% include 'includes/footer.html' %}
 </div>
 <!-- -------- END Features w/ pattern background & stats & rocket -------- -->
 {% endblock content %}
