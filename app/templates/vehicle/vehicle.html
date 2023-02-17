@@ -49,13 +49,13 @@
                     </div>
 
                     <div class="col-3">
-                        <button type="submit" class="btn btn-outline-secondary">
+                        <button type="submit" class="btn btn-outline-secondary"  onclick="printArea()">
                             <span class="btn-inner--icon"><i class="material-icons text-lg">file_download</i></span>
                             <span class="btn-inner--text">Download Specification</span>
                         </button>
                     </div>
                     <div class="col-3">
-                        <button type="submit" class="btn btn-outline-secondary">
+                        <button type="submit" class="btn btn-outline-secondary" onclick="printArea()">
                             <span class="btn-inner--icon">
                                 <i class="material-icons text-lg">print</i>
                             </span>
@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-8" id="area">
                         <div class="row">
                             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner mb-4">
@@ -260,6 +260,17 @@
     <!-- -------- START Features w/ pattern background & stats & rocket -------- -->
 
 </div>
+
+   <script>
+        function printArea() {
+            const printContents = document.getElementById('area').innerHTML;
+            const originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+
 
   {% include 'includes/footer.html' %}
 </div>
