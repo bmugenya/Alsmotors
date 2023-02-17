@@ -1,0 +1,383 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} About US {% endblock %} 
+
+{% block body_class %} about-us {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="cover">
+  {% include 'includes/navigation-light.html' %}
+
+  <div class="page-header min-vh-50" style="background-image: url(/static/assets/img/about-bg.jpg);">
+    <span class="mask bg-gradient-dark opacity-4"></span>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center mx-auto">
+          <h1 class="text-white mt-4 mb-1">Got a question?</h1>
+          <p class="lead text-white mb-6">We&#39;d like to talk more about what you need</p>
+        </div>
+
+
+
+            <div class="row mt-n5 blur border-radius-xl shadow-blur position-relative overflow-hidden">
+      <div class="col-lg-3 col-md-6 col-6 position-relative my-auto">
+        <div class="p-3 text-center">
+          <div class="icon icon-shape icon-md bg-gradient-warning shadow-warning text-center mx-auto">
+            <i class="material-icons opacity-10">menu_book</i>
+          </div>
+          <h5 class="mt-3 mb-1">Address</h5>
+          <p class="mb-0">Custom House Rd</p>
+          <hr class="vertical dark">
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-6 position-relative my-auto">
+        <div class="p-3 text-center">
+          <div class="icon icon-shape icon-md bg-gradient-warning shadow-warning text-center mx-auto">
+            <i class="material-icons opacity-10">email</i>
+          </div>
+          <h5 class="mt-3 mb-1">Email</h5>
+          <p class="mb-0">info@alsmotors.co.ke</p>
+        </div>
+        <hr class="vertical dark">
+      </div>
+      <div class="col-lg-3 col-md-6 col-6 position-relative my-auto">
+        <div class="p-3 text-center">
+          <div class="icon icon-shape icon-md bg-gradient-warning shadow-warning text-center mx-auto">
+            <i class="material-icons opacity-10">call</i>
+          </div>
+          <h5 class="mt-3 mb-1">Phone</h5>
+          <p class="mb-0">+(254) 792 888 666</p>
+        </div>
+        <hr class="vertical dark">
+      </div>
+      <div class="col-lg-3 col-md-6 col-6 position-relative my-auto">
+        <div class="p-3 text-center">
+          <div class="icon icon-shape icon-md bg-gradient-warning shadow-warning text-center mx-auto">
+            <i class="material-icons opacity-10">contacts</i>
+          </div>
+          <h5 class="mt-3 mb-1">Contact</h5>
+          <p class="mb-0">Al Siddique Motors LTD</p>
+        </div>
+      </div>
+    </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="container">
+
+  </div>
+
+
+
+
+  <div class="card card-body shadow-xl">
+    <!-- Section with four info areas left & one card right with image and waves -->
+    <section class="py-2">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4">
+              <div class="card-body shadow-xl">
+
+        <div class="card-header">
+                    <h3 class="">Contact Information</h3>
+                    <p class="mb-4">Al siddique Motors the most trusted provider of vehicle export solutions in the region, with over 120,000 vehicles sold we have deservedly earned the reputation for integrity, transparency and putting you the customer at the heart of our business.</p>
+
+ <p class="mb-4">Please contact us directly for all of your vehicle requirements with complete confidence</p>
+
+ <p class="mb-4">Can we check the GDPR – does this need to be a bigger statement?</p>
+              
+
+              
+                  </div>
+  
+                  </div>
+                </div>
+               
+           
+          <div class="col-lg-8">
+   
+
+            <form  class="card-body shadow-xl"  method="post"  action="{{ url_for('home_blueprint.index') }}">
+   
+                    <div class="row">
+
+                        <div class="col-6 pe-2 mb-3">
+                  <div class="input-group input-group-outline mb-3">
+                    <label class="form-label">First Name *</label>
+                    <input type="text" required name="first" class="form-control">
+                  </div>
+                </div>
+
+                          <div class="col-6 pe-2 mb-3">
+                  <div class="input-group input-group-outline mb-3">
+                    <label class="form-label">Last Name *</label>
+                    <input type="text" name="last" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+
+                     <div class="row">
+
+                        <div class="col-6 pe-2 mb-3">
+                  <div class="input-group input-group-outline mb-3">
+                    <label class="form-label">Email *</label>
+                    <input type="text" required name="email" class="form-control">
+                  </div>
+                </div>
+
+                          <div class="col-6 pe-2 mb-3">
+                  <div class="input-group input-group-outline mb-3">
+                    <label class="form-label">Phone *</label>
+                    <input type="text" name="phone" class="form-control">
+                  </div>
+                </div>
+              </div>
+ <div class="row">
+
+                      <div class="col-md-12 pe-2 mb-3">
+                        <div class="input-group input-group-outline mb-4">
+                          <label class="form-label">I'm looking for...</label>
+                          <textarea name="message" class="form-control" id="message"
+                           rows="6" ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 text-end ms-auto">
+                        <button type="submit" class="btn bg-gradient-warning mb-0">SCHEDULE A TEST DRIVE</button>
+                      </div>
+                    </div>
+          
+                </form>
+    
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row align-items-center">
+          <div class="col-lg-4">
+              <div class="card-body shadow-xl">
+
+        <div class="card-header">              
+
+                    <h6 class="">Al Siddique Motors LTD</h6>
+                       <p class="opacity-8 mb-4">Head Office — Showroom # 1
+                       <br> Mombasa, Kenya</p>
+                    <div class="d-flex p-2 ">
+                      <div>
+                        <i class="fas fa-phone text-sm"></i>
+                      </div>
+                      <div class="ps-3">
+                        <span class="text-sm opacity-8">+254 792 888 666</span>
+                      </div>
+                    </div>
+               <div class="d-flex p-2 ">
+                      <div>
+                        <i class="fas fa-phone text-sm"></i>
+                      </div>
+                      <div class="ps-3">
+                        <span class="text-sm opacity-8">+254 741 535 353</span>
+                      </div>
+                    </div>
+                    <div class="d-flex p-2 ">
+                      <div>
+                        <i class="fas fa-map-marker-alt text-sm"></i>
+                      </div>
+                      <div class="ps-3">
+                        <span class="text-sm opacity-8">Custom House Rd, Mombasa Kenya</span>
+                      </div>
+                    </div>
+                  </div>
+  
+                  </div>
+                </div>
+               
+           
+          <div class="col-lg-8">
+   
+
+           
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15919.237410264608!2d39.65580001464774!3d-4.059256994911803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1840138e3ff0477d%3A0xe20020f165c76380!2sAl%20Siddique%20Motors%20LTD!5e0!3m2!1sen!2sae!4v1676622865401!5m2!1sen!2sae" width="800" height="270" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+
+
+
+
+
+              <div class="row align-items-center">
+          <div class="col-lg-4">
+              <div class="card-body shadow-xl">
+
+        <div class="card-header">              
+
+                    <h6 class="">Al Siddique Motors LTD(NRD)</h6>
+                       <p class="opacity-8 mb-4">Branch — Showroom # 2 <br>
+                        Nairobi, Kenya
+                        </p>
+                    <div class="d-flex p-2 ">
+                      <div>
+                        <i class="fas fa-phone text-sm"></i>
+                      </div>
+                      <div class="ps-3">
+                        <span class="text-sm opacity-8">+254 792 888 666</span>
+                      </div>
+                    </div>
+                    <div class="d-flex p-2 ">
+                      <div>
+                        <i class="fas fa-phone text-sm"></i>
+                      </div>
+                      <div class="ps-3">
+                        <span class="text-sm opacity-8">+254 700 888 666</span>
+                      </div>
+                    </div>
+                    <div class="d-flex p-2 ">
+                      <div>
+                        <i class="fas fa-map-marker-alt text-sm"></i>
+                      </div>
+                      <div class="ps-3">
+                        <span class="text-sm opacity-8">Ngong road, next to Prestige Plaza, Nairobi Kenya</span>
+                      </div>
+                    </div>
+                  </div>
+  
+                  </div>
+                </div>
+               
+           
+          <div class="col-lg-8">
+   
+
+           
+
+
+
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63820.82938863494!2d36.72614938842358!3d-1.2933631084981905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11652760b709%3A0x4f07e78576bc52ab!2sAl%20Siddique%20Motors%20LTD%20(NRB)!5e0!3m2!1sen!2ske!4v1676622147180!5m2!1sen!2ske" width="800" height="270" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <div class="row align-items-center">
+          <div class="col-lg-4">
+              <div class="card-body shadow-xl">
+
+        <div class="card-header">              
+
+                    <h6 class="">Al Siddique Motors LTD(Railways)</h6>
+                       <p class="opacity-8 mb-4">Branch — Showroom # 3 <br>Mombasa, Kenya
+              
+                    <div class="d-flex p-2 ">
+                      <div>
+                        <i class="fas fa-phone text-sm"></i>
+                      </div>
+                      <div class="ps-3">
+                        <span class="text-sm opacity-8">+254 792 888 666</span>
+                      </div>
+                    </div>
+                   <div class="d-flex p-2 ">
+                      <div>
+                        <i class="fas fa-phone text-sm"></i>
+                      </div>
+                      <div class="ps-3">
+                        <span class="text-sm opacity-8">+254 746 082 830</span>
+                      </div>
+                    </div>
+                    <div class="d-flex p-2 ">
+                      <div>
+                        <i class="fas fa-map-marker-alt text-sm"></i>
+                      </div>
+                      <div class="ps-3">
+                        <span class="text-sm opacity-8"> Tangana road, next to Auto Xpress nad corner garag,Mombasa Kenya</span>
+                      </div>
+                    </div>
+                  </div>
+  
+                  </div>
+                </div>
+               
+           
+          <div class="col-lg-8">
+   
+
+           
+
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.809220433637!2d39.6623661!3d-4.0592838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1840131f4ab8060f%3A0x3f07a61d55bd7c8a!2sAl-Siddique%20Motors%20LTD%20(Railways)!5e0!3m2!1sen!2sae!4v1676622599879!5m2!1sen!2sae" width="800" height="270" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </section>
+  
+<!-- END Blogs w/ big image on left -->
+
+
+
+
+
+  </div>
+
+    {% include 'includes/footer.html' %} 
+</div>
+{% endblock content %}
+
+

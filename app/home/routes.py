@@ -33,7 +33,8 @@ def index():
 
     if request.method == 'POST':
         data = {
-            'name' : request.form['name'],
+            'name' : request.form['first'] + " " + request.form['last'],
+            'email' : request.form['email'],
             'mobile' : request.form['phone'],
             'message' : request.form['message'],
         }
