@@ -30,8 +30,41 @@
   <section class="pt-10">
     <div class="container">
 
+
+      <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="dellModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h1>{{car.name}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn bg-gradient-warning" data-bs-dismiss="modal">Close</button>
+        <a href="{{ url_for('vehicle_blueprint.delete_vehicle',id=id ) }}">
+        <button type="button" class="btn bg-gradient-danger">Confirm</button>
+      </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
+           <div class="modal-content">
         
           <div class="card card-body shadow-xl">
 
@@ -73,6 +106,7 @@
             </form>
 
           </div>
+        </div>
 
       
 
@@ -208,7 +242,7 @@
      <i class="material-icons opacity-10">camera_alt</i> Add Photo</button>
 
 
-    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger w-auto me-2">  
+    <button type="button"  data-bs-toggle="modal" data-bs-target="#delModal" class="btn btn-danger w-auto me-2">  
      <i class="material-icons opacity-10">delete</i> Delete Vehicle</button>
 
       
