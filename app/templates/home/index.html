@@ -37,11 +37,9 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-6 my-auto">
-                <h3 class="text-white mb-0 fadeIn1 fadeInBottom">WIDE RANGE OF BRANDS</h3>
-                <h1 class="text-white fadeIn2 fadeInBottom" id="state1" countTo="5234">0</h1>
-                <h6 class="lead text-white opacity-8 fadeIn3 fadeInBottom">A vast selection of the most popular new
-                  models from a wide range of brands awaits you today: Toyota, Lexus, Ford, Bentley, MG, Tesla, BMW,
-                  Mercedes, Suzuki, etc...</h6>
+                <h3 class="text-white mb-0 fadeIn1 fadeInBottom">TRUSTED BY THOUSANDS</h3>
+                <h1 class="text-white fadeIn2 fadeInBottom" id="state1" countTo="2234">0</h1>
+                <h6 class="lead text-white opacity-8 fadeIn3 fadeInBottom">With over 120,000 vehicles sold, we are trusted by many thousands of customers around the world. If you are looking for your next mobility solution, please do not hesitate to contact us today</h6>
               </div>
             </div>
           </div>
@@ -57,22 +55,6 @@
                 <h1 class="text-white fadeIn2 fadeInBottom"> 24/7 </h1>
                 <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">Dependable, reliable and guaranteed quality on
                   time every time makes Legend your chosen partner in business</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="page-header min-vh-75" style="background-image: url('/static/assets/img/bg-6.jpg');">
-          <!-- <span class="mask bg-gradient-dark"></span> -->
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6 my-auto">
-                <h4 class="text-white mb-0 fadeIn1 fadeInBottom">TRUSTED BY THOUSANDS</h4>
-                <h1 class="text-white fadeIn2 fadeInBottom" id="state2" countTo="5234">0</h1>
-                <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">With over 120,000 vehicles sold, we are
-                  trusted by many thousands of customers around the world. If you are looking for your next mobility
-                  solution, please do not hesitate to contact us today</p>
               </div>
             </div>
           </div>
@@ -99,14 +81,24 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 mx-auto py-3">
-            <div class="row">
+                <div class="row border-bottom">
+      <div class="col-lg-6">
+        <h6>I WANT TO BUY</h6>
+      </div>
+      <div class="col-lg-6 text-end d-flex justify-content-center">
+        <button type="button" class="btn btn-outline-warning ms-lg-1 me-lg-0 me-auto mt-lg-0 mt-2">ALL VEHICLES</button>
+         <button type="button" class="btn btn-outline-warning ms-lg-1 me-lg-0 me-auto mt-lg-0 mt-2">NEW</button>
+          <button type="button" class="btn btn-outline-warning  ms-lg-1 me-lg-0 me-auto mt-lg-0 mt-2">USED</button>
+      </div>
+    </div>
+
+            <div class="row pt-3">
               <form role="form" method="post" action="{{ url_for('vehicle_blueprint.collection') }}" style="display: flex;">
                 <div class="col-md-2 position-relative">
 
                   <div class="input-group input-group-dynamic">
-                    <label disabled>Location</label>
                     <select class="select-css" name="location">
-                      <option value="">Select</option>
+                      <option value="">Location</option>
                       <option value="nairobi">NAIROBI</option>
                       <option value="mombasa">MOMBASA</option>
                     </select>
@@ -121,9 +113,8 @@
                 <div class="col-md-2 position-relative">
 
                   <div class="input-group input-group-dynamic">
-                    <label class="">All Category</label>
                     <select name="category" class="select-css">
-                      <option value="">Select</option>
+                      <option value="">All Category</option>
                       <option value="sedan">SEDAN & HATCHBACK</option>
                       <option value="suv">SUV</option>
                       <option value="pickups">PICK UPS</option>
@@ -136,9 +127,8 @@
                 <div class="col-md-2 position-relative">
 
                   <div class="input-group input-group-dynamic">
-                    <label class="">All Models</label>
                     <select name="brand" class="select-css">
-                      <option value="">Select</option>
+                      <option value="">All Models</option>
                       <option value="toyota">TOYOTA</option>
                       <option value="nissan">NISSAN</option>
                       <option value="mazda">MAZDA</option>
@@ -158,9 +148,8 @@
                 <div class="col-md-2 position-relative">
 
                   <div class="input-group input-group-dynamic">
-                    <label class="">Fuel Type</label>
                     <select class="select-css" name="fuel" aria-label="First Name...">
-                      <option value="">Select</option>
+                      <option value="">Fuel Type</option>
                       <option value="disel">DISEL</option>
                       <option value="electric">ELECTRIC</option>
                       <option value="petrol">PETROL</option>
@@ -174,9 +163,8 @@
                 <div class="col-md-2 position-relative">
 
                   <div class="input-group input-group-dynamic">
-                    <label class="">Transmission</label>
                     <select class="select-css" name="transmission" aria-label="First Name...">
-                      <option value="">Select</option>
+                      <option value="">Transmission</option>
                       <option value="automatic">AUTOMATIC</option>
                       <option value="manual">MANUAL</option>
                       <option value="hybrid">HYBRID</option>
@@ -188,7 +176,7 @@
 
                 <div class="col-md-2">
 
-                  <div class="input-group input-group-dynamic pt-2rem">
+                  <div class="input-group input-group-dynamic text-end">
                     <button type="submit" class="btn bg-gradient-warning">
                       <span class="btn-inner--icon"><i class="fa fa-search"></i></span>
                       <span class="btn-inner--text">Search</span>
@@ -273,13 +261,10 @@
 
 
 
+              {% for car in cars[:8] %}
 
 
-
-              {% for car in cars[:6] %}
-
-
-              <div class="col-md-4 mt-4">
+              <div class="col-md-3 mt-4">
                 <div class="card">
                   <div class="card-header p-0 position-relative z-index-2">
 
@@ -327,9 +312,9 @@
           </div>
           <div class="tab-pane fade" id="pills-sedan" role="tabpanel" aria-labelledby="pills-sedan-tab">
             <div class="row">
-              {% for car in cars[:6] if 'sedan' in car["category"] %}
+              {% for car in cars[:8] if 'sedan' in car["category"] %}
 
-              <div class="col-md-4 mt-4">
+              <div class="col-md-3 mt-4">
                 <div class="card">
                   <div class="card-header p-0 position-relative z-index-2">
 
@@ -378,9 +363,9 @@
           </div>
           <div class="tab-pane fade" id="pills-suv" role="tabpanel" aria-labelledby="pills-suv-tab">
             <div class="row">
-              {% for car in cars[:6] if 'suv' in car["category"] %}
+              {% for car in cars[:8] if 'suv' in car["category"] %}
 
-              <div class="col-md-4 mt-4">
+              <div class="col-md-3 mt-4">
                 <div class="card">
                   <div class="card-header p-0 position-relative z-index-2">
 
@@ -430,9 +415,9 @@
 
           <div class="tab-pane fade" id="pills-pick" role="tabpanel" aria-labelledby="pills-pick-tab">
             <div class="row">
-              {% for car in cars[:6] if 'pickups' in car["category"] %}
+              {% for car in cars[:8] if 'pickups' in car["category"] %}
 
-              <div class="col-md-4 mt-4">
+              <div class="col-md-3 mt-4">
                 <div class="card">
                   <div class="card-header p-0 position-relative z-index-2">
 
@@ -484,9 +469,9 @@
 
           <div class="tab-pane fade" id="pills-bus" role="tabpanel" aria-labelledby="pills-bus-tab">
             <div class="row">
-              {% for car in cars[:6] if 'buses' in car["category"] %}
+              {% for car in cars[:8] if 'buses' in car["category"] %}
 
-              <div class="col-md-4 mt-4">
+              <div class="col-md-3 mt-4">
                 <div class="card">
                   <div class="card-header p-0 position-relative z-index-2">
 
@@ -854,6 +839,169 @@ background-repeat: no-repeat; background-size: cover;">
 
     </div>
   </section>
+
+
+
+
+
+  <section class="py-6">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <div class="card p-3">
+         <div class="row mb-3">
+     <div class="col-lg-8">
+        <h3>I WANT TO SEARCH FOR</h3>
+      </div>
+     <div class="col-lg-4  text-end">
+        <button class="btn btn-outline-secondary " >COLLECTIONS</button>
+      </div>
+    
+
+    </div>
+
+        <div class="row justify-content-start">
+          <div class="col-md-3">
+            <div class="card">
+               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
+              <h6 class="text-center">AUDI</h6>
+               <img src="/static/assets/img/logos/audi.png" width="80" height="80" style="margin:0 auto;">
+          
+            </div>
+          </div>
+                 <div class="col-md-3">
+            <div class="card">
+
+             <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
+              <h6 class="text-center">LEXUS</h6>
+               <img src="/static/assets/img/logos/lex.png" width="80" height="80" style="margin:0 auto;">
+          
+            </div>
+          </div>
+         <div class="col-md-3">
+            <div class="card">
+               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
+              <h6 class="text-center">FORD</h6>
+               <img src="/static/assets/img/logos/ford.png" width="80" height="80" style="margin:0 auto;">
+          
+            </div>
+          </div>
+                  <div class="col-md-3">
+            <div class="card">
+               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
+              <h6 class="text-center">SUBARU</h6>
+               <img src="/static/assets/img/logos/sub.png" width="80" height="80" style="margin:0 auto;">
+          
+            </div>
+          </div>
+           
+        </div>
+        <div class="row justify-content-start mt-4">
+      
+       <div class="col-md-3">
+            <div class="card">
+               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
+              <h6 class="text-center">LAND ROVER</h6>
+               <img src="/static/assets/img/logos/land.png" width="80" height="80" style="margin:0 auto;">
+          
+            </div>
+          </div>
+           
+                  <div class="col-md-3">
+            <div class="card">
+               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
+              <h6 class="text-center">VOLVO</h6>
+               <img src="/static/assets/img/logos/vol.png" width="80" height="80" style="margin:0 auto;">
+          
+            </div>
+          </div>
+
+                        <div class="col-md-3">
+            <div class="card">
+               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
+              <h6 class="text-center">MERCEDES BENZ</h6>
+               <img src="/static/assets/img/logos/mer.png" width="80" height="80" style="margin:0 auto;">
+          
+            </div>
+          </div>
+
+                          <div class="col-md-3">
+            <div class="card">
+               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
+              <h6 class="text-center">MAZDA</h6>
+               <img src="/static/assets/img/logos/maz.png" width="80" height="80" style="margin:0 auto;">
+          
+            </div>
+          </div>
+        </div>
+
+
+                <div class="row justify-content-start mt-4">
+          <div class="col-md-3">
+            <div class="card">
+               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
+              <h6 class="text-center">Toyota</h6>
+               <img src="/static/assets/img/logos/toyo.png" width="80" height="80" style="margin:0 auto;">
+          
+            </div>
+          </div>
+                 <div class="col-md-3">
+            <div class="card">
+
+             <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
+              <h6 class="text-center">NISSAN</h6>
+               <img src="/static/assets/img/logos/nissan.png" width="80" height="80" style="margin:0 auto;">
+          
+            </div>
+          </div>
+         <div class="col-md-3">
+            <div class="card">
+               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
+              <h6 class="text-center">VOKSWAGON</h6>
+               <img src="/static/assets/img/logos/voks.png" width="80" height="80" style="margin:0 auto;">
+          
+            </div>
+          </div>
+                  <div class="col-md-3">
+            <div class="card">
+               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
+              <h6 class="text-center">PEGOUT</h6>
+               <img src="/static/assets/img/logos/peg.png" width="80" height="80" style="margin:0 auto;">
+          
+            </div>
+          </div>
+           
+        </div>
+          </div>
+
+
+      </div>
+      <div class="col-lg-4">
+               <div class="p-0 position-relative z-index-2">
+              <img src="/static/assets/img/logo.png" width="70%" height="auto" alt="img-colored-shadow" class="img-fluid border-radius-lg ms-6">
+          
+          </div>
+
+
+<div class="card mt-n8 opacity-8">
+      
+          <div class="card-body mt-6 text-center">
+            <h5 class="font-weight-normal">
+            WIDE RANGE OF BRANDS
+            </h5>
+            <p class="mb-0">
+           AL Siddique Motors is the most enticing, creative, modern and multipurpose auto dealer Company.We have a vast selection of the most popular new models from a wide range of brands awaits you today: Toyota, Lexus, Ford, Bentley, MG, Tesla, BMW, Mercedes, Suzuki, etc...
+            </p>
+            <button type="button" class="btn bg-gradient-warning btn-sm mb-0 mt-3 text-uppercase">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
   <section class="vehicles my-5" id="vehicles">
     <div class="container">
