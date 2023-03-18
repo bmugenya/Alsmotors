@@ -21,7 +21,7 @@ class App extends Component {
   
   constructor(props) {
     super(props);
-    this.urls = { get:`http://localhost:5000/vehicles/api`};
+    this.urls = { get:`https://alsmotors-2mlm.onrender.com/vehicles/api`};
 
   }
 
