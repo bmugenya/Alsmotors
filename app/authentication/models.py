@@ -6,6 +6,7 @@ from datetime import datetime
 from hashlib import md5
 
 
+
 class Updateable:
     def update(self, data):
         for attr, value in data.items():
@@ -75,6 +76,9 @@ class Car(db.Model, Updateable):
     def __repr__(self):
         return '<Car {}>'.format(self.name)
 
+    @property
+    def url(self):
+        return url_for('cars.get', id=self.id)
 
 class Image(db.Model, Updateable):
     

@@ -1,5 +1,5 @@
 from app.vehicle import blueprint
-from flask import render_template, request,flash,redirect,url_for
+from flask import render_template, request,flash,redirect,url_for,jsonify,make_response
 from flask_login import login_required
 from app.authentication.models import Car,Image,Notification,Contact, Subscribe
 from app import db,login_manager
@@ -60,21 +60,81 @@ def collection():
         cars = 'searching'
 
         if brand:
-            cars =  Car.query.filter(Car.brand.like(brand))
-        if category:
-            cars =  Car.query.filter(Car.category.like(category))
-        if location:
-            cars =  Car.query.filter(Car.location.like(location))
-        if fuel:
-            cars =  Car.query.filter(Car.fuel_type.like(fuel))
-        if transmission:
-            cars =  Car.query.filter(Car.transmission.like(transmission))
+            cars =  Car.query.filter(Car.brand.like(brand),
+                Car.query.filter(Car.category.like(category),
+                    Car.location.like(location),
+                    Car.fuel_type.like(fuel),
+                    Car.transmission.like(transmission)))
 
         return render_template('vehicle/collection.html',cars=cars)
 
     cars =  Car.query.all()
     return render_template('vehicle/collection.html',item_length="true",cars=cars)
  
+
+
+
+@blueprint.route('/vehicles/api', methods=['GET','POST'])
+def vehicle_api():
+    if request.method == 'POST':
+        data =request.get_json()
+        print(data)
+        if data:
+            category = data.get('category')
+            brand = data.get('brand')
+            location = data.get('location')
+            fuel = data.get('fuel')
+            transmission = data.get('transmission')
+            used = data.get('used')
+            cars = 'searching'
+
+            if brand:
+                cars =  Car.query.filter(Car.brand.like(brand))
+            if category:
+                cars =  Car.query.filter(Car.category.like(category))
+            if location:
+                cars =  Car.query.filter(Car.location.like(location))
+            if fuel:
+                cars =  Car.query.filter(Car.fuel_type.like(fuel))
+            if used:
+                cars =  Car.query.filter(Car.used.like(used))
+            if transmission:
+                cars =  Car.query.filter(Car.transmission.like(transmission))
+
+            return [{
+             "id":car.id,
+                'name':car.name,
+                'image_url':car.image_url,
+                'year':car.year,
+                'engine':car.engine,
+                'drive_type':car.drive_type,
+                'brand':car.brand,
+                'category':car.category,
+                'model':car.model,
+                'location':car.location,
+                'fuel_type':car.fuel_type,
+                'transmission':car.transmission,
+                'promotion':car.promotion,
+                'used':car.used
+                } for car in cars]
+
+    cars =  Car.query.all()
+    return [{
+    "id":car.id,
+        'name':car.name,
+        'image_url':car.image_url,
+        'year':car.year,
+        'engine':car.engine,
+        'drive_type':car.drive_type,
+        'brand':car.brand,
+        'category':car.category,
+        'model':car.model,
+        'location':car.location,
+        'fuel_type':car.fuel_type,
+        'transmission':car.transmission,
+        'promotion':car.promotion,
+        'used':car.used
+        }for car in cars]
  
 @blueprint.route('/update/vehicle/<int:id>', methods=['POST','GET'])
 @login_required

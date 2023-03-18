@@ -26,27 +26,54 @@ def subscription():
     return render_template('home/index.html',cars=cars,segment='index')
 
 
-
-@blueprint.route('/',methods=['GET','POST'])
-def index():
-    cars =  Car.query.all()
-
-    if request.method == 'POST':
+@blueprint.route('/contact', methods=['GET','POST'])
+def Contact():
+    if request.method == "POST":
         data = {
-            'name' : request.form['first'] + " " + request.form['last'],
-            'email' : request.form['email'],
-            'mobile' : request.form['phone'],
-            'message' : request.form['message'],
+                    'name' : request.form['first'] + " " + request.form['last'],
+                    'email' : request.form['email'],
+                    'mobile' : request.form['phone'],
+                    'message' : request.form['message'],
         }
-        
+                
         contact = Contact(**data)
         db.session.add(contact)
         db.session.commit()
 
         flash("Thank you for reaching out to Alsmotors.")
-        redirect(url_for('home_blueprint.index'))
+    redirect(url_for('home_blueprint.index'))
 
-    return render_template('home/index.html',cars=cars,segment='index')
+
+@blueprint.route('/',methods=['GET','POST'])
+def index():
+    
+    if request.method == 'GET':    
+        cars =  Car.query.all()
+        return render_template('home/index.html',cars=cars,segment='index')
+
+    if request.method == 'POST':
+        category = request.form['category']
+        brand = request.form['brand']
+        location = request.form['location']
+        fuel = request.form['fuel']
+        transmission = request.form['transmission']
+        cars = 'searching'
+
+        if brand:
+            cars =  Car.query.filter(Car.brand.like(brand))
+            return render_template('home/index.html',cars=cars, category="brand", segment='index')
+        if category:
+            cars =  Car.query.filter(Car.category.like(category))
+            return render_template('home/index.html',cars=cars, category="category", segment='index')
+        if location:
+            cars =  Car.query.filter(Car.location.like(location))
+        if fuel:
+            cars =  Car.query.filter(Car.fuel_type.like(fuel))
+        if transmission:
+            cars =  Car.query.filter(Car.transmission.like(transmission))
+
+        return render_template('home/index.html',cars=cars,segment='index')
+              
 
 
 @blueprint.route('/<template>')

@@ -11,15 +11,11 @@
 <div class="cover">
 {% include 'includes/navigation-light.html' %}
 
-<header class="bg-gradient-dark">
-  <div class="page-header min-vh-45" style="background-image: url('/static/assets/img/photo.avif');">
-    <span class="mask bg-gradient-dark opacity-6"></span>
-  </div>
-</header>
 
-<div class="card card-body shadow-xl mt-n6">
+
+<div class="card card-body shadow-xl">
   <!-- Section with four info areas left & one card right with image and waves -->
-  <section class="py-7">
+  <section class="py-1">
     <div class="container">
       <div class="row">
         
@@ -28,6 +24,11 @@
           <div class="card-body">
             <p>Search Filters</p>
             <form role="form"  method="post" action="{{ url_for('vehicle_blueprint.collection') }}" class="text-start">
+
+<div class="input-group input-group-outline mb-4">
+          <label class="form-label">Search by keyword</label>
+          <input class="form-control" type="text" >
+        </div>
 
               <div class="input-group input-group-outline mb-3">
                 <select  name="category" class="select-css">

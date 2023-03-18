@@ -6,18 +6,21 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from app.config import configurations
 from flask_mail import Mail
+from flask_cors import CORS
 
 
 db = SQLAlchemy()
 migrate = Migrate()
 login_manager = LoginManager()
 mail = Mail()
+cors = CORS()
 
 def register_extensions(app):
     db.init_app(app)
     login_manager.init_app(app)
     migrate.init_app(app,db)
     mail.init_app(app)
+    cors.init_app(app)
 
 
 def register_blueprints(app):

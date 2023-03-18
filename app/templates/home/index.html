@@ -73,458 +73,11 @@
     </div>
   </div>
 
-
-
-
-  <div class="card card-body blur shadow-blur mx-3 mx-md-10 mt-n7" style="padding:0 !important;">
-    <section class="pt-3 pb-4" id="count-stats">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 mx-auto py-3">
-                <div class="row border-bottom">
-      <div class="col-lg-6">
-        <h6>I WANT TO BUY</h6>
-      </div>
-      <div class="col-lg-6 text-end d-flex justify-content-center">
-        <button type="button" class="btn btn-outline-warning ms-lg-1 me-lg-0 me-auto mt-lg-0 mt-2">ALL VEHICLES</button>
-         <button type="button" class="btn btn-outline-warning ms-lg-1 me-lg-0 me-auto mt-lg-0 mt-2">NEW</button>
-          <button type="button" class="btn btn-outline-warning  ms-lg-1 me-lg-0 me-auto mt-lg-0 mt-2">USED</button>
-      </div>
-    </div>
-
-            <div class="row pt-3">
-              <form role="form" method="post" action="{{ url_for('vehicle_blueprint.collection') }}" style="display: flex;">
-                <div class="col-md-2 position-relative">
-
-                  <div class="input-group input-group-dynamic">
-                    <select class="select-css" name="location">
-                      <option value="">Location</option>
-                      <option value="nairobi">NAIROBI</option>
-                      <option value="mombasa">MOMBASA</option>
-                    </select>
-                  </div>
-
-
-                </div>
-
-                <input type="hidden" name="make" />
-                <input type="hidden" name="models" />
-
-                <div class="col-md-2 position-relative">
-
-                  <div class="input-group input-group-dynamic">
-                    <select name="category" class="select-css">
-                      <option value="">All Category</option>
-                      <option value="sedan">SEDAN & HATCHBACK</option>
-                      <option value="suv">SUV</option>
-                      <option value="pickups">PICK UPS</option>
-                      <option value="buses">BUSES VANS & MPVS</option>
-                    </select>
-                  </div>
-
-                </div>
-
-                <div class="col-md-2 position-relative">
-
-                  <div class="input-group input-group-dynamic">
-                    <select name="brand" class="select-css">
-                      <option value="">All Models</option>
-                      <option value="toyota">TOYOTA</option>
-                      <option value="nissan">NISSAN</option>
-                      <option value="mazda">MAZDA</option>
-                      <option value="subaru">SUBARU</option>
-                      <option value="isuzu">ISUZU</option>
-                      <option value="mistubishi">MISTUBISHI</option>
-                      <option value="honda">HONDA</option>
-                      <option value="bmw">BMW</option>
-                      <option value="benz">BENZ</option>
-                      <option value="other">OTHER</option>
-                    </select>
-                  </div>
-                </div>
-
-
-
-                <div class="col-md-2 position-relative">
-
-                  <div class="input-group input-group-dynamic">
-                    <select class="select-css" name="fuel" aria-label="First Name...">
-                      <option value="">Fuel Type</option>
-                      <option value="disel">DISEL</option>
-                      <option value="electric">ELECTRIC</option>
-                      <option value="petrol">PETROL</option>
-                      <option value="hybrid">HYBRID</option>
-                    </select>
-                  </div>
-
-                </div>
-
-
-                <div class="col-md-2 position-relative">
-
-                  <div class="input-group input-group-dynamic">
-                    <select class="select-css" name="transmission" aria-label="First Name...">
-                      <option value="">Transmission</option>
-                      <option value="automatic">AUTOMATIC</option>
-                      <option value="manual">MANUAL</option>
-                      <option value="hybrid">HYBRID</option>
-                    </select>
-                  </div>
-
-                </div>
-
-
-                <div class="col-md-2">
-
-                  <div class="input-group input-group-dynamic text-end">
-                    <button type="submit" class="btn bg-gradient-warning">
-                      <span class="btn-inner--icon"><i class="fa fa-search"></i></span>
-                      <span class="btn-inner--text">Search</span>
-                    </button>
-                  </div>
-
-
-                </div>
-
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <div class="container">
+  <div class="row" id="body-vehicles"></div>
   </div>
+          
 
-
-
-  <section class="py-5">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-lg-8 mx-auto">
-          <h3>New Arrivals</h3>
-        </div>
-        <div class="col-lg-4 mx-auto">
-          <div class="nav-wrapper position-relative end-0">
-
-
-            <ul class="nav nav-pills nav-fill p-1" id="pills-tab" role="tablist">
-
-              <li class="nav-item" role="presentation">
-                <a class="nav-link mb-0 px-0 py-1 active" id="pills-all-tab" data-bs-toggle="pill"
-                  data-bs-target="#pills-all" type="button" role="tab" aria-controls="pills-all" aria-selected="true">
-                  ALL
-                </a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link mb-0 px-0 py-1" id="pills-sedan-tab" data-bs-toggle="pill"
-                  data-bs-target="#pills-sedan" type="button" role="tab" aria-controls="pills-sedan"
-                  aria-selected="false">
-                  SEDAN
-                </a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link mb-0 px-0 py-1" id="pills-suv-tab" data-bs-toggle="pill" data-bs-target="#pills-suv"
-                  type="button" role="tab" aria-controls="pills-suv" aria-selected="false">
-                  SUV
-                </a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link mb-0 px-0 py-1" id="pills-pick-tab" data-bs-toggle="pill"
-                  data-bs-target="#pills-pick" type="button" role="tab" aria-controls="pills-pick">
-                  PICK UPS
-                </a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link mb-0 px-0 py-1" id="pills-bus-tab" data-bs-toggle="pill" data-bs-target="#pills-bus"
-                  type="button" role="tab" aria-controls="pills-bus">
-                  BUSES
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="tab-content" id="pills-tabContent">
-
-          <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
-            <div class="row">
-
-
-
-              {% for car in cars[:8] %}
-
-
-              <div class="col-md-3 mt-4">
-                <div class="card">
-                  <div class="card-header p-0 position-relative z-index-2">
-
-                    <img class='card-header-img' src={{ car.image_url }} alt="img-blur-shadow">
-
-                    <div class="info">
-                      <div class="pt-5">
-                        <h6 class="font-weight-normal text-white mt-1">{{ car.name }}</h6>
-
-                        <a href="{{ url_for('vehicle_blueprint.vehicle',id=car.id) }}">
-                          <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gallary">
-                            <i class="material-icons text-white text-lg">link</i>
-                          </button></a>
-                        <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Zoom">
-                          <i class="material-icons text-white text-lg">zoom_out_map</i>
-                        </button>
-                        <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Print">
-                          <i class="material-icons text-white text-lg">print</i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card-body text-center p-0">
-                    <div class="d-flex">
-                      <div class="col-6">
-                        <p class="text-capitalize pt-2">
-                          <i class="material-icons text-lg">location_on</i>
-                          {{ car.location }}
-                        </p>
-                      </div>
-                      <div class="col-6">
-                        <p class="text-capitalize pt-2">
-                          <i class="material-icons text-lg">today</i>
-                          {{ car.year.strftime('%Y') }}
-                        </p>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-          <div class="tab-pane fade" id="pills-sedan" role="tabpanel" aria-labelledby="pills-sedan-tab">
-            <div class="row">
-              {% for car in cars[:8] if 'sedan' in car["category"] %}
-
-              <div class="col-md-3 mt-4">
-                <div class="card">
-                  <div class="card-header p-0 position-relative z-index-2">
-
-                    <img class='card-header-img' src={{ car.image_url }} alt="img-blur-shadow">
-
-                    <div class="info">
-                      <div class="pt-5">
-
-  <h6 class="font-weight-normal text-white mt-1">{{ car.name }}</h6>
-                        <a href="{{ url_for('vehicle_blueprint.vehicle',id=car.id) }}">
-                          <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gallary">
-                            <i class="material-icons text-white text-lg">link</i>
-                          </button></a>
-                        <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Zoom">
-                          <i class="material-icons text-white text-lg">zoom_out_map</i>
-                        </button>
-                        <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Print">
-                          <i class="material-icons text-white text-lg">print</i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card-body text-center p-0">
-                   
-                    <div class="d-flex">
-                      <div class="col-6">
-                        <p class="text-capitalize pt-2">
-                          <i class="material-icons text-lg">location_on</i>
-                          {{ car.location }}
-                        </p>
-                      </div>
-                      <div class="col-6">
-                        <p class="text-capitalize pt-2">
-                          <i class="material-icons text-lg">today</i>
-                          {{ car.year.strftime('%Y') }}
-                        </p>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-          <div class="tab-pane fade" id="pills-suv" role="tabpanel" aria-labelledby="pills-suv-tab">
-            <div class="row">
-              {% for car in cars[:8] if 'suv' in car["category"] %}
-
-              <div class="col-md-3 mt-4">
-                <div class="card">
-                  <div class="card-header p-0 position-relative z-index-2">
-
-                    <img class='card-header-img' src={{ car.image_url }} alt="img-blur-shadow">
-
-                    <div class="info">
-                      <div class="pt-5">
-
-  <h6 class="font-weight-normal text-white mt-1">{{ car.name }}</h6>
-                        <a href="{{ url_for('vehicle_blueprint.vehicle',id=car.id) }}">
-                          <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gallary">
-                            <i class="material-icons text-white text-lg">link</i>
-                          </button></a>
-                        <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Zoom">
-                          <i class="material-icons text-white text-lg">zoom_out_map</i>
-                        </button>
-                        <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Print">
-                          <i class="material-icons text-white text-lg">print</i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card-body text-center p-0">
-                    <h6 class="font-weight-normal mt-3">{{ car.name }}</h6>
-                    <div class="d-flex">
-                      <div class="col-6">
-                        <p class="text-capitalize pt-2">
-                          <i class="material-icons text-lg">location_on</i>
-                          {{ car.location }}
-                        </p>
-                      </div>
-                      <div class="col-6">
-                        <p class="text-capitalize pt-2">
-                          <i class="material-icons text-lg">today</i>
-                          {{ car.year.strftime('%Y') }}
-                        </p>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-
-          <div class="tab-pane fade" id="pills-pick" role="tabpanel" aria-labelledby="pills-pick-tab">
-            <div class="row">
-              {% for car in cars[:8] if 'pickups' in car["category"] %}
-
-              <div class="col-md-3 mt-4">
-                <div class="card">
-                  <div class="card-header p-0 position-relative z-index-2">
-
-                    <img class='card-header-img' src={{ car.image_url }} alt="img-blur-shadow">
-
-                    <div class="info">
-                      <div class="pt-5">
-
-  <h6 class="font-weight-normal text-white mt-1">{{ car.name }}</h6>
-                        <a href="{{ url_for('vehicle_blueprint.vehicle',id=car.id) }}">
-                          <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gallary">
-                            <i class="material-icons text-white text-lg">link</i>
-                          </button></a>
-                        <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Zoom">
-                          <i class="material-icons text-white text-lg">zoom_out_map</i>
-                        </button>
-                        <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Print">
-                          <i class="material-icons text-white text-lg">print</i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card-body text-center p-0">
-                   
-                    <div class="d-flex">
-                      <div class="col-6">
-                        <p class="text-capitalize pt-2">
-                          <i class="material-icons text-lg">location_on</i>
-                          {{ car.location }}
-                        </p>
-                      </div>
-                      <div class="col-6">
-                        <p class="text-capitalize pt-2">
-                          <i class="material-icons text-lg">today</i>
-                          {{ car.year.strftime('%Y') }}
-                        </p>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-
-
-
-          <div class="tab-pane fade" id="pills-bus" role="tabpanel" aria-labelledby="pills-bus-tab">
-            <div class="row">
-              {% for car in cars[:8] if 'buses' in car["category"] %}
-
-              <div class="col-md-3 mt-4">
-                <div class="card">
-                  <div class="card-header p-0 position-relative z-index-2">
-
-                    <img class='card-header-img' src={{ car.image_url }} alt="img-blur-shadow">
-
-                    <div class="info">
-                      <div class="pt-5">
-
-  <h6 class="font-weight-normal text-white mt-1">{{ car.name }}</h6>
-                        <a href="{{ url_for('vehicle_blueprint.vehicle',id=car.id) }}">
-                          <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gallary">
-                            <i class="material-icons text-white text-lg">link</i>
-                          </button></a>
-                        <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Zoom">
-                          <i class="material-icons text-white text-lg">zoom_out_map</i>
-                        </button>
-                        <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Print">
-                          <i class="material-icons text-white text-lg">print</i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card-body text-center p-0">
-                   
-                    <div class="d-flex">
-                      <div class="col-6">
-                        <p class="text-capitalize pt-2">
-                          <i class="material-icons text-lg">location_on</i>
-                          {{ car.location }}
-                        </p>
-                      </div>
-                      <div class="col-6">
-                        <p class="text-capitalize pt-2">
-                          <i class="material-icons text-lg">today</i>
-                          {{ car.year.strftime('%Y') }}
-                        </p>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-
-
-
-      </div>
-    </div>
-  </section>
 
 
   <section class="pt-5">
@@ -553,10 +106,6 @@
   </section>
 
 
-
-
-
-
   <section class="pb-5 position-relative bg-gradient-dark mx-n3" style="background-image: url('/static/assets/img/car-bg.jpg');  background-position: center; 
 background-repeat: no-repeat; background-size: cover;">
     <span class="mask bg-gradient-dark opacity-4"></span>
@@ -574,9 +123,6 @@ background-repeat: no-repeat; background-size: cover;">
         <div class="swiper test-slider">
 
           <div class="swiper-wrapper">
-
-           
-
             <div class="col-md-4 col-12 swiper-slide">
               <div class="card">
                 <div class="page-header min-height-150"
@@ -689,11 +235,7 @@ background-repeat: no-repeat; background-size: cover;">
                 </div>
               </div>
             </div>
-            
-
-
-
-   
+          
             <div class="col-md-4 col-12 swiper-slide">
               <div class="card">
                 <div class="page-header min-height-150"
@@ -766,21 +308,9 @@ background-repeat: no-repeat; background-size: cover;">
                 </div>
               </div>
             </div>
-
-
-
-
         </div>
-
-
         </div>
-
-
   </section>
-
-
-
-
 
 
 
@@ -812,189 +342,438 @@ background-repeat: no-repeat; background-size: cover;">
     </div>
   </section>
 
+
+
+
+
+<section class="py-5">
+  
+
+
+
+
+
+    </div>
+  </div>
+</section>
+
+
+
   <header class="header-2">
     <div class="page-header min-vh-50 relative" style="background-image: url('/static/assets/img/city-profile.jpg')">
       <span class="mask bg-gradient-dark opacity-4"></span>
       <div class="container">
-        <div class="row">
-          <div class="col-lg-7 text-center mx-auto">
-            <h2 class="text-white pt-3 mt-n5">Want to know more about us? Play our promotional video now!</h2>
-
-          </div>
-        </div>
       </div>
     </div>
   </header>
   <section class="my-5">
-    <div class="card card-body blur shadow-blur mx-3 mx-md-10 mt-n8 p-0">
+    <div class="card card-body blur shadow-blur mx-3 mx-md-10 mt-n12 p-0">
 
 
 
-      <iframe width="100%" height="415" src="https://www.youtube.com/embed/JeRwuPk3pqQ" 
-      title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write;
-         encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
+    <div class="container">
+  
+         <div class="row mb-3">
+     <div class="col-lg-8">
+        <h3>I WANT TO SEARCH FOR</h3>
+      </div>
+     <div class="col-lg-4  text-end">
+       <div class="nav-wrapper position-relative end-0 nav nav-fill p-1" id="pills-tab" role="tablist">
 
+        <button class="btn btn-outline-secondary active" id="pills-brand-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-brand" role="tab" aria-controls="pills-brand" aria-selected="tru
+e">Brand</button>
+                  <button class="btn btn-outline-secondary" id="pills-make-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-make"role="tab" aria-controls="pills-make" aria-selected="false">Make</button>
+      </div>
+    
+
+    </div>
+
+
+
+
+  <div class="row">
+        <div class="tab-content" id="pills-tabContent">
+
+          <div class="tab-pane fade show active" id="pills-brand" role="tabpanel" aria-labelledby="pills-brand-tab">
+          
+
+        <div class="row justify-content-start">
+         
+
+<div class="col-3">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/logos/audi.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Audi</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+              <div class="col-3">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/logos/lex.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Lexus</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+         <div class="col-3">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/logos/ford.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Ford</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="col-3">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/logos/sub.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Subaru</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="row justify-content-start mt-4">
+      
+  <div class="col-3">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/logos/land.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Land Rover</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+           
+<div class="col-3">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/logos/vol.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Volvo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+                
+
+<div class="col-3">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/logos/mer.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Mercedes Benz</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+                
+
+<div class="col-3">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/logos/maz.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Mazda</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+                
+        </div>
+
+
+                <div class="row justify-content-start mt-4">
+<div class="col-3">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/logos/toyo.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Toyota</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div class="col-3">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/logos/nissan.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Nissan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+                
+<div class="col-3">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/logos/voks.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Volswagon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div class="col-3">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/logos/peg.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Pegout</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+           
+        </div>
+      </div>
+
+
+          <div class="tab-pane fade show" id="pills-make" role="tabpanel" aria-labelledby="pills-make-tab">
+          
+
+        <div class="row justify-content-start pb-2">
+      <div class="col-2">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/type/sport-car.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Sports Car</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="col-2">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/type/cabriolet.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Convertibles</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+ <div class="col-2">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/type/sedan.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Sedans</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+ <div class="col-2">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/type/suv.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>SUVs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+ <div class="col-2">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/type/pickup-truck.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Trucks</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+ <div class="col-2">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/type/van.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Vans</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+        <div class="row justify-content-start">
+
+ <div class="col-2">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/type/wagon.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Wagons</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="col-2">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/type/truck.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Truck</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+ <div class="col-2">
+        <div class="card card-background">
+          <div class="full-background" style="background-image: url(/static/assets/img/type/motorcycle.png)"></div>
+          <div class="card-body cont body-left">
+            <div class="text-start">
+              <div class="author">
+                <div class="name ms-2 text-black">
+                  <span>Motorcycles</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+            </div>
+          </div>
+  
     </div>
   </section>
 
 
 
 
-
-  <section class="py-6">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-8">
-        <div class="card p-3">
-         <div class="row mb-3">
-     <div class="col-lg-8">
-        <h3>I WANT TO SEARCH FOR</h3>
-      </div>
-     <div class="col-lg-4  text-end">
-        <button class="btn btn-outline-secondary " >COLLECTIONS</button>
-      </div>
-    
-
-    </div>
-
-        <div class="row justify-content-start">
-          <div class="col-md-3">
-            <div class="card">
-               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
-              <h6 class="text-center">AUDI</h6>
-               <img src="/static/assets/img/logos/audi.png" width="80" height="80" style="margin:0 auto;">
-          
-            </div>
-          </div>
-                 <div class="col-md-3">
-            <div class="card">
-
-             <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
-              <h6 class="text-center">LEXUS</h6>
-               <img src="/static/assets/img/logos/lex.png" width="80" height="80" style="margin:0 auto;">
-          
-            </div>
-          </div>
-         <div class="col-md-3">
-            <div class="card">
-               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
-              <h6 class="text-center">FORD</h6>
-               <img src="/static/assets/img/logos/ford.png" width="80" height="80" style="margin:0 auto;">
-          
-            </div>
-          </div>
-                  <div class="col-md-3">
-            <div class="card">
-               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
-              <h6 class="text-center">SUBARU</h6>
-               <img src="/static/assets/img/logos/sub.png" width="80" height="80" style="margin:0 auto;">
-          
-            </div>
-          </div>
-           
-        </div>
-        <div class="row justify-content-start mt-4">
-      
-       <div class="col-md-3">
-            <div class="card">
-               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
-              <h6 class="text-center">LAND ROVER</h6>
-               <img src="/static/assets/img/logos/land.png" width="80" height="80" style="margin:0 auto;">
-          
-            </div>
-          </div>
-           
-                  <div class="col-md-3">
-            <div class="card">
-               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
-              <h6 class="text-center">VOLVO</h6>
-               <img src="/static/assets/img/logos/vol.png" width="80" height="80" style="margin:0 auto;">
-          
-            </div>
-          </div>
-
-                        <div class="col-md-3">
-            <div class="card">
-               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
-              <h6 class="text-center">MERCEDES BENZ</h6>
-               <img src="/static/assets/img/logos/mer.png" width="80" height="80" style="margin:0 auto;">
-          
-            </div>
-          </div>
-
-                          <div class="col-md-3">
-            <div class="card">
-               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
-              <h6 class="text-center">MAZDA</h6>
-               <img src="/static/assets/img/logos/maz.png" width="80" height="80" style="margin:0 auto;">
-          
-            </div>
-          </div>
-        </div>
-
-
-                <div class="row justify-content-start mt-4">
-          <div class="col-md-3">
-            <div class="card">
-               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
-              <h6 class="text-center">Toyota</h6>
-               <img src="/static/assets/img/logos/toyo.png" width="80" height="80" style="margin:0 auto;">
-          
-            </div>
-          </div>
-                 <div class="col-md-3">
-            <div class="card">
-
-             <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
-              <h6 class="text-center">NISSAN</h6>
-               <img src="/static/assets/img/logos/nissan.png" width="80" height="80" style="margin:0 auto;">
-          
-            </div>
-          </div>
-         <div class="col-md-3">
-            <div class="card">
-               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
-              <h6 class="text-center">VOKSWAGON</h6>
-               <img src="/static/assets/img/logos/voks.png" width="80" height="80" style="margin:0 auto;">
-          
-            </div>
-          </div>
-                  <div class="col-md-3">
-            <div class="card">
-               <span class="badge rounded-circle border text-dark text-center w-15 mt-n2 ms-auto">4</span>
-              <h6 class="text-center">PEGOUT</h6>
-               <img src="/static/assets/img/logos/peg.png" width="80" height="80" style="margin:0 auto;">
-          
-            </div>
-          </div>
-           
-        </div>
-          </div>
-
-
-      </div>
-      <div class="col-lg-4">
-               <div class="p-0 position-relative z-index-2">
-              <img src="/static/assets/img/logo.png" width="70%" height="auto" alt="img-colored-shadow" class="img-fluid border-radius-lg ms-6">
-          
-          </div>
-
-
-<div class="card mt-n8 opacity-8">
-      
-          <div class="card-body mt-6 text-center">
-            <h5 class="font-weight-normal">
-            WIDE RANGE OF BRANDS
-            </h5>
-            <p class="mb-0">
-           AL Siddique Motors is the most enticing, creative, modern and multipurpose auto dealer Company.We have a vast selection of the most popular new models from a wide range of brands awaits you today: Toyota, Lexus, Ford, Bentley, MG, Tesla, BMW, Mercedes, Suzuki, etc...
-            </p>
-            <button type="button" class="btn bg-gradient-warning btn-sm mb-0 mt-3 text-uppercase">Get Started</button>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -1109,5 +888,7 @@ background-repeat: no-repeat; background-size: cover;">
 
 
   {% include 'includes/footer.html' %}
+
+
 </div>
 {% endblock content %}
