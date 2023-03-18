@@ -41,8 +41,8 @@ def Contact():
         db.session.commit()
 
         flash("Thank you for reaching out to Alsmotors.")
-    redirect(url_for('home_blueprint.index'))
-
+    return render_template('home/contact.html',segment='index')
+           
 
 @blueprint.route('/',methods=['GET','POST'])
 def index():

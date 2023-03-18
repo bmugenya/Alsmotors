@@ -1,49 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-black" style="padding:0">
-  <div class="container">
-    <a class="navbar-brand text-white" href="/" rel="tooltip" title="Alsmotors" data-placement="bottom">
-      <i class="material-icons opacity-6 me-2 text-md">access_alarm</i>
-      9:00 AM - 6:00 PM 
-    </a>
-    <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon mt-2">
-        <span class="navbar-toggler-bar bar1"></span>
-        <span class="navbar-toggler-bar bar2"></span>
-        <span class="navbar-toggler-bar bar3"></span>
-      </span>
-    </button>
-    <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0 ms-lg-12 ps-lg-5" id="navigation">
-      <ul class="navbar-nav navbar-nav-hover ms-auto">
-        <li class="nav-item mx-2 ms-lg-5">
-          <a href="/" class="nav-link text-white ps-2 d-flex justify-content-between cursor-pointer align-items-center">
-            <i class="material-icons opacity-6 me-2 text-md">call</i>
-            079288866 / 0700888666 
-             <div class="arrow ms-auto ms-md-2"></div>
-          </a>
-        </li>
-        <li class="nav-item mx-2">
-          <a href="/about-us.html" class="nav-link text-white ps-2 d-flex justify-content-between cursor-pointer align-items-center">
-            <i class="material-icons opacity-6 me-2 text-md">email</i>
-            info@alsmotors.co.ke
-            <div class="arrow ms-auto ms-md-2"></div>
-          </a>
-        </li>
-        <li class="nav-item mx-2">
-          <a href="/about-us.html" class="nav-link text-white ps-2 d-flex justify-content-between cursor-pointer align-items-center">
-            <i class="material-icons opacity-6 me-2 text-md">location_on</i>
-            Ngong Road
-            <div class="arrow ms-auto ms-md-2"></div>
-          </a>
-        </li>
-
-
-              
-      </ul>
-    </div>
-  </div>
-</nav>
-
 <!-- Navbar Light -->
-  <nav class="navbar navbar-expand-lg bg-white p-0">
+  <nav class="navbar navbar-expand-lg bg-white p-0 position-sticky z-index-sticky top-0" style="min-height:90px;">
     <div class="container">
       <a class="navbar-brand" href="/" rel="tooltip" title="Alsmotors" data-placement="bottom">
         <img src="/static/assets/img/favicon.png" width=64 height=36 alt="">
@@ -58,13 +14,90 @@
       </button>
       <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0 ms-lg-12 ps-lg-5" id="navigation">
         <ul class="navbar-nav navbar-nav-hover ms-auto">
-          <li class="nav-item mx-2 ms-lg-5">
-            <a href="/" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
-              <i class="material-icons opacity-6 me-2 text-md">dashboard</i>
-              Home
-               <div class="arrow ms-auto ms-md-2"></div>
+          
+
+
+          <li class="nav-item dropdown dropdown-hover mx-2">
+            <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="material-icons opacity-6 me-2 text-md">location_on</i>
+              Our Office
+              <img src="/static/assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
             </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive mt-0 mt-lg-3 p-3 border-radius-lg" aria-labelledby="dropdownMenuDocs">
+              <div class="d-none d-lg-block">
+                <ul class="list-group">
+                   
+
+                        <li class="nav-item list-group-item border-0 p-0">
+          <a href="/" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
+            <i class="material-icons opacity-6 me-2 text-md">alarm</i>
+            9:00 AM - 6:00 PM
+             <div class="arrow ms-auto ms-md-2"></div>
+          </a>
+        </li>
+                  
+
+                  <li class="nav-item list-group-item border-0 p-0">
+          <a href="/" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
+            <i class="material-icons opacity-6 me-2 text-md">call</i>
+            079288866 
+             <div class="arrow ms-auto ms-md-2"></div>
+          </a>
+        </li>
+
+             <li class="nav-item list-group-item border-0 p-0">
+          <a href="/" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
+            <i class="material-icons opacity-6 me-2 text-md">call</i>
+            0700888666 
+             <div class="arrow ms-auto ms-md-2"></div>
+          </a>
+        </li>
+        <li class="nav-item list-group-item border-0 p-0">
+          <a href="/about-us.html" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
+            <i class="material-icons opacity-6 me-2 text-md">email</i>
+            info@alsmotors.co.ke
+            <div class="arrow ms-auto ms-md-2"></div>
+          </a>
+        </li>
+        <li class="nav-item list-group-item border-0 p-0">
+          <a href="/about-us.html" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
+            <i class="material-icons opacity-6 me-2 text-md">location_on</i>
+            Ngong Road
+            <div class="arrow ms-auto ms-md-2"></div>
+          </a>
+        </li>
+
+                </ul>
+              </div>
+              <div class="row d-lg-none">
+                <div class="col-md-12 g-0">
+                  <a class="dropdown-item py-2 ps-3 border-radius-md">
+                  
+                    <span class="text-sm">  <i class="material-icons opacity-6 me-2 text-md">alarm</i>
+            9:00 AM - 6:00 PM</span>
+                  </a>
+                  <a class="dropdown-item py-2 ps-3 border-radius-md">
+                    <span class="text-sm"> <i class="material-icons opacity-6 me-2 text-md">call</i>
+            079288866 /  0700888666 </span>
+                  </a>
+
+
+                  <a class="dropdown-item py-2 ps-3 border-radius-md">
+                    <span class="text-sm"> <i class="material-icons opacity-6 me-2 text-md">email</i>
+            info@alsmotors.co.ke </span>
+                  </a>
+
+
+                  <a class="dropdown-item py-2 ps-3 border-radius-md">
+                    <span class="text-sm"> <i class="material-icons opacity-6 me-2 text-md">location_on</i>
+            Ngong Road</span>
+                  </a>
+                </div>
+              </div>
+            </ul>
           </li>
+
+
           <li class="nav-item mx-2">
             <a href="/about-us.html" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
               <i class="material-icons opacity-6 me-2 text-md">view_day</i>
