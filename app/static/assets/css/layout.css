@@ -42,6 +42,30 @@ animation-fill-mode: both;
 }
 
 
+.fadeInn { animation-name: fadeInn }
+@keyframes fadeInn {
+    from {
+        opacity: 0;
+         transform: translateX(100%); 
+      
+    }
+    to { opacity: 1 }
+}
+
+
+
+
+.fadeOut { animation-name: fadeOut }
+@keyframes fadeOut {
+    from {
+        opacity: 0;
+         transform: translateY(5%); 
+      
+    }
+    to { opacity: 1 }
+}
+
+
 /* .car-top{ */
     /* -webkit-transition: 1s;
     -ms-transition: 1s;
@@ -218,6 +242,15 @@ right: 7px;
 
 
  
+
+ .merlights {
+ bottom: 52px;
+right: 7px;
+  
+  background: url(/static/assets/img/lcar-img3.png) no-repeat 0 0;
+}
+
+
   
 
 

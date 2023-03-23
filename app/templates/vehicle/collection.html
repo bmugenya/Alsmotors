@@ -13,15 +13,15 @@
 
 
 
-<div class="card card-body shadow-xl">
+
   <!-- Section with four info areas left & one card right with image and waves -->
-  <section class="py-1">
+  <section class="py-5">
     <div class="container">
       <div class="row">
         
 
-        <div class="col-md-4">
-          <div class="card-body">
+        <div class="col-md-3">
+          <div class="card card-body shadow-xl">
             <p>Search Filters</p>
             <form role="form"  method="post" action="{{ url_for('vehicle_blueprint.collection') }}" class="text-start">
 
@@ -107,33 +107,9 @@
             </form>
           </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-9">
           {% if item_length %}
           <p>We found {{ cars | length }} Cars available for you</p>
           {% else %}
@@ -143,89 +119,27 @@
           {% for car in cars %}
         
   
-
-
-      
-            <div class="row mb-5">
-              <div class="card border-radius-lg">
-                <div class="row">
-
-          <div class="col-lg-6 justify-content-center">
-              <div class="d-block blur-shadow-image pt-5">
-                <img src={{ car.image_url }} alt="img-blur-shadow-blog-2" class="img-fluid border-radius-lg">
-              </div>
-             
-            </div>
-      
-          <div class="col-lg-6 justify-content-center">
-  
-
-
-
-         <div class="table-responsive">
-               
-                <table class="table align-items-center mb-0">
-                    <h6 class="text-gradient text-warning text-center">{{ car.name}}</h6>
-                  <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Brand</th>
-                    <td class="text-capitalize text-xs">{{car.brand }}</td>
-                  </tr>
-                  <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Category</th>
-                    <td class="text-capitalize text-xs">{{car.category }}</td>
-                  </tr>
-                  <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Transmission</th>
-                    <td class="text-capitalize text-xs">{{car.transmission }}</td>
-                  </tr>
-                  <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Year</th>
-                    <td class="text-capitalize text-xs">{{car.year.strftime('%Y') }}</td>
-                  </tr>        
-                  <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Model</th>
-                    <td class="text-capitalize text-xs">{{car.model }}</td>
-                  </tr>
-                  <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Drive Type</th>
-                    <td class="text-capitalize text-xs">{{car.drive_type }}</td>                      
-                  </tr>
-                  <tr>
+                      <div class="col-md-3 mt-4">
+          
+             <a href="{{ url_for('vehicle_blueprint.vehicle',id=car.id) }}">
               
+    <div class="card shadow-lg mt-4">
 
-        
-                  </table>
-                  
-                  </div>
-
-
-
-</div>
-
-
-
-
- <a href="{{ url_for('vehicle_blueprint.vehicle',id=car.id) }}" class="text-end text-warning text-sm icon-move-right">More Details
-                    <i class="fas fa-arrow-right text-xs ms-1"></i>
-                  </a>
-               
-                <p class=" pt-2">
-              
-               </div>
-
-             
-
-</div>
-
+          <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+            <a class="d-block blur-shadow-image">
+              <img src={{car.image_url}} style="width:100%"/>
+            </a>
           </div>
-        
 
+          <div class="card-body">
+            <h6>{{car.name}}</h6>
+          </div>
 
+        </div>
+        </a>
+</div>
 
-
-
-
-
+  
 {% endfor %}
           </div>
           
