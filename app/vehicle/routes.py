@@ -6,6 +6,8 @@ from app import db,login_manager
 import cloudinary.uploader
 
 
+
+
 @blueprint.route('/delete/vehicle/<int:id>', methods=['GET','POST','DELETE'])
 @login_required
 def delete_vehicle(id):

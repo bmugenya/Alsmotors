@@ -15,6 +15,8 @@ from flask_login import (
 #     return redirect(url_for('authentication_blueprint.login'))
 
 
+
+
 @blueprint.route('/login', methods=['GET'])
 def login():
     login_form = LoginForm(request.form)
