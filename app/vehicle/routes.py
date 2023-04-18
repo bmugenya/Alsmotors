@@ -59,15 +59,21 @@ def collection():
         location = request.form['location']
         fuel = request.form['fuel']
         transmission = request.form['transmission']
+        print(request.form)
         cars = 'searching'
 
-        if brand:
-            cars =  Car.query.filter(Car.brand.like(brand),
-                Car.query.filter(Car.category.like(category),
-                    Car.location.like(location),
-                    Car.fuel_type.like(fuel),
-                    Car.transmission.like(transmission)))
 
+        if brand:
+            cars =  Car.query.filter(Car.brand.like(brand))
+        if category:
+            cars =  Car.query.filter(Car.category.like(category))
+        if location:
+            cars =  Car.query.filter(Car.location.like(location))
+        if fuel:
+            cars =  Car.query.filter(Car.fuel_type.like(fuel))
+        if transmission:
+            cars =  Car.query.filter(Car.transmission.like(transmission))
+        
         return render_template('vehicle/collection.html',cars=cars)
 
     cars =  Car.query.all()
