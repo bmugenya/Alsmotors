@@ -31,7 +31,7 @@
 
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner mb-4">
-      <div class="carousel-item active">
+      <div id="count-stats" class="carousel-item active">
         <div class="page-header min-vh-85" style="background-image: url('/static/assets/img/road.jpg');">
           <!-- <span class="mask bg-gradient-dark"></span> -->
           <div class="container">
@@ -44,7 +44,7 @@
 
               <div class="col-lg-6 my-auto">
                 <h3 class="text-white mb-0 fadeIn1 fadeInBottom">TRUSTED BY THOUSANDS</h3>
-                <h1 class="text-white fadeIn2 fadeInBottom" id="state1" countTo="2234">0</h1>
+                <h1 class="text-white" id="state1" countTo="2234">0</h1>
                 <h6 class="lead text-white opacity-8 fadeIn3 fadeInBottom">With over 120,000 vehicles sold, we are trusted by many thousands of customers around the world. If you are looking for your next mobility solution, please do not hesitate to contact us today</h6>
               </div>
             </div>
@@ -404,7 +404,7 @@ e">Brand</button>
 
 <div class="col-3">
 
-             <a href="{{ url_for('vehicle_blueprint.collection') }}">
+            <a href="/collection?brand=audi">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/logos/audi.png)"></div>
           <div class="card-body cont body-left">
@@ -422,7 +422,7 @@ e">Brand</button>
 
 
               <div class="col-3">
-                 <a href="{{ url_for('vehicle_blueprint.collection') }}">
+                <a href="/collection?brand=lexus">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/logos/lex.png)"></div>
           <div class="card-body cont body-left">
@@ -439,7 +439,7 @@ e">Brand</button>
       </div>
 
          <div class="col-3">
-           <a href="{{ url_for('vehicle_blueprint.collection') }}">
+            <a href="/collection?brand=ford">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/logos/ford.png)"></div>
           <div class="card-body cont body-left">
@@ -455,7 +455,7 @@ e">Brand</button>
       </a>
       </div>
             <div class="col-3">
-               <a href="{{ url_for('vehicle_blueprint.collection') }}">
+              <a href="/collection?brand=subaru">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/logos/sub.png)"></div>
           <div class="card-body cont body-left">
@@ -476,7 +476,7 @@ e">Brand</button>
         <div class="row justify-content-start mt-4">
       
   <div class="col-3">
-     <a href="{{ url_for('vehicle_blueprint.collection') }}">
+ <a href="/collection?brand=landrover">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/logos/land.png)"></div>
           <div class="card-body cont body-left">
@@ -493,7 +493,7 @@ e">Brand</button>
       </div>
            
 <div class="col-3">
-   <a href="{{ url_for('vehicle_blueprint.collection') }}">
+  <a href="/collection?brand=volvo">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/logos/vol.png)"></div>
           <div class="card-body cont body-left">
@@ -511,7 +511,7 @@ e">Brand</button>
                 
 
 <div class="col-3">
-   <a href="{{ url_for('vehicle_blueprint.collection') }}">
+ <a href="/collection?brand=benz">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/logos/mer.png)"></div>
           <div class="card-body cont body-left">
@@ -529,7 +529,7 @@ e">Brand</button>
                 
 
 <div class="col-3">
-   <a href="{{ url_for('vehicle_blueprint.collection') }}">
+   <a href="/collection?brand=mazda">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/logos/maz.png)"></div>
           <div class="card-body cont body-left">
@@ -550,7 +550,7 @@ e">Brand</button>
 
                 <div class="row justify-content-start mt-4">
 <div class="col-3">
-   <a href="{{ url_for('vehicle_blueprint.collection') }}">
+  <a href="/collection?brand=toyota">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/logos/toyo.png)"></div>
           <div class="card-body cont body-left">
@@ -566,7 +566,7 @@ e">Brand</button>
       </a>
       </div>
 <div class="col-3">
-   <a href="{{ url_for('vehicle_blueprint.collection') }}">
+  <a href="/collection?brand=nissan">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/logos/nissan.png)"></div>
           <div class="card-body cont body-left">
@@ -583,7 +583,7 @@ e">Brand</button>
       </div>
                 
 <div class="col-3">
-   <a href="{{ url_for('vehicle_blueprint.collection') }}">
+    <a href="/collection?brand=volswagon">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/logos/voks.png)"></div>
           <div class="card-body cont body-left">
@@ -599,7 +599,7 @@ e">Brand</button>
       </a>
       </div>
 <div class="col-3">
-   <a href="{{ url_for('vehicle_blueprint.collection') }}">
+  <a href="/collection?brand=pegout">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/logos/peg.png)"></div>
           <div class="card-body cont body-left">
@@ -624,7 +624,7 @@ e">Brand</button>
 
         <div class="row justify-content-start pb-2">
       <div class="col-2">
-         <a href="{{ url_for('vehicle_blueprint.collection') }}">
+         <a href="/collection?type=sport">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/type/sport-car.png)"></div>
           <div class="card-body cont body-left">
@@ -644,7 +644,7 @@ e">Brand</button>
 
 
       <div class="col-2">
-         <a href="{{ url_for('vehicle_blueprint.collection') }}">
+            <a href="/collection?type=convertibles">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/type/cabriolet.png)"></div>
           <div class="card-body cont body-left">
@@ -662,7 +662,7 @@ e">Brand</button>
 
 
  <div class="col-2">
-   <a href="{{ url_for('vehicle_blueprint.collection') }}">
+     <a href="/collection?type=sedan">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/type/sedan.png)"></div>
           <div class="card-body cont body-left">
@@ -683,7 +683,7 @@ e">Brand</button>
 
 
  <div class="col-2">
-   <a href="{{ url_for('vehicle_blueprint.collection') }}">
+     <a href="/collection?type=suv">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/type/suv.png)"></div>
           <div class="card-body cont body-left">
@@ -704,7 +704,7 @@ e">Brand</button>
 
 
  <div class="col-2">
-   <a href="{{ url_for('vehicle_blueprint.collection') }}">
+      <a href="/collection?type=pickups">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/type/pickup-truck.png)"></div>
           <div class="card-body cont body-left">
@@ -723,7 +723,7 @@ e">Brand</button>
 
 
  <div class="col-2">
-   <a href="{{ url_for('vehicle_blueprint.collection') }}">
+      <a href="/collection?type=van">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/type/van.png)"></div>
           <div class="card-body cont body-left">
@@ -744,7 +744,7 @@ e">Brand</button>
         <div class="row justify-content-start">
 
  <div class="col-2">
-   <a href="{{ url_for('vehicle_blueprint.collection') }}">
+     <a href="/collection?type=wagon">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/type/wagon.png)"></div>
           <div class="card-body cont body-left">
@@ -763,7 +763,7 @@ e">Brand</button>
 
 
       <div class="col-2">
-         <a href="{{ url_for('vehicle_blueprint.collection') }}">
+            <a href="/collection?type=pickups">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/type/truck.png)"></div>
           <div class="card-body cont body-left">
@@ -785,7 +785,7 @@ e">Brand</button>
 
 
  <div class="col-2">
-   <a href="{{ url_for('vehicle_blueprint.collection') }}">
+     <a href="/collection?type=motorcycles">
         <div class="card card-background">
           <div class="full-background" style="background-image: url(/static/assets/img/type/motorcycle.png)"></div>
           <div class="card-body cont body-left">
