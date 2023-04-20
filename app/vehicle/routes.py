@@ -59,7 +59,7 @@ def collection():
 
 
     if request.args.get('brand'):
-        cars =  Car.query.filter(Car.location.like(request.args.get('brand')))
+        cars =  Car.query.filter(Car.brand.like(request.args.get('brand')))
         return render_template('vehicle/collection.html',cars=cars)
 
     if request.args.get('type'):
