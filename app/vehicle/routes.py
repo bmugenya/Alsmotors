@@ -72,7 +72,6 @@ def collection():
         location = request.form['location']
         fuel = request.form['fuel']
         transmission = request.form['transmission']
-        print(request.form)
         cars = 'searching'
 
 

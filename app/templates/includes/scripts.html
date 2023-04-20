@@ -111,12 +111,15 @@ function animate() {
 
   function scrollFunction() {
     if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
+      document.body.scrollTop > 20 || document.documentElement.scrollTop > 20
     ) {
       mybutton.style.display = "block";
+        mybutton.classList.add('visible');
+    mybutton.classList.remove('hidden');
     } else {
       mybutton.style.display = "none";
+         mybutton.classList.remove('visible');
+    mybutton.classList.add('hidden');
     }
   }
   // When the user clicks on the button, scroll to the top of the document
@@ -126,7 +129,6 @@ function animate() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
-
 
 
 

@@ -93,7 +93,20 @@ animation-fill-mode: both;
   bottom: 20px;
   right: 20px;
   display: none;
-  }
+  transition: all 0.3s ease-in-out;
+}
+
+#btn-back-to-top.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#btn-back-to-top.hidden {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+
 
 .vehicles .vehicles-slider .box{
     text-align: center;
@@ -354,3 +367,17 @@ right: 7px;
   100% { transform: rotate(360deg); }
 }
 
+
+
+.thisone:hover .img-move-left img {
+  transform: translateX(-8px);
+}
+
+.thisone:hover .img-move-right img {
+  transform: translateX(8px);
+}
+
+.img-move-left img,
+.img-move-right img {
+  transition: all 0.2s cubic-bezier(0.34, 1.61, 0.7, 1.3);
+}
