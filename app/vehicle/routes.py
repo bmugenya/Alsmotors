@@ -28,27 +28,30 @@ def table():
 @blueprint.route('/vehicle/<int:id>', methods=['GET','POST'])
 def vehicle(id):
     car =  db.session.get(Car, id)
-    images = Image.query.filter(Image.cars_id == id)
-    
-    
-    if request.method == 'POST':
-        data = {
+    if car:
+        images = Image.query.filter(Image.cars_id == id)
         
-            'name' : request.form['name'],
-            'mobile' : request.form['phone'],
-            'email' : request.form['email'],
-            'message' : request.form['message'],
-            'cars_id' : id,
-        }
         
-        notification = Notification(**data)
-        db.session.add(notification)
-        db.session.commit()
-        msg = "Thank you for your inquiry regarding %s we will get back to you shortly" % (car.name)
-        flash(msg)
-        redirect(url_for('vehicle_blueprint.vehicle',id=id))
+        if request.method == 'POST':
+            data = {
+            
+                'name' : request.form['name'],
+                'mobile' : request.form['phone'],
+                'email' : request.form['email'],
+                'message' : request.form['message'],
+                'cars_id' : id,
+            }
+            
+            notification = Notification(**data)
+            db.session.add(notification)
+            db.session.commit()
+            msg = "Thank you for your inquiry regarding %s we will get back to you shortly" % (car.name)
+            flash(msg)
+            redirect(url_for('vehicle_blueprint.vehicle',id=id))
 
-    return render_template('vehicle/vehicle.html',id=id,images=images,car=car)
+        return render_template('vehicle/vehicle.html',id=id,images=images,car=car)
+
+    return render_template('home/page-404.html')
 
 
 @blueprint.route('/collection', methods=['GET','POST'])

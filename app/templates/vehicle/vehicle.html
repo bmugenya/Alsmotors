@@ -260,13 +260,18 @@
 </div>
 
    <script>
-        function printArea() {
-            const printContents = document.getElementById('area').innerHTML;
-            const originalContents = document.body.innerHTML;
-            document.body.innerHTML = printContents;
-            window.print();
-            document.body.innerHTML = originalContents;
-        }
+function printArea() {
+  const printContents = document.getElementById('area').innerHTML;
+  const originalContents = document.body.innerHTML;
+
+  if (printContents) {
+    document.body.innerHTML = printContents;
+    window.print();
+    document.body.innerHTML = originalContents;
+  } else {
+    console.error('Could not find print area');
+  }
+}
     </script>
 
 
