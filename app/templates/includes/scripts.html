@@ -43,12 +43,13 @@
     // get element position (distance from the top of the page to the bottom of the element)
     var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
 
-    // is scroll position greater than element position? (is element in view?)
-    if (scrollPosition > elementPosition) {
-
- // is scroll position greater than element position? (is element in view?)
-  return scrollPosition > elementPosition;
+  // is scroll position greater than element position? (is element in view?)
+  if (scrollPosition > elementPosition) {
+    return true;
   }
+
+  return false;
+}
 
   // get the element to animate
 
