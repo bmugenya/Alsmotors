@@ -22,6 +22,32 @@
 
 <script type="text/javascript">
 
+const sliderContainer = document.querySelector('.slider-container');
+
+let currentSlide = 1;
+const slideCount = sliderContainer.childElementCount - 2;
+
+function showSlide(index) {
+  sliderContainer.style.transform = `translateY(-${index * 100 / (slideCount + 2)}%)`;
+  currentSlide = index;
+}
+
+function nextSlide() {
+    slides[currentSlide].className = 'slide';
+    currentSlide = (currentSlide >= slides.length - 1) ? 0 : currentSlide + 1;
+    slides[currentSlide].className = 'slide showing';
+}
+
+function prevSlide() {
+  currentSlide--;
+  if (currentSlide < 1) {
+    currentSlide = slideCount;
+  }
+  showSlide(currentSlide);
+}
+
+setInterval(nextSlide, 5000);
+
 
 
   // get the element to animate
@@ -134,6 +160,7 @@ function animate() {
 
 
   var swiper = new Swiper(".vehicles-slider", {
+
     grabCursor: true,
     centeredSlides: true,
     spaceBetween: 20,
